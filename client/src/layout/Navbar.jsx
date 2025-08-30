@@ -9,7 +9,7 @@ const Navbar = () => {
         {/* Logo and Brand */}
         <div className="flex items-center gap-2 flex-shrink-0">
           <img src='/logo-img.png' alt="Saree Logo" className="h-8 w-8 object-contain md:-ml-20" />
-          <span className="text-2xl font-medium text-[#b76e79] tracking-wide font-prata">SAREE</span>
+          <span className="text-2xl font-medium text-[#b76e79] tracking-wide font-prata">Antariksh Silks</span>
         </div>
 
         {/* Hamburger menu for mobile */}
@@ -30,7 +30,7 @@ const Navbar = () => {
         </button>
 
         {/* Navigation Links (desktop) */}
-        <div className="hidden md:flex items-center gap-8 ml-20">
+        <div className="hidden md:flex items-center gap-8 ml-140">
           <a href="#" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">Home</a>
           <a href="#" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">About Us</a>
           <a href="#" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">Blog</a>

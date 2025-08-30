@@ -4,12 +4,12 @@ import { MdOutlineMailOutline } from "react-icons/md";
 const SubscribeSection = () => {
   return (
     <section className="py-6 mx-w-full bg-[#fbfcfd]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center rounded-xl p-6 md:p-10">
           {/* Left image */}
           <div className="w-full">
             <div className="rounded-2xl overflow-hidden ">
-              <img src="/subscribe-img.jpg" alt="store" className="w-full h-64 md:h-72 object-cover" />
+              <img src="/subscribe-img.jpg" alt="store" className="w-full h-64 md:h-72 lg:h-90 object-cover" />
             </div>
           </div>
 
@@ -21,7 +21,7 @@ const SubscribeSection = () => {
             <form className="mt-6">
               <label htmlFor="email" className="sr-only">Email</label>
 
-              <div className="relative w-full max-w-xl">
+              <div className="relative w-full max-w-lg">
                 {/* left icon */}
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-900">
                   <MdOutlineMailOutline className="w-5 h-5" />

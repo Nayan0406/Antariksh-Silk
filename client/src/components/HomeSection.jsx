@@ -5,27 +5,27 @@ const HomeSection = () => {
   return (
     <section className="relative min-h-screen bg-[#9b2851] overflow-hidden">
       {/* Decorative left gradient to blend with image */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#9b2851] via-[#b76e79]/80 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#9b2851] to-[#9b2851] pointer-events-none z-0" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 py-12 lg:py-20">
   <div className="relative lg:pr-24">
           {/* Left content: constrained width so right image can show */}
           <div className="max-w-2xl text-white space-y-6 lg:space-y-8 py-8">
             <div className="flex items-center gap-3 mb-6">
-              <img src="/logo-img.png" alt="Saree Logo" className="h-20 w-16 object-contain ml-50" />
+              <img src="/logo-img.png" alt="Saree Logo" className="h-20 w-auto lg:ml-60 object-contain" />
             </div>
 
             {/* Compact inline search (matches image) */}
             <div className="mb-6">
               <form className="flex items-center gap-6 flex-wrap md:flex-nowrap">
-                <div className="flex flex-col">
+        <div className="flex flex-col w-full sm:w-auto">
                   <label className="text-sm text-white/80 mb-2 font-medium">Service Name</label>
 
                   <div className="relative">
                     <input
                       type="text"
                       placeholder="Book your services..."
-                      className="w-64 md:w-56 bg-transparent border-0 border-b-2 border-white/40 focus:border-white/80 text-white placeholder-white/60 py-2 pr-10 text-sm"
+          className="w-full sm:w-64 md:w-56 bg-transparent border-0 border-b-2 border-white/40 focus:border-white/80 text-white placeholder-white/60 py-2 pr-10 text-sm"
                     />
 
                     <svg className="absolute right-2 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -34,23 +34,21 @@ const HomeSection = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-col">
+                <div className="flex flex-col w-full sm:w-auto">
                   <label className="text-sm text-white/80 mb-2 font-medium">Address</label>
 
                   <div className="relative">
                     <input
                       type="text"
                       placeholder="Where"
-                      className="w-48 md:w-44 bg-transparent border-0 border-b-2 border-white/40 focus:border-white/80 text-white placeholder-white/60 py-2 pr-10 text-sm"
+                      className="w-full sm:w-48 md:w-44 bg-transparent border-0 border-b-2 border-white/40 focus:border-white/80 text-white placeholder-white/60 py-2 pr-10 text-sm"
                     />
 
-                    <svg className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <CiLocationOn />
-                    </svg>
+                    <CiLocationOn className="absolute right-2 top-1/2 transform -translate-y-1/2 w-6 h-6 text-white/70" />
                   </div>
                 </div>
 
-                <button type="submit" className="mt-3 md:mt-0 inline-flex items-center gap-2 px-5 py-2 bg-white text-[#5d2b34] rounded-md text-sm font-medium border border-[#d6b9a9] shadow-sm">
+                <button type="submit" className="mt-3 md:mt-0 inline-flex items-center gap-2 px-5 py-2 bg-white text-[#5d2b34] rounded-md text-sm font-medium border border-[#d6b9a9] shadow-sm bg-blur-20 w-full md:w-auto justify-center">
                   <span>Search</span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                 </button>
@@ -82,8 +80,8 @@ const HomeSection = () => {
       </div>
 
       {/* Right image covers full right half on large screens */}
-      <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2">
-        <img src="/homesection-img.png" alt="Beautiful Pink Saree" className="w-full h-220 object-fill" />
+      <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2 overflow-hidden">
+        <img src="/homesection-img.png" alt="Beautiful Pink Saree" className="w-full h-full object-cover" />
       </div>
     </section>
   )

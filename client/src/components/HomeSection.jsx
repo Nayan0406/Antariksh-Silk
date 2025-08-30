@@ -1,4 +1,5 @@
 import React from 'react'
+import { CiLocationOn } from "react-icons/ci";
 
 const HomeSection = () => {
   return (
@@ -11,30 +12,45 @@ const HomeSection = () => {
           {/* Left content: constrained width so right image can show */}
           <div className="max-w-2xl text-white space-y-6 lg:space-y-8 py-8">
             <div className="flex items-center gap-3 mb-6">
-              <img src="/logo-img.png" alt="Saree Logo" className="h-16 w-16 object-contain ml-50" />
+              <img src="/logo-img.png" alt="Saree Logo" className="h-20 w-16 object-contain ml-50" />
             </div>
 
             {/* Compact inline search (matches image) */}
             <div className="mb-6">
-              <form className="flex items-center gap-3 flex-wrap md:flex-nowrap">
+              <form className="flex items-center gap-6 flex-wrap md:flex-nowrap">
                 <div className="flex flex-col">
-                  <label className="text-xs text-white/70 mb-1">Service Name</label>
-                  <input
-                    type="text"
-                    placeholder="Book your services..."
-                    className="w-64 md:w-56 px-3 py-2 rounded-md bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none text-sm"
-                  />
-                  
+                  <label className="text-sm text-white/80 mb-2 font-medium">Service Name</label>
+
+                  <div className="relative">
+                    <input
+                      type="text"
+                      placeholder="Book your services..."
+                      className="w-64 md:w-56 bg-transparent border-0 border-b-2 border-white/40 focus:border-white/80 text-white placeholder-white/60 py-2 pr-10 text-sm"
+                    />
+
+                    <svg className="absolute right-2 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                  </div>
                 </div>
+
                 <div className="flex flex-col">
-                  <label className="text-xs text-white/70 mb-1">Address</label>
-                  <input
-                    type="text"
-                    placeholder="Where"
-                    className="w-48 md:w-44 px-3 py-2 rounded-md bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none text-sm"
-                  />
+                  <label className="text-sm text-white/80 mb-2 font-medium">Address</label>
+
+                  <div className="relative">
+                    <input
+                      type="text"
+                      placeholder="Where"
+                      className="w-48 md:w-44 bg-transparent border-0 border-b-2 border-white/40 focus:border-white/80 text-white placeholder-white/60 py-2 pr-10 text-sm"
+                    />
+
+                    <svg className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <CiLocationOn />
+                    </svg>
+                  </div>
                 </div>
-                <button type="submit" className="mt-4 md:mt-0 inline-flex items-center gap-2 px-4 py-2 bg-white text-[#5d2b34] rounded-md text-sm font-medium border border-[#d6b9a9] shadow-sm">
+
+                <button type="submit" className="mt-3 md:mt-0 inline-flex items-center gap-2 px-5 py-2 bg-white text-[#5d2b34] rounded-md text-sm font-medium border border-[#d6b9a9] shadow-sm">
                   <span>Search</span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                 </button>
@@ -42,7 +58,7 @@ const HomeSection = () => {
             </div>
 
             <div className="inline-flex items-center gap-3 px-3 py-2  w-max mb-4">
-              <img src="/home-logo.png" alt="badge" className="h-5 w-5" />
+              <img src="/home-logo.png" alt="badge" className="h-6 w-5" />
               <span className="text-lg font-medium uppercase tracking-wider text-white/90">SAREES FOR EVERY OCCASION</span>
             </div>
 
@@ -67,7 +83,7 @@ const HomeSection = () => {
 
       {/* Right image covers full right half on large screens */}
       <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2">
-        <img src="/homesection-img.png" alt="Beautiful Pink Saree" className="w-full h-full object-cover" />
+        <img src="/homesection-img.png" alt="Beautiful Pink Saree" className="w-full h-220 object-fill" />
       </div>
     </section>
   )

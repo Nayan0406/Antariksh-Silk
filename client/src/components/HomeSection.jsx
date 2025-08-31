@@ -3,9 +3,9 @@ import { CiLocationOn } from "react-icons/ci";
 
 const HomeSection = () => {
   return (
-    <section className="relative min-h-screen bg-[#9b2851] overflow-hidden">
+    <section className="relative min-h-screen  overflow-hidden">
       {/* Decorative left gradient to blend with image */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#9b2851] to-[#9b2851] pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#9b2851] to-[#9b2851] pointer-events-none z-1" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 py-12 lg:py-20">
   <div className="relative lg:pr-24">
@@ -81,7 +81,7 @@ const HomeSection = () => {
 
       {/* Right image covers full right half on large screens */}
       <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2 overflow-hidden">
-        <img src="/homesection-img.png" alt="Beautiful Pink Saree" className="w-full h-full object-cover" />
+        <img src="/homesection-img.png" alt="Beautiful Pink Saree" className="w-full h-full object-fill" />
       </div>
     </section>
   )

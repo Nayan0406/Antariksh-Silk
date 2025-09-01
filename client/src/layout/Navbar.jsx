@@ -38,8 +38,8 @@ const Navbar = () => {
         </div>
         {/* Auth Buttons (desktop) */}
         <div className="hidden md:flex items-center gap-3 -mr-20">
-          <button className="px-6 py-2 rounded-full border-2 border-[#b76e79] text-[#b76e79] font-medium bg-white hover:bg-[#f8e6ea] transition">Login</button>
-          <button className="px-6 py-2 rounded-full bg-[#b76e79] text-white font-medium hover:bg-[#a05a65] transition">Signup</button>
+          <button className="px-6 py-2 rounded-full border-2 border-[#b76e79] text-[#b76e79] font-medium bg-white hover:bg-[#f8e6ea] transition cursor-pointer">Login</button>
+          <button className="px-6 py-2 rounded-full bg-[#b76e79] text-white font-medium hover:bg-[#a05a65] transition cursor-pointer">Signup</button>
         </div>
       </div>
 
@@ -47,13 +47,13 @@ const Navbar = () => {
       {menuOpen && (
         <div className="md:hidden bg-white border-t border-gray-200 px-4 pb-4">
           <div className="flex flex-col gap-3 mt-3">
-            <a href="#" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">Home</a>
-            <a href="#" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">About Us</a>
-            <a href="#" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">Blog</a>
-            <a href="#" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">Contact Us</a>
+            <a href="/" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">Home</a>
+            <a href="/about" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">About Us</a>
+            <a href="/blog" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">Blog</a>
+            <a href="/contact" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">Contact Us</a>
             <div className="flex gap-2 mt-2">
-              <button className="flex-1 px-4 py-2 rounded-full border-2 border-[#b76e79] text-[#b76e79] font-medium bg-white hover:bg-[#f8e6ea] transition">Login</button>
-              <button className="flex-1 px-4 py-2 rounded-full bg-[#b76e79] text-white font-medium hover:bg-[#a05a65] transition">Signup</button>
+              <button className="flex-1 px-4 py-2 rounded-full border-2 border-[#b76e79] text-[#b76e79] font-medium bg-white hover:bg-[#f8e6ea] transition cursor-pointer">Login</button>
+              <button className="flex-1 px-4 py-2 rounded-full bg-[#b76e79] text-white font-medium hover:bg-[#a05a65] transition cursor-pointer">Signup</button>
             </div>
           </div>
         </div>

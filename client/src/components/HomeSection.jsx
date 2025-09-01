@@ -74,14 +74,14 @@ const HomeSection = () => {
 
           {/* Mobile image (stacked under content) */}
           <div className="mt-8 lg:hidden">
-            <img src="/homesection-img.png" alt="Saree" className="w-full h-64 object-cover rounded-lg shadow-lg" />
+            <img src="/Saree.png" alt="Saree" className="w-full h-64 object-fill rounded-lg shadow-lg" />
           </div>
         </div>
       </div>
 
       {/* Right image covers full right half on large screens */}
       <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2 overflow-hidden">
-        <img src="/homesection-img.png" alt="Beautiful Pink Saree" className="w-full h-full object-fill" />
+        <img src="/Saree.png" alt="Beautiful Pink Saree" className="w-full h-full object-right" />
       </div>
     </section>
   )

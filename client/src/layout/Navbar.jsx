@@ -31,10 +31,10 @@ const Navbar = () => {
 
         {/* Navigation Links (desktop) */}
         <div className="hidden md:flex items-center gap-8 ml-140">
-          <a href="#" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">Home</a>
-          <a href="#" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">About Us</a>
-          <a href="#" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">Blog</a>
-          <a href="#" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">Contact Us</a>
+          <a href="/" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">Home</a>
+          <a href="/about" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">About Us</a>
+          <a href="/blog" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">Blog</a>
+          <a href="/contact" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">Contact Us</a>
         </div>
         {/* Auth Buttons (desktop) */}
         <div className="hidden md:flex items-center gap-3 -mr-20">

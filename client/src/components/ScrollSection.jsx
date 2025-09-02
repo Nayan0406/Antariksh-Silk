@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
 const categories = [
-  'Navari Saree',
+  'Paithani Saree',
   'Irkal Saree',
   'Solapur Saree',
   'Tussar Silk Saree',
@@ -55,7 +55,7 @@ const ScrollSection = () => {
               <div className="flex items-center justify-center mb-4">
                 <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 bg-[#faf1df] rounded-full flex items-center justify-center">
                   <img
-                    src="/scroll-img.png"
+                    src="/paithani-img.png"
                     alt={name}
                     className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
                   />

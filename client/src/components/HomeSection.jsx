@@ -5,18 +5,18 @@ const HomeSection = () => {
   return (
     <section className="relative min-h-screen  overflow-hidden">
       {/* Decorative left gradient to blend with image */}
-      <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#9b2851] to-[#9b2851] pointer-events-none z-1" />
+      <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#1d0200] to-[#1d0200] pointer-events-none z-1" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 py-12 lg:py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 py-12">
   <div className="relative lg:pr-24">
           {/* Left content: constrained width so right image can show */}
-          <div className="max-w-2xl text-white space-y-6 lg:space-y-8 py-8">
-            <div className="flex items-center gap-3 mb-6">
-              <img src="/logo-img.png" alt="Saree Logo" className="h-20 w-auto lg:ml-60 object-contain" />
+          <div className="max-w-2xl text-white">
+            <div className="flex items-center lg:pb-[-20px]">
+              <img src="/home-logo.png" alt="Saree Logo" className="h-80 w-80 lg:ml-30 object-contain lg:pt-[-20px] lg:pb-[-40px]" />
             </div>
 
             {/* Compact inline search (matches image) */}
-            <div className="mb-6">
+            {/* <div className="mb-6">
               <form className="flex items-center gap-6 flex-wrap md:flex-nowrap">
         <div className="flex flex-col w-full sm:w-auto">
                   <label className="text-sm text-white/80 mb-2 font-medium">Service Name</label>
@@ -53,10 +53,10 @@ const HomeSection = () => {
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                 </button>
               </form>
-            </div>
+            </div> */}
 
             <div className="inline-flex items-center gap-3 px-3 py-2  w-max mb-4">
-              <img src="/home-logo.png" alt="badge" className="h-6 w-5" />
+              {/* <img src="/home-logo.png" alt="badge" className="h-6 w-5" /> */}
               <span className="text-lg font-medium uppercase tracking-wider text-white/90">SAREES FOR EVERY OCCASION</span>
             </div>
 
@@ -81,7 +81,7 @@ const HomeSection = () => {
 
       {/* Right image covers full right half on large screens */}
       <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2 overflow-hidden">
-        <img src="/Saree.png" alt="Beautiful Pink Saree" className="w-full h-full object-right" />
+        <img src="/homesection-img.png" alt="Beautiful Pink Saree" className="w-full h-full object-right" />
       </div>
     </section>
   )

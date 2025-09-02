@@ -29,7 +29,7 @@ const Navbar = () => {
         </button>
 
         {/* Navigation Links (desktop) */}
-        <div className="hidden md:flex items-center gap-8 lg:ml-0">
+        <div className="hidden md:flex items-center gap-8 lg:ml-190">
           <a href="/" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">Home</a>
           <a href="/about" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">About Us</a>
           <a href="/blog" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">Blog</a>

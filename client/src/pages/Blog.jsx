@@ -1,21 +1,12 @@
 import React from 'react'
 import BlogSection from '../components/BlogSection'
-import BlogContent from '../components/BlogContent'
-import BlogItem from '../components/BlogItem'
-import BlogNavari from '../components/BlogNavari'
-import BlogIrkal from '../components/BlogIrkal'
-import BlogTussar from '../components/BlogTussar'
-
+import BlogItems from '../components/BlogItems'
 
 const Blog = () => {
   return (
     <div>
       <BlogSection />
-      <BlogContent />
-      <BlogItem />
-      <BlogNavari />
-      <BlogIrkal />
-      <BlogTussar />
+      <BlogItems />
     </div>
   )
 }

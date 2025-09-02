@@ -4,11 +4,11 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full border-b border-gray-300 bg-white">
-      <div className="w-full flex items-center justify-between py-3 px-4 md:px-6">
+    <nav className="md:w-full w-full border-b border-gray-300 bg-white">
+      <div className="w-full md:w-full flex items-center justify-between py-3 px-4 md:px-2">
         {/* Logo and Brand */}
         <div className="flex h-[50px] items-center">
-          <img src='logo.png' alt="Saree Logo" className="ml-6 h-full object-cover" />
+          <img src='logo.png' alt="Saree Logo" className="sm:ml-1 lg:ml-6 h-full object-cover" />
         </div>
 
         {/* Hamburger menu for mobile */}
@@ -29,7 +29,7 @@ const Navbar = () => {
         </button>
 
         {/* Navigation Links (desktop) */}
-        <div className="hidden md:flex items-center gap-8 ml-190">
+        <div className="hidden md:flex items-center gap-8 lg:ml-0">
           <a href="/" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">Home</a>
           <a href="/about" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">About Us</a>
           <a href="/blog" className="text-base font-medium text-gray-800 hover:text-[#b76e79] transition">Blog</a>

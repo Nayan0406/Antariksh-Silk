@@ -23,20 +23,20 @@ const Footer = () => {
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b-1 border-white pb-4">
         {/* Brand */}
         <div className="flex items-center gap-2 justify-center md:justify-start">
-          <img src="/logo.png" alt="Logo" className="h-20 w-30 object-contain" />
+          <img src="/home-logo.png" alt="Logo" className="h-20 w-30 object-contain" />
         </div>
         {/* Socials */}
         <div className="flex gap-3 justify-center md:justify-end">
-          <a href="#" className="border border-[#e1bfcf] rounded-full p-2 hover:bg-[#e1bfcf] hover:text-[#2a1b22] transition" aria-label="Facebook">
+          <a href="#" className="border border-[#ff7a7a] rounded-full p-2 hover:bg-[#e1bfcf] hover:text-[#2a1b22] transition" aria-label="Facebook">
             <FaFacebookF />
           </a>
-          <a href="#" className="border border-[#e1bfcf] rounded-full p-2 hover:bg-[#e1bfcf] hover:text-[#2a1b22] transition" aria-label="Twitter">
+          <a href="#" className="border border-[#ff7a7a] rounded-full p-2 hover:bg-[#e1bfcf] hover:text-[#2a1b22] transition" aria-label="Twitter">
             <FaTwitter />
           </a>
-          <a href="#" className="border border-[#e1bfcf] rounded-full p-2 hover:bg-[#e1bfcf] hover:text-[#2a1b22] transition" aria-label="LinkedIn">
+          <a href="#" className="border border-[#ff7a7a] rounded-full p-2 hover:bg-[#e1bfcf] hover:text-[#2a1b22] transition" aria-label="LinkedIn">
             <FaLinkedinIn />
           </a>
-          <a href="#" className="border border-[#e1bfcf] rounded-full p-2 hover:bg-[#e1bfcf] hover:text-[#2a1b22] transition" aria-label="Instagram">
+          <a href="#" className="border border-[#ff7a7a] rounded-full p-2 hover:bg-[#e1bfcf] hover:text-[#2a1b22] transition" aria-label="Instagram">
             <FaInstagram />
           </a>
         </div>

@@ -27,7 +27,7 @@ const HomeProduct = () => {
           {/* background image that sits behind the grid */}
           {/* <img src="/image.png" alt="decor" className="absolute inset-0 w-full h-full object-cover rounded-2xl pointer-events-none opacity-30" /> */}
           {/* optional subtle color wash over background */}
-          <div className="absolute inset-0 bg-[#cba8a8] rounded-2xl " />
+          <div className="absolute inset-0 bg-[#873939] rounded-2xl " />
 
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Left side big image */}

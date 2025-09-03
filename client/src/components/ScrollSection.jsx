@@ -44,20 +44,20 @@ const ScrollSection = () => {
         {/* Scrollable Row */}
         <div
           ref={ref}
-          className="flex gap-10 md:gap-14 overflow-x-auto scroll-smooth py-6 px-6 md:px-12 snap-x snap-mandatory hide-scrollbar items-start w-full"
+          className="flex gap-10 overflow-x-auto scroll-smooth py-6 px-6 md:px-12 snap-x snap-mandatory hide-scrollbar items-start w-full"
           role="list"
         >
           {categories.map((name) => (
             <article
               key={name}
-              className="snap-center flex-shrink-0 w-44 sm:w-52 md:w-56 lg:w-64 text-center"
+              className="snap-center flex-shrink-0 w-44 sm:w-52 md:w-56 lg:w-54 text-center"
             >
               <div className="flex items-center justify-center mb-4">
-                <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 bg-[#faf1df] rounded-full flex items-center justify-center">
+                <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-16 md:h-16 bg-[#faf1df] rounded-full flex items-center justify-center">
                   <img
                     src="/paithani-img.png"
                     alt={name}
-                    className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
+                    className="w-14 h-14 sm:w-16 sm:h-16 md:w-26 md:h-26 object-contain"
                   />
                 </div>
               </div>

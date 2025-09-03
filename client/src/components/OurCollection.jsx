@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { FaStar, FaRegHeart } from 'react-icons/fa'
+import { FaStar, FaHeart } from 'react-icons/fa'
+
 
 const items = [
   {
@@ -51,7 +52,7 @@ const OurCollection = () => {
   }
 
   return (
-    <section className="relative py-12 bg-[#f9e9ec]">
+    <section className="relative py-12 bg-[#dfb8b8] md:rounded-tl-[10rem]">
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 -mt-5">
           <p className="text-xs text-pink-400 uppercase tracking-wider">Our Collection</p>
@@ -76,24 +77,27 @@ const OurCollection = () => {
           </div> */}
 
           {/* Scroll container */}
-          <div ref={ref} className="flex gap-6 overflow-x-auto hide-scrollbar py-4 snap-x snap-mandatory scroll-smooth w-full">
+          <div ref={ref} className="flex gap-6 overflow-x-auto hide-scrollbar py-4 snap-x snap-mandatory scroll-smooth w-full h-[450px]">
             {items.map((it, idx) => (
               <article key={idx} className="snap-center flex-shrink-0 w-64 sm:w-72 md:w-80 lg:w-70 bg-white rounded-xl shadow-sm overflow-hidden flex flex-col">
                 <div className="relative h-44 md:h-52 overflow-hidden">
                   <img src={it.img} alt={it.title} className="w-full h-70 object-fill" />
                 </div>
                 <div className="p-4 flex flex-col flex-1">
-                  <div className="flex items-center justify-between text-xs text-gray-500 mb-3">
+                  <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-3">
                     <div className="flex items-center gap-2">
-                      <span className="text-pink-400"><FaStar /></span>
+                      <span className="text-[#a31f1f]"><FaStar /></span>
                       <span>{it.rating}</span>
                     </div>
-                    <div>{it.reviews} reviews</div>
+                    <div className='text-[#141414]'>{it.reviews} reviews</div>
                   </div>
                   <h3 className="text-lg font-semibold text-[#2b1d20] mb-2">{it.title}</h3>
-                  <p className="text-sm text-gray-600 mb-4">{it.desc}</p>
+                  <div className="flex items-start gap-3 mb-4">
+                    <FaHeart className='text-[#f44336] mt-1' />
+                    <p className="text-sm text-gray-600">{it.desc}</p>
+                  </div>
                   <div className="mt-auto">
-                    <Link to="/product" className="w-full inline-flex items-center justify-center h-10 px-4 rounded-md border border-pink-200 text-pink-600 text-sm">Buy Now</Link>
+                    <Link to="/product" className="w-full inline-flex items-center justify-center h-10 px-4 rounded-md border border-[#550000] text-[#550000] text-sm">Buy Now</Link>
                   </div>
                 </div>
               </article>

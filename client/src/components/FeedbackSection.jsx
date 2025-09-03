@@ -3,13 +3,13 @@ import React from 'react'
 const FeedbackSection = () => {
   return (
     <section className="py-8 lg:py-20">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-8">
           <span className="text-sm tracking-widest text-[#c77a93] -mt-10">FEEDBACK</span>
           <h2 className="mt-3 text-3xl lg:text-4xl font-semibold text-[#3a2233]">What our Customers says...</h2>
         </div>
 
-        <div className="relative bg-[#8b2a53] text-white rounded-2xl overflow-hidden px-8 py-20 lg:px-16 ">
+        <div className="relative bg-[#550000] text-white md:rounded-tr-[8rem] md:rounded-br-[8rem] md:rounded-bl-[8rem] overflow-hidden px-8 py-35 lg:px-16 ">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* Section A: image / avatar */}
             <section className="relative flex items-center justify-center lg:justify-start">

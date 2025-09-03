@@ -7,12 +7,12 @@ const HomeSection = () => {
       {/* Decorative left gradient to blend with image */}
       <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#1d0200] to-[#1d0200] pointer-events-none z-1" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 py-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 py-1">
   <div className="relative lg:pr-24">
           {/* Left content: constrained width so right image can show */}
           <div className="max-w-2xl text-white">
-            <div className="flex items-center lg:pb-[-20px]">
-              <img src="/home-logo.png" alt="Saree Logo" className="h-80 w-80 lg:ml-30 object-contain lg:pt-[-20px] lg:pb-[-40px]" />
+            <div className="flex items-center lg:pb-[-90px]">
+              <img src="/home-logo.png" alt="Saree Logo" className="h-80 w-80 lg:ml-3 object-contain lg:pt-[-50px] lg:pb-[-40px]" />
             </div>
 
             {/* Compact inline search (matches image) */}
@@ -57,15 +57,15 @@ const HomeSection = () => {
 
             <div className="inline-flex items-center gap-3 px-3 py-2  w-max mb-4">
               {/* <img src="/home-logo.png" alt="badge" className="h-6 w-5" /> */}
-              <span className="text-lg font-medium uppercase tracking-wider text-white/90">SAREES FOR EVERY OCCASION</span>
+              <span className="text-lg font-medium uppercase tracking-wider text-[#f08181]">A TOUCH OF TRADITION, A STATEMENT OF LUXURY</span>
             </div>
 
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-[#f3e0c9]">
-                Find a service<br />
-                <span className="text-[#f3e0c9]">close to you</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-[#f7e5c1] font-rosarivo">
+                Sarees for every<br />
+                <span className="text-[#f7e5c1]">Occasion</span>
               </h1>
-              <p className="text-md md:text-lg text-white/80 max-w-lg leading-relaxed">
+              <p className="text-md md:text-lg text-[#ffffff] max-w-lg leading-relaxed">
                 There are many variation of passages are lorem available,
                 majority have suffered alteration in some form.
               </p>
@@ -73,8 +73,8 @@ const HomeSection = () => {
           </div>
 
           {/* Mobile image (stacked under content) */}
-          <div className="mt-8 lg:hidden">
-            <img src="/Saree.png" alt="Saree" className="w-full h-64 object-fill rounded-lg shadow-lg" />
+          <div className="w-full mt-8 lg:hidden">
+            <img src="/homesection-img.png" alt="Saree" className="w-full h-64 object-fill" />
           </div>
         </div>
       </div>

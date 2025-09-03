@@ -1,0 +1,15 @@
+/* Global CSS additions */
+
+/* Utility to hide scrollbars while preserving scroll behavior. Used by ProductList.jsx */
+.hide-scrollbar {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+	display: none; /* Chrome, Safari, Opera */
+}
+
+/* Optional small helper to ensure snapping works smoothly on iOS */
+.smooth-snap {
+	-webkit-overflow-scrolling: touch;
+}

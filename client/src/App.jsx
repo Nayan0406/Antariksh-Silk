@@ -7,6 +7,11 @@ import About from './pages/About'
 import Blog from './pages/Blog'
 import Contact from './pages/Contact'
 import Product from './pages/Product'
+import TermsandCondition from './components/TermsandCondition'
+import PrivacyPolicy from './components/PrivacyPolicy'
+import Disclaimer from './components/Disclaimer'
+import ShippingPolicy from './components/ShippingPolicy'
+import RefundPolicy from './components/RefundPolicy'
 
 function App() {
 
@@ -21,6 +26,11 @@ function App() {
           <Route path='/blog' element={<Blog />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/product' element={<Product />} />
+          <Route path='/termsandcondition' element={<TermsandCondition />} />
+          <Route path='/privacypolicy' element={<PrivacyPolicy />} />
+          <Route path='/disclaimer' element={<Disclaimer />} />
+          <Route path='/shippingpolicy' element={<ShippingPolicy />} />
+          <Route path='/refundpolicy' element={<RefundPolicy />} />
         </Routes>
 
         <Footer />

@@ -48,19 +48,22 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold text-white mb-2 font-prata">Explore</h3>
           <ul className="space-y-4 text-sm">
-            <li><a href="#" className="hover:text-[#e1bfcf] transition">Home</a></li>
-            <li><a href="#" className="hover:text-[#e1bfcf] transition">About Us</a></li>
-            <li><a href="#" className="hover:text-[#e1bfcf] transition">Services</a></li>
-            <li><a href="#" className="hover:text-[#e1bfcf] transition">Blog</a></li>
-            <li><a href="#" className="hover:text-[#e1bfcf] transition">Contact Us</a></li>
+            <li><a href="/" className="hover:text-[#e1bfcf] transition">Home</a></li>
+            <li><a href="/about" className="hover:text-[#e1bfcf] transition">About Us</a></li>
+            <li><a href="#" className="hover:text-[#e1bfcf] transition">Collections</a></li>
+            <li><a href="/blog" className="hover:text-[#e1bfcf] transition">Blog</a></li>
+            <li><a href="/contact" className="hover:text-[#e1bfcf] transition">Contact Us</a></li>
           </ul>
         </div>
         {/* Utility Pages */}
         <div>
-          <h3 className="text-lg font-semibold text-white mb-2 font-prata">Utility Pages</h3>
+          <h3 className="text-lg font-semibold text-white mb-2 font-prata">Policies</h3>
           <ul className="space-y-4 text-sm">
-            <li><a href="#" className="hover:text-[#e1bfcf] transition">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-[#e1bfcf] transition">Terms of Use</a></li>
+            <li><a href="/privacypolicy" className="hover:text-[#e1bfcf] transition">Privacy Policy</a></li>
+            <li><a href="/termsandcondition" className="hover:text-[#e1bfcf] transition">Terms &amp; Conditions</a></li>
+            <li><a href="/refundpolicy" className="hover:text-[#e1bfcf] transition">Return &amp; Refund Policy</a></li>
+            <li><a href="/shippingpolicy" className="hover:text-[#e1bfcf] transition">Shipping Policy</a></li>
+            <li><a href="/disclaimer" className="hover:text-[#e1bfcf] transition">Disclaimer</a></li>
           </ul>
         </div>
         {/* Keep in Touch */}

@@ -1,177 +1,141 @@
 import React, { useState } from "react";
-import { FaMinus, FaPlus, FaStar, FaRegCircle } from "react-icons/fa";
-import { FiChevronRight, FiTruck, FiRefreshCw, FiEye } from "react-icons/fi";
-import { FaRegHeart } from "react-icons/fa6";
-
-const reviews = [
-  { name: "Neha", rating: 4.5, text: "The colours are vibrant, and it fits beautifully." },
-  { name: "Mansi", rating: 4.5, text: "Highly recommend this product. Worth every rupee spent!" },
-  { name: "Meghna", rating: 4.5, text: "The product is good, but the packaging could have been better." },
-  { name: "Pranav", rating: 4.5, text: "Lovely saree — great texture and finish." },
-];
+import { FaRegHeart, FaHeart } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const SilkSareeDetail = () => {
-  const [qty, setQty] = useState(1);
-  const [activeAcc, setActiveAcc] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+  const colors = ["blue", "yellow", "green", "red"];
+  const [selectedColor, setSelectedColor] = useState("green");
+  const [liked, setLiked] = useState(false);
+
+  const reviews = [
+    {
+      name: "Neha",
+      rating: 4.5,
+      text: "The colors are vibrant, and it fits beautifully. Got so many compliments!",
+    },
+    {
+      name: "Mansi",
+      rating: 4.5,
+      text: "Highly recommend this product. Worth every rupee spent!",
+    },
+    {
+      name: "Meghna",
+      rating: 4.5,
+      text: "The product is good, but the packaging could have been better.",
+    },
+    {
+      name: "Prachi",
+      rating: 4,
+      text: "Overall satisfied with the saree. Great quality.",
+    },
+  ];
 
   return (
-    <section className="max-w-full mx-auto px-4 py-12">
-      <div className="grid lg:grid-cols-2 gap-8 items-start">
-        {/* Left: Images + Accordions */}
-        <div>
-          <div className="grid grid-cols-2 gap-4">
-            <img src="/home-product-img.png" alt="front" className="w-full object-fill h-105" />
-            <img src="/silksaree-back.png" alt="back" className="w-full object-fill h-105" />
-          </div>
-
-          <div className="mt-8 space-y-4">
-            <button
-              onClick={() => setActiveAcc(activeAcc === 0 ? -1 : 0)}
-              className="w-full flex items-center justify-between bg-[#f1d7d8] rounded-lg px-5 py-4 text-left"
-            >
-              <div className="flex items-center gap-3">
-                <FiChevronRight className="text-xl text-[#6b1a1a]" />
-                <span className="font-semibold">Product details</span>
-              </div>
-              <span>{activeAcc === 0 ? "-" : "+"}</span>
-            </button>
-            {activeAcc === 0 && (
-              <div className="bg-white border rounded-lg p-4 text-sm text-gray-700">
-                <ul className="list-disc pl-5 space-y-2">
-                  <li>Black Chanderi Handwoven Handloom Pure Silk Saree.</li>
-                  <li>Category: Chanderi Pattu Silk Saree</li>
-                  <li>
-                    Description: Golden Zari Patela Border All Over Meenakari Buta Pattu Silk Saree.
-                  </li>
-                  <li>Material: Pure Chanderi silk</li>
-                </ul>
-              </div>
-            )}
-
-            <button
-              onClick={() => setActiveAcc(activeAcc === 1 ? -1 : 1)}
-              className="w-full flex items-center justify-between border rounded-lg px-5 py-4 text-left"
-            >
-              <div className="flex items-center gap-3">
-                <FiRefreshCw className="text-xl text-[#6b1a1a]" />
-                <span className="font-semibold">Return & Refund</span>
-              </div>
-              <span>{activeAcc === 1 ? "-" : "+"}</span>
-            </button>
-            {activeAcc === 1 && (
-              <div className="bg-white border rounded-lg p-4 text-sm text-gray-700">
-                <p>7 day return policy. Product must be unused and tags intact.</p>
-              </div>
-            )}
-
-            <button
-              onClick={() => setActiveAcc(activeAcc === 2 ? -1 : 2)}
-              className="w-full flex items-center justify-between border rounded-lg px-5 py-4 text-left"
-            >
-              <div className="flex items-center gap-3">
-                <FiTruck className="text-xl text-[#6b1a1a]" />
-                <span className="font-semibold">Shipping Policy</span>
-              </div>
-              <span>{activeAcc === 2 ? "-" : "+"}</span>
-            </button>
-            {activeAcc === 2 && (
-              <div className="bg-white border rounded-lg p-4 text-sm text-gray-700">
-                <p>Standard shipping: 4-7 business days. Expedited available at checkout.</p>
-              </div>
-            )}
-
-            <button
-              onClick={() => setActiveAcc(activeAcc === 3 ? -1 : 3)}
-              className="w-full flex items-center justify-between border rounded-lg px-5 py-4 text-left"
-            >
-              <div className="flex items-center gap-3">
-                <FiEye className="text-xl text-[#6b1a1a]" />
-                <span className="font-semibold">Care</span>
-              </div>
-              <span>{activeAcc === 3 ? "-" : "+"}</span>
-            </button>
-            {activeAcc === 3 && (
-              <div className="bg-white border rounded-lg p-4 text-sm text-gray-700">
-                <p>Dry clean only. Avoid direct sunlight for long durations.</p>
-              </div>
-            )}
-          </div>
+    <div className="w-full min-h-screen bg-white p-8">
+      {/* Top Section */}
+      <div className="flex flex-col lg:flex-row gap-10">
+        {/* Product Images */}
+        <div className="flex gap-6 w-full lg:w-1/2 justify-center">
+          <img
+            src="/silk-saree.png" // apna image path replace karo
+            alt="Saree Front"
+            className="w-[280px] h-[400px] object-cover rounded-md"
+          />
+          <img
+            src="/silksaree-back.png" // apna image path replace karo
+            alt="Saree Back"
+            className="w-[280px] h-[400px] object-cover rounded-md"
+          />
         </div>
 
-        {/* Right: Product info */}
-        <div className="space-y-6">
-          <div className="flex items-center justify-between md:pt-10">
-            <div>
-              <p className="text-xs text-gray-500 uppercase tracking-wide md:pb-3">Visit our store!</p>
-              <h1 className="text-3xl font-serif font-bold">Silk Saree</h1>
-              <p className="text-sm text-gray-500 mt-1">known for best appearance in occasions like diwali.</p>
-              <div className="flex items-center gap-2 text-xs pt-2">
-                <li className="gap-1">Color: Red</li>
-                <li>Material: Silk</li>
-              </div>
-            </div>
-            <button className=" text-gray-500 hover:text-red-600">
-              <FaRegHeart className="w-5 h-20" />
+        {/* Product Details + Reviews */}
+        <div className="w-full lg:w-1/2">
+          <h3 className="uppercase text-sm tracking-widest text-gray-500">
+            Visit our store!
+          </h3>
+          <div className="flex items-center justify-between">
+            <h2 className="text-3xl font-bold mt-2">Silk Saree</h2>
+            <button
+              aria-pressed={liked}
+              onClick={() => setLiked((v) => !v)}
+              className="p-1 cursor-pointer"
+              title={liked ? 'Remove from wishlist' : 'Add to wishlist'}
+            >
+              {liked ? (
+                <FaHeart className="text-red-600" size={20} />
+              ) : (
+                <FaRegHeart className="text-gray-500" size={20} />
+              )}
             </button>
           </div>
+          <p className="text-gray-600 mt-1">
+            known for best appearance in occasions like diwali.
+          </p>
+          <p className="text-sm text-gray-500 mt-1">
+            • Color: Green &nbsp;&nbsp;• Material: Silk
+          </p>
 
-          <div className="-pt-10">
-            <div>
-              <div className="text-2xl font-normal -pt-20">Rs.6,000</div>
-              <div><FaRegCircle className="w-5 h-5"/>
-              Blue</div>
-            </div>
+          <p className="text-2xl font-semibold mt-4">Rs.6,000</p>
+
+          {/* Colors */}
+          <div className="flex gap-4 mt-4">
+            {colors.map((c) => (
+              <div
+                key={c}
+                onClick={() => setSelectedColor(c)}
+                className={`w-10 h-10 rounded-full border-2 cursor-pointer ${
+                  selectedColor === c ? "border-black" : "border-transparent"
+                }`}
+                style={{ backgroundColor: c }}
+              ></div>
+            ))}
           </div>
-          <div className="flex items-center gap-3 border p-2 rounded-sm w-max">
+
+          {/* Quantity + Add to Cart */}
+          <div className="flex items-center gap-4 mt-6">
+            <div className="flex items-center border border-gray-300 rounded-md">
               <button
-                onClick={() => setQty(q => Math.max(1, q - 1))}
-                className="w-8 h-8 flex items-center justify-center cursor-pointer"
+                className="px-3 py-2"
+                onClick={() => setQuantity(Math.max(1, quantity - 1))}
               >
-                <FaMinus />
+                -
               </button>
-              <div className="w-20 text-center">{qty} </div>
+              <span className="px-4">{quantity}</span>
               <button
-                onClick={() => setQty(q => q + 1)}
-                className="w-8 h-8 flex items-center justify-center cursor-pointer"
+                className="px-3 py-2"
+                onClick={() => setQuantity(quantity + 1)}
               >
-                <FaPlus />
+                +
               </button>
             </div>
+            <Link to="/addtocart">
+              <button className="bg-red-700 text-white px-8 py-3 rounded-md cursor-pointer">
+                Add to Cart
+              </button>
+            </Link>
+          </div>
 
-            
-            <button className="ml-auto bg-[#5a0e0e] text-white px-6 py-2 rounded">Add to Cart</button>
-
-          <div>
-            <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
-              <div className="flex items-center gap-2 text-pink-400"><FaStar /> 4.5</div>
-              <div className="text-xs text-gray-500">104 reviews</div>
-            </div>
-
-            <div className="flex gap-4 overflow-x-auto hide-scrollbar pb-2">
-              {reviews.map((r, i) => (
-                <div key={i} className="min-w-[220px] bg-white border rounded-lg p-3">
-                  <div className="flex items-center justify-between text-xs text-gray-500 mb-2">
-                    <div className="flex items-center gap-2"><FaStar className="text-pink-400" />{r.rating}</div>
-                    <div>{r.name}</div>
-                  </div>
-                  <div className="text-sm text-gray-600">{r.text}</div>
+          {/* Reviews */}
+          {/* <div className="mt-10">
+            <h3 className="text-lg font-semibold mb-4">Product Reviews</h3>
+            <div className="flex gap-6 overflow-x-auto pb-4">
+              {reviews.map((review, index) => (
+                <div
+                  key={index}
+                  className="min-w-[220px] border rounded-lg p-4 shadow-sm"
+                >
+                  <p className="font-semibold">{review.name}</p>
+                  <p className="text-yellow-500">⭐ {review.rating}</p>
+                  <p className="text-sm text-gray-600 mt-2">{review.text}</p>
+                  <p className="text-xs text-gray-500 mt-2">104 reviews</p>
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Right bottom product details box */}
-          <div className="bg-[#fbecec] p-6 rounded-lg">
-            <h4 className="font-semibold mb-3">Product details</h4>
-            <ul className="list-disc pl-5 text-sm text-gray-700 space-y-2">
-              <li>Black Chanderi Handwoven Handloom Pure Silk Saree.</li>
-              <li>Category: Chanderi Pattu Silk Saree</li>
-              <li>Material: Pure Chanderi silk</li>
-            </ul>
-          </div>
+          </div> */}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

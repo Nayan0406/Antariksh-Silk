@@ -20,7 +20,7 @@ const ProductList = () => {
                     
                   </div>
                   <h3 className="text-lg font-semibold text-[#2b1d20] mb-2">Irkal Saree</h3>
-                  <div className='flex items-center gap-2'><span className="text-[#f44336]"><FaHeart /></span><p className="text-sm text-gray-600 mb-4">Lightweight and comfortable for daily wear.</p></div>
+                  <div className='flex items-center gap-2'><span className="text-[#f44336]"><FaHeart className='-mt-6'/></span><p className="text-sm text-gray-600 mb-4">Lightweight and comfortable for daily wear.</p></div>
                   <div className="mt-auto">
                     <button className="w-full py-2 rounded border border-[#f2d6d9] text-[#b34d5b] text-sm">BUY NOW</button>
                   </div>
@@ -37,7 +37,7 @@ const ProductList = () => {
                     
                   </div>
                   <h3 className="text-lg font-semibold text-[#2b1d20] mb-2">Tussar Silk</h3>
-                  <div className='flex items-center gap-2'><span className="text-[#f44336]"><FaHeart /></span><p className="text-sm text-gray-600 mb-4">Lightweight and comfortable for daily wear.</p></div>
+                  <div className='flex items-center gap-2'><span className="text-[#f44336]"><FaHeart className='-mt-6'/></span><p className="text-sm text-gray-600 mb-4">Lightweight and comfortable for daily wear.</p></div>
                   <div className="mt-auto">
                     <button className="w-full py-2 rounded border border-[#f2d6d9] text-[#b34d5b] text-sm">BUY NOW</button>
                   </div>
@@ -54,7 +54,7 @@ const ProductList = () => {
                     
                   </div>
                   <h3 className="text-lg font-semibold text-[#2b1d20] mb-2">Solapur Chaddar Saree</h3>
-                  <div className='flex items-center gap-2'><span className="text-[#f44336]"><FaHeart /></span><p className="text-sm text-gray-600 mb-4">Lightweight and comfortable for daily wear.</p></div>
+                  <div className='flex items-center gap-2'><span className="text-[#f44336]"><FaHeart className='-mt-6'/></span><p className="text-sm text-gray-600 mb-4">Lightweight and comfortable for daily wear.</p></div>
                   <div className="mt-auto">
                     <button className="w-full py-2 rounded border border-[#f2d6d9] text-[#b34d5b] text-sm">BUY NOW</button>
                   </div>
@@ -71,7 +71,7 @@ const ProductList = () => {
                     
                   </div>
                   <h3 className="text-lg font-semibold text-[#2b1d20] mb-2">Kanjeevaram Saree</h3>
-                  <div className='flex items-center gap-2'><span className="text-[#f44336]"><FaHeart /></span><p className="text-sm text-gray-600 mb-4">Lightweight and comfortable for daily wear.</p></div>
+                  <div className='flex items-center gap-2'><span className="text-[#f44336]"><FaHeart className='-mt-6'/></span><p className="text-sm text-gray-600 mb-4">Lightweight and comfortable for daily wear.</p></div>
                   <div className="mt-auto">
                     <button className="w-full py-2 rounded border border-[#f2d6d9] text-[#b34d5b] text-sm">BUY NOW</button>
                   </div>
@@ -88,7 +88,7 @@ const ProductList = () => {
                     
                   </div>
                   <h3 className="text-lg font-semibold text-[#2b1d20] mb-2">Paithani Saree</h3>
-                  <div className='flex items-center gap-2'><span className="text-[#f44336]"><FaHeart /></span><span className="text-sm text-gray-600 mb-4">Lightweight and comfortable for daily wear.</span></div>
+                  <div className='flex items-center gap-2'><span className="text-[#f44336]"><FaHeart className='-mt-6'/></span><span className="text-sm text-gray-600 mb-4">Lightweight and comfortable for daily wear.</span></div>
                   <div className="mt-auto">
                     <button className="w-full py-2 rounded border border-[#f2d6d9] text-[#b34d5b] text-sm">BUY NOW</button>
                   </div>

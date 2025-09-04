@@ -12,6 +12,10 @@ import PrivacyPolicy from './components/PrivacyPolicy'
 import Disclaimer from './components/Disclaimer'
 import ShippingPolicy from './components/ShippingPolicy'
 import RefundPolicy from './components/RefundPolicy'
+import AddToCart from './components/AddToCart'
+import AddressSection from './components/AddressSection'
+import AddNewAddress from './components/AddNewAddress'
+import PaymentSection from './components/PaymentSection'
 
 function App() {
 
@@ -31,6 +35,11 @@ function App() {
           <Route path='/disclaimer' element={<Disclaimer />} />
           <Route path='/shippingpolicy' element={<ShippingPolicy />} />
           <Route path='/refundpolicy' element={<RefundPolicy />} />
+          <Route path='/addtocart' element={<AddToCart />} />
+
+          <Route path='/addresssection' element={<AddressSection />} />
+          <Route path='/addnewaddress' element={<AddNewAddress />} />
+          <Route path='/paymentsection' element={<PaymentSection />} />
         </Routes>
 
         <Footer />

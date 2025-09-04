@@ -3,7 +3,7 @@ import { MdOutlineMailOutline } from "react-icons/md";
 
 const SubscribeSection = () => {
   return (
-    <section className="py-6 mx-w-6xl bg-[#e9dadb] md:rounded-tl-[20rem] md:rounded-br-[20rem]">
+    <section className="py-6 mx-w-6xl bg-[#e9dadb] md:rounded-tl-[10rem] md:rounded-br-[10rem]">
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center rounded-xl p-6 md:p-10">
           {/* Left image */}

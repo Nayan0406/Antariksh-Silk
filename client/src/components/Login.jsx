@@ -26,15 +26,15 @@ const Login = () => {
       </div>
 
       {/* Right Side - Login Form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center bg-gradient-to-r from-transparent via-[#550000] to-[#550000] px-8 py-12">
+      <div className="w-full lg:w-1/2 flex items-center justify-center bg-[#550101] px-8 py-12 -z-20">
         <div className="w-full max-w-md">
           {/* Logo */}
-          <div className="text-center mb-12">
-            <img src="/home-logo.png" alt="" />
+          <div className="text-center mb-8">
+            <img src="/home-logo.png" alt="" className='w-50 h-30'/>
           </div>
 
           {/* Login Heading */}
-          <div className="text-center mb-8">
+          <div className=" mb-8">
             <h2 className="text-3xl font-light text-white tracking-wider">
               Login
             </h2>
@@ -49,7 +49,7 @@ const Login = () => {
                 placeholder="Email / Phone No."
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 bg-[#6f2b2b] bg-opacity-50 border border-red-600 rounded text-white placeholder-red-300 focus:outline-none focus:border-red-400 focus:bg-opacity-70 transition-all"
+                className="w-full px-4 py-3 bg-[#6f2b2b] bg-opacity-50 border border-red-600 rounded text-white placeholder-red-300 focus:outline-none focus:border-red-400 focus:bg-opacity-70 transition-all cursor-pointer"
                 required
               />
             </div>
@@ -113,8 +113,8 @@ const Login = () => {
           {/* Sign Up Link */}
           <div className="text-center mt-8">
             <p className="text-red-200 text-sm">
-              Don't have an account{' '}
-              <a href="/signup" className="text-yellow-400 hover:text-yellow-300 transition-colors font-medium">
+              Don't have an account ?{' '}
+              <a href="/signup" className="text-blue-400 underline transition-colors font-medium">
                 Sign Up
               </a>
             </p>

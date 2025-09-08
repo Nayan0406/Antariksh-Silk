@@ -1,138 +1,296 @@
 import React, { useState } from "react";
 import { FaRegHeart, FaHeart } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { FaRegStar, FaChevronRight, FaInfoCircle, FaUndo, FaTruck, FaEye } from "react-icons/fa";
+import { AiOutlineInfoCircle } from "react-icons/ai";
+import { LuUndo2 } from "react-icons/lu";
 
 const SilkSareeDetail = () => {
   const [quantity, setQuantity] = useState(1);
-  const colors = ["blue", "yellow", "green", "red"];
-  const [selectedColor, setSelectedColor] = useState("green");
+  const colors = [
+    { name: "Blue", color: "#4285f4" },
+    { name: "Yellow", color: "#ffc107" },
+    { name: "Green", color: "#0f7b0f" },
+    { name: "Red", color: "#dc3545" }
+  ];
+  const [selectedColor, setSelectedColor] = useState("Green");
   const [liked, setLiked] = useState(false);
+  const [selectedDetail, setSelectedDetail] = useState("Product details");
+
+  // Image mapping for different colors
+  const colorImages = {
+    "Blue": {
+      front: "/bluesilksaree-front.png",
+      back: "/bluesilksaree-back.png"
+    },
+    "Yellow": {
+      front: "/yellowsilksaree-front.png",
+      back: "/yellowsilksaree-back.png"
+    },
+    "Green": {
+      front: "/greensilksaree-front.png",
+      back: "/greensilksaree-back.png"
+    },
+    "Red": {
+      front: "/silk-saree.png",
+      back: "/silksaree-back.png"
+    }
+  };
+
+  const productDetails = {
+    "Product details": {
+      title: "Product details",
+      content: [
+        "Black Chanderi Handwoven Handloom Pure Silk Saree.",
+        "Category :- *Chanderi Pattu Silk Saree*",
+        "*Description* :- Golden Zari Patela Border All Over Meenakari Buta Pattu Silk Saree.",
+        "Material :- In Length (Warp) _ *Silk*",
+        "In Width (Weft) _ *Punaresham* (Raw)",
+        "Material     Pure Chanderi silk"
+      ]
+    },
+    "Return & Refund": {
+      title: "Return & Refund",
+      content: [
+        "30-day return policy for all products",
+        "Items must be in original condition with tags",
+        "Refund will be processed within 5-7 business days",
+        "Return shipping charges may apply",
+        "Custom or personalized items are not returnable"
+      ]
+    },
+    "Shipping Policy": {
+      title: "Shipping Policy", 
+      content: [
+        "Free shipping on orders above Rs. 2,000",
+        "Standard delivery: 5-7 business days",
+        "Express delivery: 2-3 business days (additional charges apply)",
+        "Cash on delivery available",
+        "International shipping available to select countries"
+      ]
+    },
+    "Care": {
+      title: "Care",
+      content: [
+        "Dry clean only for best results",
+        "Store in a cool, dry place",
+        "Avoid direct sunlight when storing",
+        "Iron on low heat with a cloth barrier",
+        "Handle with care to maintain fabric quality"
+      ]
+    }
+  };
 
   const reviews = [
     {
       name: "Neha",
       rating: 4.5,
       text: "The colors are vibrant, and it fits beautifully. Got so many compliments!",
+      totalReviews: "104 REVIEWS"
     },
     {
-      name: "Mansi",
+      name: "Mansi", 
       rating: 4.5,
       text: "Highly recommend this product. Worth every rupee spent!",
+      totalReviews: "104 REVIEWS"
     },
     {
       name: "Meghna",
       rating: 4.5,
       text: "The product is good, but the packaging could have been better.",
+      totalReviews: "104 REVIEWS"
     },
     {
       name: "Prachi",
       rating: 4,
       text: "Overall satisfied with the saree. Great quality.",
+      totalReviews: "104 REVIEWS"
     },
   ];
 
   return (
-    <div className="w-full min-h-screen bg-white p-8">
-      {/* Top Section */}
-      <div className="flex flex-col lg:flex-row gap-10">
+    <div className="max-w-full min-h-screen bg-white mt-4 sm:mt-6 lg:mt-10">
+      <div className="flex flex-col lg:flex-row ml-2 sm:ml-4 lg:ml-6">
         {/* Product Images */}
-        <div className="flex gap-6 w-full lg:w-1/2 justify-center">
+        <div className="w-full lg:w-1/2 flex gap-2 sm:gap-3 lg:gap-4">
           <img
-            src="/silk-saree.png" // apna image path replace karo
+            src={colorImages[selectedColor]?.front || "/silk-saree.png"}
             alt="Saree Front"
-            className="w-[280px] h-[400px] object-cover rounded-md"
+            className="w-1/2 h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] object-cover transition-all duration-300"
           />
           <img
-            src="/silksaree-back.png" // apna image path replace karo
+            src={colorImages[selectedColor]?.back || "/silksaree-back.png"}
             alt="Saree Back"
-            className="w-[280px] h-[400px] object-cover rounded-md"
+            className="w-1/2 h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] object-cover transition-all duration-300"
           />
         </div>
 
-        {/* Product Details + Reviews */}
-        <div className="w-full lg:w-1/2">
-          <h3 className="uppercase text-sm tracking-widest text-gray-500">
-            Visit our store!
+        {/* Product Details */}
+        <div className="w-full lg:w-1/2 p-3 sm:p-4 lg:p-6 xl:p-12">
+          <h3 className="uppercase text-xs tracking-[0.2em] text-gray-600 mb-2 sm:mb-3 lg:mb-4">
+            VISIT OUR STORE!
           </h3>
-          <div className="flex items-center justify-between">
-            <h2 className="text-3xl font-bold mt-2">Silk Saree</h2>
+          
+          <div className="flex items-start justify-between mb-3 sm:mb-4">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">Silk Saree</h1>
             <button
               aria-pressed={liked}
               onClick={() => setLiked((v) => !v)}
-              className="p-1 cursor-pointer"
+              className="p-1 sm:p-2 cursor-pointer"
               title={liked ? 'Remove from wishlist' : 'Add to wishlist'}
             >
               {liked ? (
                 <FaHeart className="text-red-600" size={20} />
               ) : (
-                <FaRegHeart className="text-gray-500" size={20} />
+                <FaRegHeart className="text-gray-400" size={20} />
               )}
             </button>
           </div>
-          <p className="text-gray-600 mt-1">
+
+          <p className="text-gray-600 mb-2 text-xs sm:text-sm">
             known for best appearance in occasions like diwali.
           </p>
-          <p className="text-sm text-gray-500 mt-1">
-            • Color: Green &nbsp;&nbsp;• Material: Silk
-          </p>
+          
+          <div className="flex items-center gap-2 sm:gap-4 text-xs text-gray-500 mb-4 sm:mb-6">
+            <span>• Color: {selectedColor}</span>
+            <span>• Material: Silk</span>
+          </div>
 
-          <p className="text-2xl font-semibold mt-4">Rs.6,000</p>
+          <p className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 lg:-mt-5">Rs.6,000</p>
 
           {/* Colors */}
-          <div className="flex gap-4 mt-4">
+          <div className="flex items-center gap-1 sm:gap-2 mb-6 sm:mb-8">
             {colors.map((c) => (
-              <div
-                key={c}
-                onClick={() => setSelectedColor(c)}
-                className={`w-10 h-10 rounded-full border-2 cursor-pointer ${
-                  selectedColor === c ? "border-black" : "border-transparent"
-                }`}
-                style={{ backgroundColor: c }}
-              ></div>
+              <div key={c.name} className="flex flex-col items-center">
+                <div
+                  onClick={() => setSelectedColor(c.name)}
+                  className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 cursor-pointer ${
+                    selectedColor === c.name ? "border-gray-800" : "border-gray-300"
+                  }`}
+                  style={{ backgroundColor: c.color }}
+                ></div>
+                <span className="text-xs text-gray-600 mt-1">{c.name}</span>
+              </div>
             ))}
           </div>
 
           {/* Quantity + Add to Cart */}
-          <div className="flex items-center gap-4 mt-6">
-            <div className="flex items-center border border-gray-300 rounded-md">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
+            <div className="flex items-center">
               <button
-                className="px-3 py-2"
+                className="w-8 h-8 sm:w-10 sm:h-10 border border-gray-300 flex items-center justify-center text-base sm:text-lg font-medium cursor-pointer"
                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
               >
                 -
               </button>
-              <span className="px-4">{quantity}</span>
+              <div className="w-8 h-8 sm:w-10 sm:h-10 border border-gray-300 flex items-center justify-center text-xs sm:text-sm">
+                {quantity}
+              </div>
               <button
-                className="px-3 py-2"
+                className="w-8 h-8 sm:w-10 sm:h-10 border border-gray-300 flex items-center justify-center text-base sm:text-lg font-medium cursor-pointer"
                 onClick={() => setQuantity(quantity + 1)}
               >
                 +
               </button>
             </div>
+            
             <Link to="/addtocart">
-              <button className="bg-red-700 text-white px-8 py-3 rounded-md cursor-pointer">
+              <button className="bg-red-900 text-white px-8 sm:px-12 lg:px-16 py-2 sm:py-2.5 text-xs sm:text-sm font-medium w-full sm:w-auto cursor-pointer">
                 Add to Cart
               </button>
             </Link>
           </div>
 
-          {/* Reviews */}
-          {/* <div className="mt-10">
-            <h3 className="text-lg font-semibold mb-4">Product Reviews</h3>
-            <div className="flex gap-6 overflow-x-auto pb-4">
+          {/* Product Reviews */}
+          <div className="lg:-mt-10">
+            <h3 className="text-base sm:text-lg font-bold mb-4 sm:mb-6">Product Reviews</h3>
+            <div className="flex gap-3 sm:gap-4 overflow-x-auto -mt-2 hide-scrollbar pb-2">
               {reviews.map((review, index) => (
-                <div
-                  key={index}
-                  className="min-w-[220px] border rounded-lg p-4 shadow-sm"
+                <article key={index} className="snap-center flex-shrink-0 w-60 sm:w-68 md:w-70 bg-white rounded-xl border-[#c2c2c2] border-1 overflow-hidden flex flex-col">
+                  <div className="p-3 sm:p-4 flex flex-col flex-1">
+                    <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
+                      <div className="text-[#ba7894] text-xs sm:text-sm">
+                        <div className='flex items-center gap-1 sm:gap-2'>
+                          <FaRegStar size={12} /> {review.rating}
+                        </div>
+                      </div>
+                      <div className="text-xs sm:text-sm text-black">104 reviews</div>
+                    </div>
+                    <h3 className="text-sm sm:text-lg font-semibold text-[#2b1d20] mb-2">{review.name}</h3>
+                    <div className='flex items-start gap-2'>
+                      <span className="text-[#f44336] mt-1">
+                        <FaHeart size={12}/>
+                      </span>
+                      <p className="text-xs sm:text-sm text-gray-600 mb-4 leading-relaxed">{review.text}</p>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Section - Product Details and Description */}
+      <div className="flex flex-col lg:flex-row -mt-3 sm:-mt-4 lg:-mt-5 px-3 sm:px-4 lg:px-6">
+        {/* Left Section - Expandable Options */}
+        <div className="w-full lg:w-1/2 pr-0">
+          <div className="space-y-3 sm:space-y-4">
+            {Object.keys(productDetails).map((key) => {
+              const detail = productDetails[key];
+              const getIcon = (title, isSelected) => {
+                const iconColor = isSelected ? "text-white" : "text-black";
+                const iconSize = window.innerWidth < 640 ? 16 : 20;
+                switch(title) {
+                  case "Product details": return <AiOutlineInfoCircle className={iconColor} size={iconSize} />;
+                  case "Return & Refund": return <LuUndo2 className={`${iconColor} scale-y-[-1]`} size={iconSize} />;
+                  case "Shipping Policy": return <FaTruck className={iconColor} size={iconSize} />;
+                  case "Care": return <FaEye className={iconColor} size={iconSize} />;
+                  default: return <AiOutlineInfoCircle className={iconColor} size={iconSize} />;
+                }
+              };
+
+              return (
+                <div 
+                  key={key}
+                  onClick={() => setSelectedDetail(key)}
+                  className={`flex items-center justify-between p-3 sm:p-4 rounded-lg border cursor-pointer transition-all ${
+                    selectedDetail === key 
+                      ? 'bg-[#c2969d] text-white border-[#c08888]' 
+                      : 'bg-[#fffbfb] text-gray-700 border-[#c08888]'
+                  }`}
                 >
-                  <p className="font-semibold">{review.name}</p>
-                  <p className="text-yellow-500">⭐ {review.rating}</p>
-                  <p className="text-sm text-gray-600 mt-2">{review.text}</p>
-                  <p className="text-xs text-gray-500 mt-2">104 reviews</p>
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    {getIcon(detail.title, selectedDetail === key)}
+                    <span className="font-medium text-sm sm:text-base">{detail.title}</span>
+                  </div>
+                  <FaChevronRight 
+                    className={`transition-transform ${
+                      selectedDetail === key ? 'text-white' : 'text-gray-400'
+                    }`} 
+                    size={14} 
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Right Section - Details Content */}
+        <div className="w-full lg:w-1/2 mt-6 sm:mt-8 lg:mt-0 lg:pl-15">
+          <div className="bg-[#fff0f0] p-4 sm:p-6 rounded-lg border-0">
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">
+              {productDetails[selectedDetail].title}
+            </h3>
+            <div className="space-y-2 sm:space-y-3">
+              {productDetails[selectedDetail].content.map((item, index) => (
+                <div key={index} className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#000000] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">{item}</p>
                 </div>
               ))}
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>

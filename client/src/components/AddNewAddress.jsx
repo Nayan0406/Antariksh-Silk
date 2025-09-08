@@ -47,12 +47,12 @@ const AddNewAddress = () => {
         </div>
 
       {/* Select Delivery Address Section */}
-      <div className="w-full max-w-xs sm:max-w-2xl lg:max-w-5xl p-4 sm:p-6">
+      <div className="w-full max-w-lg sm:max-w-2xl lg:max-w-5xl p-4 sm:p-6">
         
 
         <div className="space-y-3 sm:space-y-4">
           {/* Address 1 - Selected */}
-          <div className={`border-0 p-3 sm:p-4 rounded-lg ${selectedAddress === 0 ? 'bg-[#fcf6f6]' : 'bg-[#f7f7f7]'}`}>
+          <div className={`border-0 p-3 sm:p-4 ${selectedAddress === 0 ? 'bg-[#fcf6f6]' : 'bg-[#f7f7f7]'}`}>
             <div className="flex items-start gap-2 sm:gap-3">
               <input 
                 type="radio" 
@@ -88,7 +88,7 @@ const AddNewAddress = () => {
           </div>
 
           {/* Address 2 */}
-          <div className={`border-0 p-3 sm:p-4 rounded-lg ${selectedAddress === 1 ? 'bg-[#fcf6f6]' : 'bg-[#f7f7f7]'}`}>
+          <div className={`border-0 p-3 sm:p-4 ${selectedAddress === 1 ? 'bg-[#fcf6f6]' : 'bg-[#f7f7f7]'} `}>
             <div className="flex items-start gap-2 sm:gap-3">
               <input 
                 type="radio" 

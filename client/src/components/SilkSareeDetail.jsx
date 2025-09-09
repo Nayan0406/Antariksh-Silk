@@ -51,6 +51,7 @@ const SilkSareeDetail = () => {
     },
     "Return & Refund": {
       title: "Return & Refund",
+      subtitle: "We want you to love your saree! if you're not fully satisfied, you can request a return within 7 days of delivery.",
       content: [
         "30-day return policy for all products",
         "Items must be in original condition with tags",

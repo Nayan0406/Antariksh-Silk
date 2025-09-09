@@ -20,6 +20,13 @@ import PaymentSection from './components/PaymentSection'
 import Login from './components/Login'
 import SignUp from './components/SignUp'
 import ProfileSetup from './components/ProfileSetup'
+import CategorySilk from './components/CategorySilk'
+import CategoryPaithani from './components/CategoryPaithani'
+import CategoryIrkal from './components/CategoryIrkal'
+import CategorySolapur from './components/CategorySolapur'
+import CategoryTussar from './components/CategoryTussar'
+import CategoryNarayanPeth from './components/CategoryNarayanpeth'
+import CategoryKanjeevaram from './components/CategoryKanjeevaram'
 
 
 function App() {
@@ -50,6 +57,14 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/profilesetup' element={<ProfileSetup />} />
+
+          <Route path='/silksaree' element={<CategorySilk />} />
+          <Route path='/paithanisaree' element={<CategoryPaithani />} />
+          <Route path='/irkalsaree' element={<CategoryIrkal />} />
+          <Route path='/solapursaree' element={<CategorySolapur />} />
+          <Route path='/tussarsaree' element={<CategoryTussar />} />
+          <Route path='/narayanpethsaree' element={<CategoryNarayanPeth />} />
+          <Route path='/kanjeevaramsaree' element={<CategoryKanjeevaram />} />
         </Routes>
 
         <Footer />

@@ -83,7 +83,7 @@ const SignUp = () => {
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 text-red-300 hover:text-white transition-colors cursor-pointer"
                 >
-                  {showPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
+                  {showPassword ? <FaEye size={18} /> : <FaEyeSlash size={18} />}
                 </button>
               </div>
 
@@ -102,7 +102,7 @@ const SignUp = () => {
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 text-red-300 hover:text-white transition-colors cursor-pointer"
                 >
-                  {showConfirmPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
+                  {showConfirmPassword ? <FaEye size={18} /> : <FaEyeSlash size={18} />}
                 </button>
               </div>
 

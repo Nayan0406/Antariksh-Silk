@@ -51,13 +51,14 @@ const SilkSareeDetail = () => {
     },
     "Return & Refund": {
       title: "Return & Refund",
-      subtitle: "We want you to love your saree! if you're not fully satisfied, you can request a return within 7 days of delivery.",
       content: [
-        "30-day return policy for all products",
-        "Items must be in original condition with tags",
-        "Refund will be processed within 5-7 business days",
-        "Return shipping charges may apply",
-        "Custom or personalized items are not returnable"
+        "We want you to love your saree! If you're not fully satisfied, you can request a return within 7 days of delivery.",
+        "Return within 3 days of delivery",
+        "Sarees must be unused, unwashed, unaltered, and with original tags/packaging.",
+        "Customized/stitched sarees and sale items are not eligible for return.",
+        "For wrong or damaged products, we'll arrange a replacement or full refund.",
+        "Refunds will be processed to your original payment method within 7-10 business days after inspection.",
+        "Shipping charges are non-refundable (unless the product is defective or wrong)."
       ]
     },
     "Shipping Policy": {
@@ -111,29 +112,29 @@ const SilkSareeDetail = () => {
 
   return (
     <div className="max-w-full min-h-screen bg-white mt-4 sm:mt-6 lg:mt-10">
-      <div className="flex flex-col lg:flex-row ml-2 sm:ml-4 lg:ml-6">
+  <div className="flex flex-col lg:flex-row ml-2 sm:ml-4 lg:ml-6">
         {/* Product Images */}
-        <div className="w-full lg:w-1/2 flex gap-2 sm:gap-3 lg:gap-4">
+        <div className="w-full lg:w-1/2 flex flex-col lg:flex-row gap-2 sm:gap-3 lg:gap-4">
           <img
             src={colorImages[selectedColor]?.front || "/silk-saree.png"}
             alt="Saree Front"
-            className="w-1/2 h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] object-cover transition-all duration-300"
+            className="w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] object-cover transition-all duration-300 rounded-md"
           />
           <img
             src={colorImages[selectedColor]?.back || "/silksaree-back.png"}
             alt="Saree Back"
-            className="w-1/2 h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] object-cover transition-all duration-300"
+            className="w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] object-cover transition-all duration-300 rounded-md"
           />
         </div>
 
         {/* Product Details */}
         <div className="w-full lg:w-1/2 p-3 sm:p-4 lg:p-6 xl:p-12">
-          <h3 className="uppercase text-xs tracking-[0.2em] text-gray-600 mb-2 sm:mb-3 lg:mb-4">
+          <h3 className="uppercase text-xs tracking-[0.2em] text-gray-600 mb-2 sm:mb-3 lg:mb-4 text-center lg:text-left">
             VISIT OUR STORE!
           </h3>
           
           <div className="flex items-start justify-between mb-3 sm:mb-4">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">Silk Saree</h1>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 text-center lg:text-left">Silk Saree</h1>
             <button
               aria-pressed={liked}
               onClick={() => setLiked((v) => !v)}
@@ -160,12 +161,12 @@ const SilkSareeDetail = () => {
           <p className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 lg:-mt-5">Rs.6,000</p>
 
           {/* Colors */}
-          <div className="flex items-center gap-1 sm:gap-2 mb-6 sm:mb-8">
+    <div className="flex items-center gap-1 sm:gap-2 mb-6 sm:mb-8">
             {colors.map((c) => (
               <div key={c.name} className="flex flex-col items-center">
                 <div
                   onClick={() => setSelectedColor(c.name)}
-                  className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 cursor-pointer ${
+      className={`w-5 h-5 sm:w-8 sm:h-8 rounded-full border-2 cursor-pointer ${
                     selectedColor === c.name ? "border-gray-800" : "border-gray-300"
                   }`}
                   style={{ backgroundColor: c.color }}
@@ -196,7 +197,7 @@ const SilkSareeDetail = () => {
             </div>
             
             <Link to="/addtocart">
-              <button className="bg-red-900 text-white px-8 sm:px-12 lg:px-16 py-2 sm:py-2.5 text-xs sm:text-sm font-medium w-full sm:w-auto cursor-pointer">
+              <button className="bg-red-900 text-white px-6 sm:px-12 lg:px-16 py-2 sm:py-2.5 text-xs sm:text-sm font-medium w-full sm:w-auto cursor-pointer rounded-md">
                 Add to Cart
               </button>
             </Link>
@@ -236,7 +237,7 @@ const SilkSareeDetail = () => {
       <div className="flex flex-col lg:flex-row -mt-3 sm:-mt-4 lg:-mt-5 px-3 sm:px-4 lg:px-6">
         {/* Left Section - Expandable Options */}
         <div className="w-full lg:w-1/2 pr-0">
-          <div className="space-y-3 sm:space-y-4">
+          <div className="space-y-3 sm:space-y-4 max-h-72 sm:max-h-96 lg:max-h-[420px] overflow-y-auto pr-2">
             {Object.keys(productDetails).map((key) => {
               const detail = productDetails[key];
               const getIcon = (title, isSelected) => {
@@ -278,18 +279,23 @@ const SilkSareeDetail = () => {
         </div>
 
         {/* Right Section - Details Content */}
-        <div className="w-full lg:w-1/2 mt-6 sm:mt-8 lg:mt-0 lg:pl-15">
-          <div className="bg-[#fff0f0] p-4 sm:p-6 rounded-lg border-0">
+  <div className="w-full lg:w-1/2 mt-6 sm:mt-8 lg:mt-0 lg:pl-6">
+          <div className="bg-[#fff0f0] p-4 sm:p-6 rounded-lg border-0 max-h-72 sm:max-h-96 lg:max-h-[420px] overflow-y-auto pr-2">
             <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">
               {productDetails[selectedDetail].title}
             </h3>
             <div className="space-y-2 sm:space-y-3">
-              {productDetails[selectedDetail].content.map((item, index) => (
-                <div key={index} className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#000000] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">{item}</p>
-                </div>
-              ))}
+              {productDetails[selectedDetail].content.map((item, index) => {
+                const isReturnFirst = selectedDetail === "Return & Refund" && index === 0;
+                return (
+                  <div key={index} className={isReturnFirst ? "mb-2" : "flex items-start gap-2"}>
+                    {!isReturnFirst && (
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#000000] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                    )}
+                    <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">{item}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

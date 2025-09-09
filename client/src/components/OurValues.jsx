@@ -22,17 +22,11 @@ const values = [
     title: '100% Genuine',
     desc: 'The majority have suffered alteration in some form, buying to injected humour, or randomised words which desktop publishing packages.'
   },
-];
-
-// const sareeImages = [
-//   { src: '/ourvalue-img-1.png', alt: 'Saree 1', className: 'w-40 md:w-48 lg:w-56 absolute top-0 left-1/2 -translate-x-1/2 md:static md:translate-x-0 md:ml-0 z-10 rounded-full object-cover shadow-lg' },
-//   { src: '/ourvalue-img-2.png', alt: 'Saree 2', className: 'w-36 md:w-44 lg:w-52 absolute top-40 left-0 md:static md:ml-8 z-20 rounded-full object-cover shadow-lg' },
-//   { src: '/ourvalue-img-3.png', alt: 'Saree 3', className: 'w-36 md:w-44 lg:w-52 absolute top-40 right-0 md:static md:ml-8 z-20 rounded-full object-cover shadow-lg' },
-// ];
+]
 
 const OurValues = () => {
   return (
-    <section className="w-full flex flex-col md:flex-row items-center justify-center py-12 px-2 md:px-8 lg:px-24 bg-white">
+    <section className="max-w-full flex flex-col md:flex-row items-center justify-center py-12 px-2 md:px-8 lg:px-24 bg-white">
       {/* Left: Values */}
       <div className="bg-[#fff8f8] rounded-md p-6 md:p-12 flex-1 max-w-xl w-full">
         <div className="text-center md:text-left">

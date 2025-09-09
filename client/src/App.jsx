@@ -34,30 +34,38 @@ function App() {
   return (
     <>
       <BrowserRouter>
+
         <Navbar />
         
         <Routes>
+
+          {/* Main Routes */}
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/collections' element={<Collections />} />
           <Route path='/blog' element={<Blog />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/product' element={<Product />} />
+
+          {/* Policy Routes */}
           <Route path='/termsandcondition' element={<TermsandCondition />} />
           <Route path='/privacypolicy' element={<PrivacyPolicy />} />
           <Route path='/disclaimer' element={<Disclaimer />} />
           <Route path='/shippingpolicy' element={<ShippingPolicy />} />
           <Route path='/refundpolicy' element={<RefundPolicy />} />
-          <Route path='/addtocart' element={<AddToCart />} />
 
+          {/* Checkout Routes */}
+          <Route path='/addtocart' element={<AddToCart />} />
           <Route path='/addresssection' element={<AddressSection />} />
           <Route path='/addnewaddress' element={<AddNewAddress />} />
           <Route path='/paymentsection' element={<PaymentSection />} />
 
+          {/* Auth Routes */}
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/profilesetup' element={<ProfileSetup />} />
 
+          {/* Category Routes */}
           <Route path='/silksaree' element={<CategorySilk />} />
           <Route path='/paithanisaree' element={<CategoryPaithani />} />
           <Route path='/irkalsaree' element={<CategoryIrkal />} />
@@ -65,9 +73,11 @@ function App() {
           <Route path='/tussarsaree' element={<CategoryTussar />} />
           <Route path='/narayanpethsaree' element={<CategoryNarayanPeth />} />
           <Route path='/kanjeevaramsaree' element={<CategoryKanjeevaram />} />
+          
         </Routes>
 
         <Footer />
+
       </BrowserRouter>
     </>
   )

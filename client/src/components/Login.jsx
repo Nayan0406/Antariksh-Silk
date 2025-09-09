@@ -16,9 +16,9 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex flex-col md:flex-row">
       {/* Left Side - Image */}
-      <div className="hidden lg:flex lg:w-1/2 relative">
+  <div className="hidden lg:flex lg:w-1/2 relative">
         <img
           src="/login-img.png"
           alt="Woman in traditional saree"
@@ -27,16 +27,16 @@ const Login = () => {
       </div>
 
       {/* Right Side - Login Form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center bg-[#550101] px-6 sm:px-8 py-8 sm:py-12">
-        <div className="w-full max-w-md">
+      <div className="w-full md:w-1/2 flex items-center justify-center bg-[#550101] px-6 sm:px-8 py-8 sm:py-12">
+        <div className="w-full max-w-md md:max-w-lg lg:max-w-md">
           {/* Logo */}
           <div className="text-center mb-6 sm:mb-8">
-            <img src="/home-logo.png" alt="Logo" className='w-32 sm:w-40 h-auto mx-auto'/>
+            <img src="/home-logo.png" alt="Logo" className='w-28 sm:w-36 md:w-40 lg:w-44 h-auto mx-auto' />
           </div>
 
           {/* Login Heading */}
           <div className="mb-6 sm:mb-8">
-            <h2 className="text-2xl sm:text-3xl font-light text-white tracking-wider">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-white tracking-wider text-center md:text-left">
               Login
             </h2>
           </div>
@@ -50,7 +50,7 @@ const Login = () => {
                 placeholder="Email / Phone No."
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 bg-[#6f2b2b] bg-opacity-50 border-0 rounded text-white placeholder-white focus:outline-none transition-all"
+                className="w-full px-4 py-3 bg-[#6f2b2b] bg-opacity-50 border-0 rounded text-white placeholder-white focus:outline-none transition-all text-sm sm:text-base"
                 required
               />
             </div>
@@ -62,13 +62,13 @@ const Login = () => {
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 bg-[#6f2b2b] bg-opacity-50 border-0 rounded text-white placeholder-white focus:outline-none transition-all pr-12"
+                className="w-full px-4 py-3 bg-[#6f2b2b] bg-opacity-50 border-0 rounded text-white placeholder-white focus:outline-none transition-all pr-12 text-sm sm:text-base"
                 required
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-red-300 hover:text-white transition-colors"
+                className="absolute right-3 sm:right-4 top-1/2 transform -translate-y-1/2 text-red-300 hover:text-white transition-colors"
               >
                 {showPassword ? <FaEye size={18} /> : <FaEyeSlash size={18} />}
               </button>
@@ -76,7 +76,7 @@ const Login = () => {
 
             {/* Remember Me & Forgot Password */}
             <div className="flex items-center justify-between text-sm">
-              <label className="flex items-center text-red-200 cursor-pointer">
+              <label className="flex items-center text-red-200 cursor-pointer text-sm">
                 <div className="relative">
                   <input
                     type="checkbox"
@@ -114,19 +114,19 @@ const Login = () => {
             {/* Login Button */}
             <button
               type="submit"
-              className="w-full bg-red-700 hover:bg-red-600 text-white font-medium py-3 px-4 rounded transition-colors duration-200 uppercase tracking-wider cursor-pointer"
+              className="w-full bg-red-700 hover:bg-red-600 text-white font-medium py-3 px-4 rounded transition-colors duration-200 uppercase tracking-wider cursor-pointer text-sm sm:text-base"
             >
               LOGIN
             </button>
           </form>
 
           {/* Social Login */}
-          <div className="mt-6 sm:mt-8 flex justify-center space-x-4">
-            <button className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:scale-105 transition-transform shadow-lg">
-              <FcGoogle size={24} />
+          <div className="mt-6 sm:mt-8 flex justify-center space-x-3">
+            <button className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center hover:scale-105 transition-transform shadow-lg">
+              <FcGoogle size={20} />
             </button>
-            <button className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:scale-105 transition-transform shadow-lg">
-              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <button className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center hover:scale-105 transition-transform shadow-lg">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
               </svg>
             </button>

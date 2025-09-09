@@ -11,13 +11,13 @@ const FilterSection = () => {
             <div className="w-full bg-white border-b p-3 sm:p-4 lg:p-6">
                 {/* Desktop Header */}
                 <div className="hidden lg:flex justify-between items-center">
-                    <div className="flex items-center gap-4">
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">Filters</h2>
+                    <div className="flex items-center gap-4 ml-10">
+                        <h2 className="text-3xl font-bold text-gray-900">Filters</h2>
                     </div>
                     
-                    <div className="flex items-center gap-4">
-                        <h3 className="text-xl lg:text-2xl font-bold text-gray-900">Sort by</h3>
-                        <select className="border-none bg-[#8B0000] text-white px-4 lg:px-6 py-2 lg:py-3 rounded-md text-sm lg:text-base font-medium cursor-pointer">
+                    <div className="flex items-center gap-6">
+                        <h3 className="text-2xl font-bold text-gray-900">Sort by</h3>
+                        <select className="border-none bg-[#8B0000] text-white px-6 py-3 rounded-md text-base font-medium cursor-pointer min-w-[120px]">
                             <option>LATEST</option>
                             <option>Price: Low to High</option>
                             <option>Price: High to Low</option>
@@ -51,7 +51,7 @@ const FilterSection = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col lg:flex-row">
+            <div className="flex flex-col lg:flex-row ml-5">
                 {/* Left Filter Section */}
                 <div className={`${showFilters ? 'block' : 'hidden'} lg:block fixed lg:relative inset-0 lg:inset-auto z-50 lg:z-auto lg:w-1/4 bg-[#340808] text-white overflow-y-auto`}>
                     {/* Mobile Close Button */}
@@ -65,69 +65,69 @@ const FilterSection = () => {
                         </button>
                     </div>
 
-                    <div className="p-3 sm:p-4 lg:p-6 space-y-4 lg:space-y-6">
+                    <div className="p-6 space-y-6">
                         {/* Price Range */}
                         <div>
-                            <h3 className="text-base lg:text-lg font-semibold mb-2 lg:mb-3">Price Range</h3>
+                            <h3 className="text-xl font-bold mb-4 text-white">Price Range</h3>
                             <input type="range" min="1000" max="6100" className="w-full accent-red-600" />
-                            <p className="text-red-400 mt-1 lg:mt-2 text-sm lg:text-base">Rs. 6,100</p>
+                            <p className="text-red-400 mt-2 text-base font-medium">Rs. 6,100</p>
                         </div>
 
                         {/* Category */}
                         <div>
-                            <h3 className="text-base lg:text-lg font-semibold mb-2 lg:mb-3">Category</h3>
-                            <ul className="space-y-1 lg:space-y-2">
-                                <li><label className="flex items-center cursor-pointer text-sm lg:text-base"><input type="checkbox" className="mr-2 lg:mr-3 accent-red-600" /> Paithani Sarees</label></li>
-                                <li><label className="flex items-center cursor-pointer text-sm lg:text-base"><input type="checkbox" className="mr-2 lg:mr-3 accent-red-600" /> Nauvari Sarees</label></li>
-                                <li><label className="flex items-center cursor-pointer text-sm lg:text-base"><input type="checkbox" className="mr-2 lg:mr-3 accent-red-600" /> Shalu Sarees</label></li>
-                                <li><label className="flex items-center cursor-pointer text-sm lg:text-base"><input type="checkbox" className="mr-2 lg:mr-3 accent-red-600" /> Narayan Peth Sarees</label></li>
-                                <li><label className="flex items-center cursor-pointer text-sm lg:text-base"><input type="checkbox" className="mr-2 lg:mr-3 accent-red-600" /> Silk Sarees</label></li>
-                                <li><label className="flex items-center cursor-pointer text-sm lg:text-base"><input type="checkbox" className="mr-2 lg:mr-3 accent-red-600" /> All types</label></li>
+                            <h3 className="text-xl font-bold mb-4 text-white">Category</h3>
+                            <ul className="space-y-3">
+                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Paithani Sarees</label></li>
+                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Nauvari Sarees</label></li>
+                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Shalu Sarees</label></li>
+                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Narayan Peth Sarees</label></li>
+                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Silk Sarees</label></li>
+                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> All types</label></li>
                             </ul>
                         </div>
 
                         {/* Occasion */}
                         <div>
-                            <h3 className="text-base lg:text-lg font-semibold mb-2 lg:mb-3">Occasion</h3>
-                            <ul className="space-y-1 lg:space-y-2">
-                                <li><label className="flex items-center cursor-pointer text-sm lg:text-base"><input type="checkbox" className="mr-2 lg:mr-3 accent-red-600" /> Wedding</label></li>
-                                <li><label className="flex items-center cursor-pointer text-sm lg:text-base"><input type="checkbox" className="mr-2 lg:mr-3 accent-red-600" /> Festival</label></li>
-                                <li><label className="flex items-center cursor-pointer text-sm lg:text-base"><input type="checkbox" className="mr-2 lg:mr-3 accent-red-600" /> Party</label></li>
-                                <li><label className="flex items-center cursor-pointer text-sm lg:text-base"><input type="checkbox" className="mr-2 lg:mr-3 accent-red-600" /> Office Wear</label></li>
-                                <li><label className="flex items-center cursor-pointer text-sm lg:text-base"><input type="checkbox" className="mr-2 lg:mr-3 accent-red-600" /> Daily Wear</label></li>
+                            <h3 className="text-xl font-bold mb-4 text-white">Occasion</h3>
+                            <ul className="space-y-3">
+                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Wedding</label></li>
+                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Festival</label></li>
+                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Party</label></li>
+                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Office Wear</label></li>
+                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Daily Wear</label></li>
                             </ul>
                         </div>
 
                         {/* Color */}
                         <div>
-                            <h3 className="text-base lg:text-lg font-semibold mb-2 lg:mb-3">Color</h3>
-                            <ul className="space-y-1 lg:space-y-2">
-                                <li><label className="flex items-center cursor-pointer text-sm lg:text-base"><input type="checkbox" className="mr-2 lg:mr-3 accent-red-600" /> Red</label></li>
-                                <li><label className="flex items-center cursor-pointer text-sm lg:text-base"><input type="checkbox" className="mr-2 lg:mr-3 accent-red-600" /> Green</label></li>
-                                <li><label className="flex items-center cursor-pointer text-sm lg:text-base"><input type="checkbox" className="mr-2 lg:mr-3 accent-red-600" /> Blue</label></li>
-                                <li><label className="flex items-center cursor-pointer text-sm lg:text-base"><input type="checkbox" className="mr-2 lg:mr-3 accent-red-600" /> White</label></li>
-                                <li><label className="flex items-center cursor-pointer text-sm lg:text-base"><input type="checkbox" className="mr-2 lg:mr-3 accent-red-600" /> Multi-color</label></li>
+                            <h3 className="text-xl font-bold mb-4 text-white">Color</h3>
+                            <ul className="space-y-3">
+                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Red</label></li>
+                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Green</label></li>
+                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Blue</label></li>
+                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> White</label></li>
+                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Multi-color</label></li>
                             </ul>
                         </div>
 
                         {/* Best Seller & New Arrivals */}
-                        <div className="space-y-1 lg:space-y-2">
-                            <label className="flex items-center cursor-pointer text-sm lg:text-base"><input type="checkbox" className="mr-2 lg:mr-3 accent-red-600" /> Best Seller</label>
-                            <label className="flex items-center cursor-pointer text-sm lg:text-base"><input type="checkbox" className="mr-2 lg:mr-3 accent-red-600" /> New Arrivals</label>
+                        <div className="space-y-3">
+                            <label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Best Seller</label>
+                            <label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> New Arrivals</label>
                         </div>
 
                         {/* Offers */}
                         <div>
-                            <h3 className="text-base lg:text-lg font-semibold mb-2 lg:mb-3">Offers</h3>
-                            <ul className="space-y-1 lg:space-y-2">
-                                <li><label className="flex items-center cursor-pointer text-sm lg:text-base"><input type="checkbox" className="mr-2 lg:mr-3 accent-red-600" /> Flat % Off</label></li>
-                                <li><label className="flex items-center cursor-pointer text-sm lg:text-base"><input type="checkbox" className="mr-2 lg:mr-3 accent-red-600" /> Clearance Sale</label></li>
-                                <li><label className="flex items-center cursor-pointer text-sm lg:text-base"><input type="checkbox" className="mr-2 lg:mr-3 accent-red-600" /> Under 1000 / 1999</label></li>
+                            <h3 className="text-xl font-bold mb-4 text-white">Offers</h3>
+                            <ul className="space-y-3">
+                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Flat % Off</label></li>
+                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Clearance Sale</label></li>
+                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Under 1000 / 1999</label></li>
                             </ul>
                         </div>
 
                         {/* Clear Filter Button */}
-                        <button className="w-full bg-red-700 py-2 lg:py-3 rounded hover:bg-red-800 transition-colors font-medium text-sm lg:text-base">
+                        <button className="w-full bg-red-700 py-3 rounded hover:bg-red-800 transition-colors font-medium text-base">
                             Clear Filter
                         </button>
                     </div>

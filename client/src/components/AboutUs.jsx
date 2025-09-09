@@ -2,23 +2,17 @@ import React from 'react'
 
 const AboutUs = () => {
   return (
-    <section className="w-full bg-[#f8f1e3] flex justify-center items-center py-12 px-2 md:px-8 lg:px-24">
-      <div className="flex flex-col md:flex-row items-center w-full max-w-full">
-        {/* Image and background layers */}
-        {/* <div className="relative w-full md:w-[420px] lg:w-[480px] flex-shrink-0 flex justify-center mb-8 md:mb-0"> */}
-          {/* Purple background block */}
-          {/* <div className="hidden md:block absolute left-0 top-8 w-[320px] h-[420px] bg-[#44263a] z-0 rounded-sm" style={{}}></div> */}
-          {/* Saree image with background */}
-          {/* <div className="relative">
-            <img src="/aboutus-bg.png" alt="Background" className="w-[320px] h-[420px] object-cover rounded-sm" />
-            <img src="/aboutus-img.png" alt="Saree" className="absolute left-0 top-0 w-[320px] h-[420px] object-contain rounded-sm" />
-          </div> */}
-        {/* </div> */}
+    <section className="max-w-full mx-auto px-4 sm:px-6 lg:mx-10 lg:px-0 lg:rounded-tl-[6rem] xl:rounded-tl-[8rem] 2xl:rounded-tl-[10rem] lg:rounded-br-[6rem] xl:rounded-br-[8rem] 2xl:rounded-br-[10rem] bg-[#f8f1e3] flex justify-center items-center py-8 sm:py-10 md:py-12 lg:py-16">
+      <div className="flex flex-col items-center w-full max-w-7xl">
         {/* Text block with left image */}
-        <div className="bg-[#44263a] text-white  p-6 md:p-12 flex-1 md:ml-[-60px] z-20 w-full max-w-full flex flex-col md:flex-row items-center md:items-start gap-20">
+        <div className="bg-[#550000] text-white p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 w-full flex flex-col lg:flex-row items-center lg:items-start gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-20">
           {/* Left image */}
-          <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-6 flex justify-center items-center">
-            <img src="/aboutus-img.png" alt="Saree" className="w-40 h-60 md:w-48 md:h-72 lg:w-90 lg:h-100 object-contain rounded-sm" />
+          <div className="flex-shrink-0 flex justify-center items-center order-1 lg:order-none">
+            <img 
+              src="/aboutus-img.png" 
+              alt="Saree" 
+              className="w-72 h-70 sm:w-36 sm:h-54 md:w-40 md:h-60 lg:w-48 lg:h-72 xl:w-56 xl:h-84 2xl:w-64 2xl:h-96 object-contain rounded-sm shadow-lg" 
+            />
           </div>
           {/* Text content */}
           <div>

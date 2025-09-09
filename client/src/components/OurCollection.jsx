@@ -52,105 +52,72 @@ const OurCollection = () => {
   }
 
   return (
-    <section className="relative py-12 bg-[#dfb8b8] md:rounded-tl-[10rem]">
+    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 bg-[#dfb8b8] md:rounded-tl-[6rem] lg:rounded-tl-[8rem] xl:rounded-tl-[10rem]">
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 -mt-5">
-          <p className="text-xs text-pink-400 uppercase tracking-wider">Our Collection</p>
-          <h2 className="text-3xl md:text-4xl font-prata font-bold text-[#3b2a2f]">Recommended</h2>
-          <p className="mt-2 text-gray-600">Lorem ipsum dolor sit amet consectetur. Eu quis enim tempor et proin neque.</p>
+        <div className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 lg:-mt-10">
+          <p className="text-xs sm:text-sm text-pink-400 uppercase tracking-wider mb-2">Our Collection</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-prata font-bold text-[#3b2a2f] mb-3 sm:mb-4">Recommended</h2>
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4 sm:px-0">
+            Lorem ipsum dolor sit amet consectetur. Eu quis enim tempor et proin neque.
+          </p>
         </div>
 
-        <div className="relative  p-4 md:p-6">
-                  <div className="overflow-x-auto hide-scrollbar py-4">
-                    <div className="flex gap-6 items-stretch snap-x snap-mandatory">
-                      {/* Card 1 */}
-                      <article className="snap-center flex-shrink-0 w-68 sm:w-74 md:w-70 bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-                        <div className="h-44 md:h-60 lg:h-75 bg-cover bg-center" style={{backgroundImage: "url('/irkal-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover'}} />
-                        <div className="p-4 flex flex-col flex-1">
-                          <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
-                            <div className="text-[#ba7894] text-sm"><div className='flex items-center gap-2'><FaRegStar /> 4.5</div></div>
-                            <div className="text-sm text-black">104 reviews</div>
-                            
-                          </div>
-                          <h3 className="text-lg font-semibold text-[#2b1d20] mb-2">Irkal Saree</h3>
-                          <div className='flex items-center gap-2'><span className="text-[#f44336]"><FaHeart className='-mt-6'/></span><p className="text-sm text-gray-600 mb-4">Lightweight and comfortable for daily wear.</p></div>
-                          <div className="mt-auto">
-                            <Link to="/product"><button className="w-full py-2 rounded border border-[#f2d6d9] text-[#b34d5b] text-sm cursor-pointer">BUY NOW</button></Link>
-                          </div>
+        <div className="relative">
+          {/* Add scrollbar hide styles */}
+          <style>{`.hide-scrollbar::-webkit-scrollbar{display:none}.hide-scrollbar{-ms-overflow-style:none;scrollbar-width:none;}`}</style>
+          
+          <div className="overflow-x-auto hide-scrollbar py-2 sm:py-4">
+            <div className="flex gap-4 sm:gap-6 md:gap-6 lg:gap-8 items-stretch snap-x snap-mandatory px-2 sm:px-0">
+              {items.map((item, index) => (
+                <article 
+                  key={index}
+                  className="snap-center flex-shrink-0 w-64 sm:w-72 md:w-80 lg:w-72 xl:w-80 bg-white rounded-lg sm:rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col"
+                >
+                  <div 
+                    className="h-75 sm:h-56 md:h-64 lg:h-60 xl:h-90 bg-cover bg-center" 
+                    style={{
+                      backgroundImage: `url('${item.img}')`, 
+                      backgroundPosition: 'center 1%', 
+                      backgroundSize: 'cover'
+                    }} 
+                  />
+                  <div className="p-3 sm:p-4 md:p-5 flex flex-col flex-1">
+                    <div className="flex items-center justify-between mb-2 sm:mb-3">
+                      <div className="text-[#ba7894] text-xs sm:text-sm">
+                        <div className='flex items-center gap-1 sm:gap-2'>
+                          <FaRegStar className="w-3 h-3 sm:w-4 sm:h-4" /> 
+                          <span>{item.rating}</span>
                         </div>
-                      </article>
-        
-                      {/* Card 2 */}
-                      <article className="snap-center flex-shrink-0 w-68 sm:w-64 md:w-70 bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-                        <div className="h-44 md:h-60 lg:h-75 bg-cover bg-center" style={{backgroundImage: "url('/tussar-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover'}} />
-                        <div className="p-4 flex flex-col flex-1">
-                          <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
-                            <div className="text-[#ba7894] text-sm"><div className='flex items-center gap-2'><FaRegStar /> 4.5</div></div>
-                            <div className="text-sm text-black">104 reviews</div>
-                            
-                          </div>
-                          <h3 className="text-lg font-semibold text-[#2b1d20] mb-2">Tussar Silk</h3>
-                          <div className='flex items-center gap-2'><span className="text-[#f44336]"><FaHeart className='-mt-6' /></span><p className="text-sm text-gray-600 mb-4">Lightweight and comfortable for daily wear.</p></div>
-                          <div className="mt-auto">
-                            <Link to="/product"><button className="w-full py-2 rounded border border-[#f2d6d9] text-[#b34d5b] text-sm cursor-pointer">BUY NOW</button></Link>
-                          </div>
-                        </div>
-                      </article>
-        
-                      {/* Card 3 */}
-                      <article className="snap-center flex-shrink-0 w-68 sm:w-64 md:w-70 bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-                        <div className="h-44 md:h-60 lg:h-75 bg-cover bg-center" style={{backgroundImage: "url('/solapur-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover'}} />
-                        <div className="p-4 flex flex-col flex-1">
-                          <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
-                            <div className="text-[#ba7894] text-sm"><div className='flex items-center gap-2'><FaRegStar /> 4.5</div></div>
-                            <div className="text-sm text-black">104 reviews</div>
-                            
-                          </div>
-                          <h3 className="text-lg font-semibold text-[#2b1d20] mb-2">Solapur Chaddar Saree</h3>
-                          <div className='flex items-center gap-2'><span className="text-[#f44336]"><FaHeart className='-mt-6' /></span><p className="text-sm text-gray-600 mb-4">Lightweight and comfortable for daily wear.</p></div>
-                          <div className="mt-auto">
-                            <Link to="/product"><button className="w-full py-2 rounded border border-[#f2d6d9] text-[#b34d5b] text-sm cursor-pointer">BUY NOW</button></Link>
-                          </div>
-                        </div>
-                      </article>
-        
-                      {/* Card 4 */}
-                      <article className="snap-center flex-shrink-0 w-68 sm:w-64 md:w-70 bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-                        <div className="h-44 md:h-60 lg:h-75 bg-cover bg-center" style={{backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover'}} />
-                        <div className="p-4 flex flex-col flex-1">
-                          <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
-                            <div className="text-[#ba7894] text-sm"><div className='flex items-center gap-2'><FaRegStar /> 4.5</div></div>
-                            <div className="text-sm text-black">104 reviews</div>
-                            
-                          </div>
-                          <h3 className="text-lg font-semibold text-[#2b1d20] mb-2">Kanjeevaram Saree</h3>
-                          <div className='flex items-center gap-2'><span className="text-[#f44336]"><FaHeart className='-mt-6' /></span><p className="text-sm text-gray-600 mb-4">Lightweight and comfortable for daily wear.</p></div>
-                          <div className="mt-auto">
-                            <Link to="/product"><button className="w-full py-2 rounded border border-[#f2d6d9] text-[#b34d5b] text-sm cursor-pointer">BUY NOW</button></Link>
-                          </div>
-                        </div>
-                      </article>
-        
-                      {/* Card 5 */}
-                      <article className="snap-center flex-shrink-0 w-68 sm:w-64 md:w-70 bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-                        <div className="h-44 md:h-60 lg:h-75 bg-cover bg-center" style={{backgroundImage: "url('/home-product-img.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover'}} />
-                        <div className="p-4 flex flex-col flex-1">
-                          <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
-                            <div className="text-[#ba7894] text-sm"><div className='flex items-center gap-2'><FaRegStar /> 4.5</div></div>
-                            <div className="text-sm text-black">104 reviews</div>
-                            
-                          </div>
-                          <h3 className="text-lg font-semibold text-[#2b1d20] mb-2">Paithani Saree</h3>
-                          <div className='flex items-center gap-2'><span className="text-[#f44336]"><FaHeart className='-mt-6' /></span><span className="text-sm text-gray-600 mb-4">Lightweight and comfortable for daily wear.</span></div>
-                          <div className="mt-auto">
-                            <Link to="/product"><button className="w-full py-2 rounded border border-[#f2d6d9] text-[#b34d5b] text-sm cursor-pointer">BUY NOW</button></Link>
-                          </div>
-                        </div>
-                      </article>
-        
+                      </div>
+                      <div className="text-xs sm:text-sm text-black">{item.reviews} reviews</div>
+                    </div>
+                    
+                    <h3 className="text-base sm:text-lg md:text-xl font-semibold text-[#2b1d20] mb-2 sm:mb-3">
+                      {item.title}
+                    </h3>
+                    
+                    <div className='flex items-start gap-2 mb-3 sm:mb-4 flex-1'>
+                      <span className="text-[#f44336] mt-1 flex-shrink-0">
+                        <FaHeart className="w-3 h-3 sm:w-4 sm:h-4" />
+                      </span>
+                      <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                    
+                    <div className="mt-auto">
+                      <Link to="/product">
+                        <button className="w-full py-2 sm:py-3 rounded border border-[#f2d6d9] text-[#b34d5b] text-xs sm:text-sm md:text-base font-medium hover:bg-[#f2d6d9] transition-colors duration-200">
+                          BUY NOW
+                        </button>
+                      </Link>
                     </div>
                   </div>
-                </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

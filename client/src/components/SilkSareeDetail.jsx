@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaRegHeart, FaHeart } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import { FaRegStar, FaChevronRight, FaInfoCircle, FaUndo, FaTruck, FaEye } from "react-icons/fa";
+import { FaRegStar, FaChevronRight, FaInfoCircle, FaUndo, FaTruck, FaEye, FaChevronUp, FaChevronDown } from "react-icons/fa";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { LuUndo2 } from "react-icons/lu";
 
@@ -16,8 +16,7 @@ const SilkSareeDetail = () => {
   const [selectedColor, setSelectedColor] = useState("Red");
   const [liked, setLiked] = useState(false);
   const [selectedDetail, setSelectedDetail] = useState("Product details");
-
-  // Image mapping for different colors
+  // Image mapping for different colors (declare before using)
   const colorImages = {
     "Blue": {
       front: "/bluesilksaree-front.png",
@@ -36,6 +35,41 @@ const SilkSareeDetail = () => {
       back: "/silksaree-back.png"
     }
   };
+
+  // main image shown on mobile (syncs to selected color)
+  const [selectedImage, setSelectedImage] = useState(colorImages[selectedColor]?.front || "/silk-saree.png");
+
+  // mobile thumbnails gallery (swappable)
+  const [mobileGallery, setMobileGallery] = useState([
+  colorImages[selectedColor]?.front || "/silk-saree.png",
+  colorImages[selectedColor]?.back || "/silksaree-back.png",
+    "/product-1-img.jpg",
+    "/product-2-img.png",
+    "/product-3-img.png",
+    "/product-4-img.png",
+  ]);
+
+  const thumbRef = useRef(null);
+  const scrollAmount = 88; // pixels per arrow press
+  const scrollUp = () => {
+    if (thumbRef.current) thumbRef.current.scrollBy({ top: -scrollAmount, behavior: 'smooth' });
+  };
+  const scrollDown = () => {
+    if (thumbRef.current) thumbRef.current.scrollBy({ top: scrollAmount, behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    // reset main image and mobile gallery when color changes
+    setSelectedImage(colorImages[selectedColor]?.front || "/silk-saree.png");
+    setMobileGallery([
+  colorImages[selectedColor]?.front || "/silk-saree.png",
+  colorImages[selectedColor]?.back || "/silksaree-back.png",
+      "/product-1-img.jpg",
+      "/product-2-img.png",
+      "/product-3-img.png",
+      "/product-4-img.png",
+    ]);
+  }, [selectedColor]);
 
   const productDetails = {
     "Product details": {
@@ -113,18 +147,68 @@ const SilkSareeDetail = () => {
   return (
     <div className="max-w-full min-h-screen bg-white mt-4 sm:mt-6 lg:mt-10">
   <div className="flex flex-col lg:flex-row ml-2 sm:ml-4 lg:ml-6">
-        {/* Product Images */}
-        <div className="w-full lg:w-1/2 flex flex-col lg:flex-row gap-2 sm:gap-3 lg:gap-4">
-          <img
-            src={colorImages[selectedColor]?.front || "/silk-saree.png"}
-            alt="Saree Front"
-            className="w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] object-cover transition-all duration-300 rounded-md"
-          />
-          <img
-            src={colorImages[selectedColor]?.back || "/silksaree-back.png"}
-            alt="Saree Back"
-            className="w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] object-cover transition-all duration-300 rounded-md"
-          />
+        {/* Product Images - desktop: horizontal scroller showing 2 images per view; mobile: first image + vertical thumbnails on right */}
+
+        {/* Desktop / Tablet: horizontal scroller (kept as before) */}
+        <div className="hidden lg:block w-full lg:w-1/2">
+          <div className="overflow-x-auto hide-scrollbar">
+            <div className="flex gap-2 sm:gap-3 lg:gap-4 snap-x snap-mandatory">
+              {
+                [
+                  colorImages[selectedColor]?.front || "/silk-saree.png",
+                  colorImages[selectedColor]?.back || "/silksaree-back.png",
+                  "/product-1-img.jpg",
+                  "/product-2-img.png",
+                  "/product-3-img.png",
+                  "/product-4-img.png",
+                ].map((src, idx) => (
+                  <div key={idx} className="flex-shrink-0 w-1/2">
+                    <img
+                      src={src}
+                      alt={`saree-${idx}`}
+                      className="w-full h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] object-cover transition-all duration-300 rounded-md"
+                    />
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile: show main front image and a vertical stack of small thumbnails on the right */}
+        <div className="block lg:hidden w-full lg:w-1/2">
+          <div className="flex items-start gap-2">
+            <div className="flex-1">
+              <img
+                src={selectedImage}
+                alt="saree-front-mobile"
+                className="w-full h-[414px] sm:h-[360px] object-cover rounded-md"
+              />
+            </div>
+
+            <div className="w-24 sm:w-28 flex flex-col gap-1 h-[414px] sm:h-[360px]">
+              <button type="button" onClick={scrollUp} className="p-1 rounded bg-white shadow-sm mb-1">
+                <FaChevronUp />
+              </button>
+              <div ref={thumbRef} className="flex-1 overflow-y-auto no-scrollbar space-y-1">
+                {
+                  mobileGallery.map((src, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => setSelectedImage(src)}
+                        className="h-20 sm:h-24 rounded-md overflow-hidden w-full bg-transparent p-0 flex items-center justify-center"
+                      >
+                        <img src={src} alt={`thumb-${idx}`} className="w-full h-full object-fit block" />
+                      </button>
+                  ))
+                }
+              </div>
+              <button type="button" onClick={scrollDown} className="p-1 rounded bg-white shadow-sm mt-1">
+                <FaChevronDown />
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Product Details */}

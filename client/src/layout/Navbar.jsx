@@ -7,12 +7,12 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full border-b border-gray-300 bg-white" role="navigation" aria-label="Main navigation">
-      <div className="w-full flex items-center justify-between py-4 sm:py-3 px-3 sm:px-4">
+    <nav className="w-full border-b border-gray-300 bg-white sticky top-0 z-20" role="navigation" aria-label="Main navigation">
+      <div className="w-full relative flex items-center justify-between py-4 sm:py-3 px-3 sm:px-4">
         {/* Logo and Brand */}
-        <div className="flex-shrink-0 flex items-center h-8 sm:h-10">
+        <Link to="/"><div className="flex-shrink-0 flex items-center h-8 sm:h-10">
           <img src='home-logo.png' alt="Saree Logo" className="h-full object-contain mx-auto sm:ml-1 lg:ml-6" />
-        </div>
+        </div></Link>
 
         {/* Hamburger menu for mobile */}
         <button
@@ -33,7 +33,7 @@ const Navbar = () => {
         </button>
 
         {/* Navigation Links (desktop) */}
-        <div className="hidden md:flex items-center gap-3 sm:gap-4 lg:gap-8 ml-4 md:ml-6 lg:ml-20 xl:ml-32">
+        <div className="hidden md:flex items-center gap-3 sm:gap-4 lg:gap-8 ml-4 md:ml-6 lg:ml-10 xl:ml-80">
           <Link to="/" onClick={() => setMenuOpen(false)} className="text-base font-medium text-gray-800 hover:text-[#550000] transition">Home</Link>
           <Link to="/about" onClick={() => setMenuOpen(false)} className="text-base font-medium text-gray-800 hover:text-[#550000] transition">About Us</Link>
           <Link to="/collections" onClick={() => setMenuOpen(false)} className="text-base font-medium text-gray-800 hover:text-[#550000] transition">Collections</Link>
@@ -42,8 +42,8 @@ const Navbar = () => {
         </div>
         {/* Icons (desktop) */}
         <div className='hidden md:flex items-center gap-2 lg:gap-3 xl:gap-4 lg:mr-2 xl:mr-3'>
-          <button aria-label="Wishlist" className="text-gray-700"><CiHeart className='w-6 h-6 lg:w-8 lg:h-8' /></button>
-          <button aria-label="Cart" className="text-gray-700"><PiShoppingCartThin className='w-6 h-6 lg:w-8 lg:h-8' /></button>
+          <button aria-label="Wishlist" className="text-gray-700 cursor-pointer"><CiHeart className='w-6 h-6 lg:w-8 lg:h-8' /></button>
+          <button aria-label="Cart" className="text-gray-700 cursor-pointer"><PiShoppingCartThin className='w-6 h-6 lg:w-8 lg:h-8' /></button>
         </div>
         {/* Auth Buttons (desktop) */}
         <div className="hidden md:flex items-center gap-2 lg:gap-3 xl:gap-4 lg:mr-4 xl:mr-12">
@@ -54,7 +54,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 px-4 pb-4 z-50 w-full" role="menu" aria-label="Mobile menu">
+        <div className="md:hidden absolute left-0 right-0 top-full bg-white border-t border-gray-200 px-4 pb-4 z-50" role="menu" aria-label="Mobile menu">
           <div className="flex flex-col gap-3 mt-3">
             <Link to="/" onClick={() => setMenuOpen(false)} className="text-base font-medium text-gray-800 hover:text-[#550000] transition">Home</Link>
             <Link to="/about" onClick={() => setMenuOpen(false)} className="text-base font-medium text-gray-800 hover:text-[#550000] transition">About Us</Link>

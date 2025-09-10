@@ -13,7 +13,7 @@ const SilkSareeDetail = () => {
     { name: "Green", color: "#0f7b0f" },
     { name: "Red", color: "#dc3545" }
   ];
-  const [selectedColor, setSelectedColor] = useState("Green");
+  const [selectedColor, setSelectedColor] = useState("Red");
   const [liked, setLiked] = useState(false);
   const [selectedDetail, setSelectedDetail] = useState("Product details");
 

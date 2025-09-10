@@ -6,16 +6,10 @@ import { LuHouse } from "react-icons/lu";
 
 const ContactForm = () => {
   return (
-    <section className="max-w-full min-h-screen bg-white flex flex-col items-center justify-center py-6 sm:py-8 md:py-10 lg:py-12 px-2 sm:px-4 lg:px-8">
-      <div className="bg-[#e3cfcd] relative flex flex-col  max-w-full rounded-tl-[10rem] rounded-br-[10rem]">
-        {/* Background image */}
-        {/* <img 
-          src="/contact-form-background.png" 
-          alt="" 
-          className="h-96 sm:h-120 md:h-140 lg:h-full lg:w-full object-cover lg:object-fill absolute top-0 left-0 z-0 rounded-lg sm:rounded-xl" 
-        /> */}
+    <section className="max-w-8xl min-h-screen bg-white flex flex-col py-6 sm:py-8 md:py-10 lg:py-12 px-2 sm:px-4 lg:px-8">
+      <div className="bg-[#e3cfcd] relative flex flex-col lg:rounded-tl-[10rem] lg:rounded-br-[10rem]">
         {/* Overlay content */}
-        <div className="relative z-10 w-full flex flex-col items-center px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8">
+        <div className="relative z-10 w-full flex flex-col px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8">
           {/* page heading outside the card */}
           <div className="text-center mb-6 sm:mb-8 md:mb-10">
             <div className="text-xs sm:text-sm md:text-base tracking-widest font-semibold mb-2 sm:mb-3 text-[#f44336] uppercase">
@@ -26,7 +20,7 @@ const ContactForm = () => {
               <span className="sm:hidden"> </span>you always...
             </h2>
           </div>
-          <div className="w-full max-w-6xl">
+          <div className="w-full max-w-full">
             <div className="flex flex-col xl:flex-row shadow-lg rounded-lg sm:rounded-xl overflow-hidden">
               {/* Left image panel with contact details */}
               <div className="w-full xl:w-1/2 relative order-2 xl:order-1">

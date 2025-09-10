@@ -2,6 +2,7 @@ import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Navbar from './layout/Navbar'
 import Footer from './layout/Footer'
+import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import About from './pages/About'
 import Collections from './pages/Collections'
@@ -32,54 +33,53 @@ import CategoryKanjeevaram from './components/CategoryKanjeevaram'
 function App() {
 
   return (
-    <>
-      <BrowserRouter>
+    <BrowserRouter>
 
-        <Navbar />
-        
-        <Routes>
+      <Navbar />
+      <ScrollToTop />
 
-          {/* Main Routes */}
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/collections' element={<Collections />} />
-          <Route path='/blog' element={<Blog />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/product' element={<Product />} />
+      <Routes>
 
-          {/* Policy Routes */}
-          <Route path='/termsandcondition' element={<TermsandCondition />} />
-          <Route path='/privacypolicy' element={<PrivacyPolicy />} />
-          <Route path='/disclaimer' element={<Disclaimer />} />
-          <Route path='/shippingpolicy' element={<ShippingPolicy />} />
-          <Route path='/refundpolicy' element={<RefundPolicy />} />
+        {/* Main Routes */}
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/collections' element={<Collections />} />
+        <Route path='/blog' element={<Blog />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/product' element={<Product />} />
 
-          {/* Checkout Routes */}
-          <Route path='/addtocart' element={<AddToCart />} />
-          <Route path='/addresssection' element={<AddressSection />} />
-          <Route path='/addnewaddress' element={<AddNewAddress />} />
-          <Route path='/paymentsection' element={<PaymentSection />} />
+        {/* Policy Routes */}
+        <Route path='/termsandcondition' element={<TermsandCondition />} />
+        <Route path='/privacypolicy' element={<PrivacyPolicy />} />
+        <Route path='/disclaimer' element={<Disclaimer />} />
+        <Route path='/shippingpolicy' element={<ShippingPolicy />} />
+        <Route path='/refundpolicy' element={<RefundPolicy />} />
 
-          {/* Auth Routes */}
-          <Route path='/login' element={<Login />} />
-          <Route path='/signup' element={<SignUp />} />
-          <Route path='/profilesetup' element={<ProfileSetup />} />
+        {/* Checkout Routes */}
+        <Route path='/addtocart' element={<AddToCart />} />
+        <Route path='/addresssection' element={<AddressSection />} />
+        <Route path='/addnewaddress' element={<AddNewAddress />} />
+        <Route path='/paymentsection' element={<PaymentSection />} />
 
-          {/* Category Routes */}
-          <Route path='/silksaree' element={<CategorySilk />} />
-          <Route path='/paithanisaree' element={<CategoryPaithani />} />
-          <Route path='/irkalsaree' element={<CategoryIrkal />} />
-          <Route path='/solapursaree' element={<CategorySolapur />} />
-          <Route path='/tussarsaree' element={<CategoryTussar />} />
-          <Route path='/narayanpethsaree' element={<CategoryNarayanPeth />} />
-          <Route path='/kanjeevaramsaree' element={<CategoryKanjeevaram />} />
-          
-        </Routes>
+        {/* Auth Routes */}
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<SignUp />} />
+        <Route path='/profilesetup' element={<ProfileSetup />} />
 
-        <Footer />
+        {/* Category Routes */}
+        <Route path='/silksaree' element={<CategorySilk />} />
+        <Route path='/paithanisaree' element={<CategoryPaithani />} />
+        <Route path='/irkalsaree' element={<CategoryIrkal />} />
+        <Route path='/solapursaree' element={<CategorySolapur />} />
+        <Route path='/tussarsaree' element={<CategoryTussar />} />
+        <Route path='/narayanpethsaree' element={<CategoryNarayanPeth />} />
+        <Route path='/kanjeevaramsaree' element={<CategoryKanjeevaram />} />
 
-      </BrowserRouter>
-    </>
+      </Routes>
+
+      <Footer />
+
+    </BrowserRouter>
   )
 }
 

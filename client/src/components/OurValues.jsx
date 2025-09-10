@@ -48,7 +48,7 @@ const OurValues = () => {
         </div>
       </div>
       {/* Right: Saree Images */}
-      <div className="relative flex-1 flex flex-col items-center justify-center md:mt-0 md:ml-8 lg:ml-16 w-full max-w-xl min-h-[18rem]">
+  <div className="relative flex-1 flex flex-col items-center justify-center md:mt-0 md:ml-8 lg:ml-16 w-full max-w-xl min-h-0 md:min-h-[18rem]">
         {/* Desktop/tablet: two top, one bottom; Mobile: stack vertically */}
         <div className="hidden md:flex w-full justify-between items-start">
           <img src="/ourvalue-img-1.png" alt="Saree 1" className="w-40 md:w-48 lg:w-46 lg:h-100 rounded-full object-cover shadow-lg" />
@@ -58,7 +58,7 @@ const OurValues = () => {
           <img src="/ourvalue-img-3.png" alt="Saree 3" className="w-40 md:w-48 lg:w-56 lg:h-100 rounded-full object-cover shadow-lg" />
         </div>
         {/* Mobile: stack images vertically and center */}
-        <div className="flex flex-col gap-6 w-full items-center md:hidden">
+        <div className="hidden">
           <img src="/ourvalue-img-1.png" alt="Saree 1" className="w-36 rounded-full object-cover shadow-lg" />
           <img src="/ourvalue-img-2.png" alt="Saree 2" className="w-36 rounded-full object-cover shadow-lg" />
           <img src="/ourvalue-img-3.png" alt="Saree 3" className="w-36 rounded-full object-cover shadow-lg" />

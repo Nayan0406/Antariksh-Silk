@@ -1,40 +1,55 @@
-import React from "react";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaMapMarkerAlt, FaCheck } from "react-icons/fa";
 
 const AddressSection = () => {
+  const [currentStep, setCurrentStep] = useState(2); // 👉 active step
+
+  const steps = [
+    { id: 1, name: "Review" },
+    { id: 2, name: "Address" },
+    { id: 3, name: "Payment" },
+  ];
+
   return (
     <div className="max-w-full mx-auto min-h-screen bg-gray-50 flex flex-col items-center p-8">
-      
       {/* === Step Indicator === */}
-      <div className="w-[400px] lg:w-2/4 flex items-center justify-between mb-12">
-        {/* Step 1 - Review */}
-        <div className="flex-1 flex items-center">
-          <div className="flex flex-col items-center text-center">
-            <div className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#a31f1f] text-[#a31f1f]  font-bold">
-              1
-            </div>
-            <p className="mt-2 text-sm font-medium text-[#a31f1f]">Review</p>
-          </div>
-          <div className="flex-1 h-[2px] bg-gray-300 mx-2"></div>
-        </div>
+      <div className="w-full max-w-2xl relative mb-12">
+        {/* Background Line */}
+        <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-gray-300 -translate-y-1/2"></div>
 
-        {/* Step 2 - Address */}
-        <div className="flex-1 flex items-center">
-          <div className="flex flex-col items-center text-center">
-            <div className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#a31f1f] text-[#a31f1f] font-bold">
-              2
-            </div>
-            <p className="mt-2 text-sm font-medium text-[#a31f1f]">Address</p>
-          </div>
-          <div className="flex-1 h-[2px] bg-gray-300 mx-2"></div>
-        </div>
+        {/* Progress Line */}
+        <div
+          className="absolute top-1/2 left-0 h-[2px] bg-[#a31f1f] -translate-y-1/2 transition-all duration-700"
+          style={{ width: `${((currentStep - 1) / (steps.length - 1)) * 100}%` }}
+        ></div>
 
-        {/* Step 3 - Payment */}
-        <div className="flex flex-col items-center text-center">
-          <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-300 text-gray-700 font-bold">
-            3
-          </div>
-          <p className="mt-2 text-sm font-medium text-gray-700">Payment</p>
+        {/* Steps */}
+        <div className="flex justify-between relative z-10">
+          {steps.map((step) => (
+            <div key={step.id} className="flex flex-col items-center">
+              {/* Circle */}
+              <div
+                className={`w-10 h-10 flex items-center justify-center rounded-full font-bold transition-all duration-500 ${
+                  step.id < currentStep
+                    ? "bg-[#a31f1f] text-white"
+                    : step.id === currentStep
+                    ? "border-2 border-[#a31f1f] text-[#a31f1f] bg-white"
+                    : "border-2 border-gray-400 text-gray-400 bg-white"
+                }`}
+              >
+                {step.id < currentStep ? <FaCheck /> : step.id}
+              </div>
+
+              {/* Label */}
+              <p
+                className={`mt-2 text-sm font-medium transition-colors duration-300 ${
+                  step.id <= currentStep ? "text-[#a31f1f]" : "text-gray-500"
+                }`}
+              >
+                {step.name}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -95,7 +110,7 @@ const AddressSection = () => {
           </div>
 
           {/* Address */}
-          <div>
+          <div className="">
             <label className="block text-sm font-medium text-gray-700">
               Street Address / House No. / Apartment Name
             </label>
@@ -127,10 +142,21 @@ const AddressSection = () => {
             />
           </div>
 
+          {/* Locality */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Locality
+            </label>
+            <input
+              type="text"
+              className="mt-1 w-full border-b border-gray-400 bg-transparent focus:outline-none"
+            />
+          </div>
+
           {/* City */}
           <div>
             <label className="block text-sm font-medium text-gray-700">
-              City
+              City/Town/District
             </label>
             <input
               type="text"
@@ -148,29 +174,24 @@ const AddressSection = () => {
               className="mt-1 w-full border-b border-gray-400 bg-transparent focus:outline-none"
             />
           </div>
-
-          {/* Country */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Country
-            </label>
-            <input
-              type="text"
-              className="mt-1 w-full border-b border-gray-400 bg-transparent focus:outline-none"
-            />
-          </div>
         </div>
 
         {/* Buttons */}
         <div className="flex justify-end gap-4 mt-8">
           <button
             type="button"
+            onClick={() =>
+              setCurrentStep((prev) => (prev > 1 ? prev - 1 : prev))
+            }
             className="bg-gray-800 text-white px-6 py-2 rounded-md cursor-pointer"
           >
-            Cancel
+            Back
           </button>
           <button
-            type="submit"
+            type="button"
+            onClick={() =>
+              setCurrentStep((prev) => (prev < steps.length ? prev + 1 : prev))
+            }
             className="bg-[#550000] text-white px-6 py-2 rounded-md cursor-pointer"
           >
             Delivery Address

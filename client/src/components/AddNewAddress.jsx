@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const AddNewAddress = () => {
   const [selectedAddress, setSelectedAddress] = useState(0) // 0 for first address selected by default
@@ -42,7 +43,7 @@ const AddNewAddress = () => {
       <div className='w-full max-w-xs sm:max-w-2xl lg:max-w-5xl bg-[#f4eded] p-4 sm:p-6 -mb-5'>
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0">
           <h2 className="text-lg sm:text-xl font-semibold sm:justify-center">Select Delivery Address</h2>
-          <button className="text-black text-xs sm:text-sm font-medium bg-[#ebf0ff] border-0 px-3 py-2 sm:px-4 sm:py-2 w-full sm:w-auto">+ ADD NEW ADDRESS</button>
+          <Link to="/addresssection"><button className="text-black text-xs sm:text-sm font-medium bg-[#ebf0ff] border-0 px-3 py-2 sm:px-4 sm:py-2 w-full sm:w-auto cursor-pointer">+ ADD NEW ADDRESS</button></Link>
         </div>
         </div>
 
@@ -76,9 +77,9 @@ const AddNewAddress = () => {
                 </div>
                 
                 <div className="flex flex-col sm:flex-row gap-2 mt-3 sm:mt-4">
-                  <button className="bg-[#5a0e0e] text-white px-6 sm:px-10 py-2 rounded text-xs sm:text-sm">
+                  <Link to="/paymentsection"><button className="bg-[#5a0e0e] text-white px-6 sm:px-10 py-2 rounded text-xs sm:text-sm cursor-pointer">
                     Delivery Address
-                  </button>
+                  </button></Link>
                   <button className="border border-gray-300 px-5 sm:px-7 py-2 rounded text-xs sm:text-sm bg-[#ebf0ff]">
                     Edit
                   </button>

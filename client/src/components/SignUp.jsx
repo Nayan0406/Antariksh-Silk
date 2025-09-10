@@ -17,7 +17,7 @@ const SignUp = () => {
     // Handle signup logic here
     console.log('Signup attempted with:', { name, email, password, confirmPassword, rememberMe });
   };  return (
-    <div className="min-h-screen flex flex-col md:flex-row">
+  <div className="flex flex-col md:flex-row md:min-h-screen">
           {/* Left Side - Image */}
           <div className="hidden lg:flex lg:w-1/2 relative">
             <img
@@ -28,22 +28,22 @@ const SignUp = () => {
           </div>
     
         {/* Right Side - SignUp Form */}
-        <div className="w-full lg:w-1/2 flex items-center justify-center bg-[#550101] px-6 sm:px-8 py-8 sm:py-12">
+        <div className="w-full lg:w-1/2 flex items-start md:items-center justify-start md:justify-center bg-[#550101] px-4 sm:px-6 py-6 sm:py-10">
           <div className="w-full max-w-md md:max-w-lg lg:max-w-md">
             {/* Logo */}
-            <div className="text-center mb-6 sm:mb-8">
+            <div className="text-center mb-4 sm:mb-6">
               <img src="/home-logo.png" alt="Logo" className='w-28 sm:w-36 md:w-40 lg:w-44 h-auto mx-auto'/>
             </div>
 
             {/* SignUp Heading */}
-            <div className="mb-6 sm:mb-8">
+            <div className="mb-4 sm:mb-6">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-white tracking-wider text-center md:text-left">
                 Sign Up
               </h2>
             </div>
 
             {/* SignUp Form */}
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               {/* Name */}
               <div>
                 <input
@@ -51,7 +51,7 @@ const SignUp = () => {
                   placeholder="Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-4 py-3 bg-[#6f2b2b] bg-opacity-50 border-0 rounded text-white placeholder-white focus:outline-none transition-all text-sm sm:text-base"
+                  className="w-full px-4 py-2 bg-[#6f2b2b] bg-opacity-50 border-0 rounded text-white placeholder-white focus:outline-none transition-all text-sm sm:text-base"
                   required
                 />
               </div>
@@ -75,7 +75,7 @@ const SignUp = () => {
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-3 bg-[#6f2b2b] bg-opacity-50 border-0 rounded text-white placeholder-white focus:outline-none transition-all pr-12 text-sm sm:text-base"
+                  className="w-full px-4 py-2 bg-[#6f2b2b] bg-opacity-50 border-0 rounded text-white placeholder-white focus:outline-none transition-all pr-12 text-sm sm:text-base"
                   required
                 />
                 <button
@@ -94,7 +94,7 @@ const SignUp = () => {
                   placeholder="Confirm Password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="w-full px-4 py-3 bg-[#6f2b2b] bg-opacity-50 border-0 rounded text-white placeholder-white focus:outline-none transition-all pr-12 text-sm sm:text-base"
+                  className="w-full px-4 py-2 bg-[#6f2b2b] bg-opacity-50 border-0 rounded text-white placeholder-white focus:outline-none transition-all pr-12 text-sm sm:text-base"
                   required
                 />
                 <button

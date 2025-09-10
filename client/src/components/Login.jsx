@@ -16,7 +16,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row">
+  <div className="flex flex-col md:flex-row md:min-h-screen">
       {/* Left Side - Image */}
   <div className="hidden lg:flex lg:w-1/2 relative">
         <img
@@ -27,7 +27,7 @@ const Login = () => {
       </div>
 
       {/* Right Side - Login Form */}
-      <div className="w-full md:w-1/2 flex items-center justify-center bg-[#550101] px-6 sm:px-8 py-8 sm:py-12">
+  <div className="w-full md:w-1/2 flex items-start md:items-center justify-start md:justify-center bg-[#550101] px-6 sm:px-8 py-6 sm:py-12">
         <div className="w-full max-w-md md:max-w-lg lg:max-w-md">
           {/* Logo */}
           <div className="text-center mb-6 sm:mb-8">

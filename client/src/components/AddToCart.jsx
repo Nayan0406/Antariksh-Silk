@@ -48,22 +48,20 @@ const AddToCart = () => {
       </div>
 
       {/* === Main Content Section === */}
-      <div className="w-full max-w-full flex flex-col lg:flex-row gap-4 lg:gap-8 mt-4 lg:mt-8 px-4 lg:px-0">
-        
-        {/* Left Section - Product Image */}
-        <div className="w-full lg:w-1/3 flex justify-center lg:justify-start lg:ml-10">
+      <div className="w-full max-w-full flex flex-col lg:flex-row gap-4 lg:gap-8 mt-4 lg:mt-8 px-4 lg:px-0 items-start">
+
+        {/* Left Column - Product Image */}
+        <div className="w-full lg:w-1/3 flex justify-center lg:justify-start">
           <img
             src="/Kanjeevaram-saree.png"
             alt="Silk Saree"
-            className="w-full max-w-[300px] sm:max-w-[350px] lg:w-[400px] h-[300px] sm:h-[350px] lg:h-[450px] object-fill rounded-lg"
+            className="w-full max-w-[300px] sm:max-w-[350px] lg:max-w-6xl lg:w-[400px] h-[300px] sm:h-[350px] lg:h-[450px] object-fit lg:ml-10"
           />
         </div>
 
-        {/* Right Section - Product Details and Price */}
-        <div className="w-full lg:w-2/3 flex flex-col lg:flex-row gap-6 lg:-ml-35">
-          
-          {/* Product Details Section */}
-          <div className="flex-1 p-4 lg:p-6 bg-white lg:bg-transparent rounded-lg lg:rounded-none shadow-sm lg:shadow-none">
+        {/* Middle Column - Product Details */}
+        <div className="w-full lg:w-1/3">
+          <div className="p-4 lg:p-6">
             <h3 className="uppercase text-xs tracking-[0.2em] text-gray-600 mb-3 lg:mb-4">
               VISIT OUR STORE!
             </h3>
@@ -89,7 +87,7 @@ const AddToCart = () => {
                 <select 
                   value={selectedColor}
                   onChange={(e) => setSelectedColor(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 bg-white"
+                  className="w-full p-3 border border-gray-300 rounded-md focus:outline-none bg-white"
                 >
                   <option value="Green">Green</option>
                   <option value="Blue">Blue</option>
@@ -120,28 +118,30 @@ const AddToCart = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 lg:gap-4">
-              <button className="flex-1 bg-gray-600 text-white py-3 px-4 lg:px-6 rounded-sm font-medium hover:bg-gray-700 transition-colors cursor-pointer text-sm lg:text-base">
+            <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 mt-4">
+              <button className="w-full sm:flex-1 bg-gray-600 text-white py-3 px-4 rounded-sm font-medium hover:bg-gray-700 transition-colors cursor-pointer text-sm">
                 Move to Wishlist
               </button>
-              <button className="flex-1 bg-[#a31f1f] text-white py-3 px-4 lg:px-6 rounded-sm font-medium hover:bg-red-800 transition-colors cursor-pointer text-sm lg:text-base">
+              <button className="w-full sm:flex-1 bg-[#a31f1f] text-white py-3 px-4 rounded-sm font-medium hover:bg-red-800 transition-colors cursor-pointer text-sm">
                 Remove
               </button>
             </div>
           </div>
+        </div>
 
-          {/* Price Details Section */}
-          <div className="w-full lg:w-100 lg:mt-10 bg-white lg:bg-transparent rounded-lg lg:rounded-none shadow-sm lg:shadow-none">
+        {/* Right Column - Price Details */}
+        <div className="w-full lg:w-1/3 lg:mt-10">
+          <div className="">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-4 lg:p-6 border-b border-gray-200 gap-3 sm:gap-0">
               <h2 className="text-lg lg:text-xl font-bold text-gray-900">Price Details</h2>
               <Link to="/addnewaddress">
-                <button className="bg-red-700 text-white px-4 lg:px-6 py-2 rounded-sm text-sm font-medium hover:bg-red-800 transition-colors cursor-pointer">
+                <button className="bg-red-700 text-white px-4 py-2 rounded-sm text-sm font-medium hover:bg-red-800 transition-colors cursor-pointer">
                   Proceed to pay
                 </button>
               </Link>
             </div>
 
-            <div className="p-4 lg:p-6 space-y-3 lg:space-y-4">
+            <div className="p-4 lg:p-6 space-y-3">
               <div className="flex justify-between text-sm">
                 <span className="font-medium">Price({quantity} item)</span>
                 <span className="font-medium">{(price * quantity).toLocaleString()}</span>

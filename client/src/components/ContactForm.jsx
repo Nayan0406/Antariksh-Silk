@@ -101,19 +101,19 @@ const ContactForm = () => {
                 <p className="text-sm sm:text-base font-semibold text-gray-700 mb-3 sm:mb-4">Query Box?</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                   <label className="inline-flex items-center gap-2">
-                    <input type="radio" name="query" className="form-radio text-[#422a3c]" defaultChecked />
+                    <input type="radio" name="query" className="form-radio accent-[#a31f1f]" defaultChecked />
                     <span className="text-xs sm:text-sm text-gray-600">Booking</span>
                   </label>
                   <label className="inline-flex items-center gap-2">
-                    <input type="radio" name="query" className="form-radio text-[#422a3c]" />
+                    <input type="radio" name="query" className="form-radio accent-[#a31f1f]" />
                     <span className="text-xs sm:text-sm text-gray-600">Custom Saree Request</span>
                   </label>
                   <label className="inline-flex items-center gap-2">
-                    <input type="radio" name="query" className="form-radio text-[#422a3c]" />
+                    <input type="radio" name="query" className="form-radio accent-[#a31f1f]" />
                     <span className="text-xs sm:text-sm text-gray-600">Bulk Orders</span>
                   </label>
                   <label className="inline-flex items-center gap-2">
-                    <input type="radio" name="query" className="form-radio text-[#422a3c]" />
+                    <input type="radio" name="query" className="form-radio accent-[#a31f1f]" />
                     <span className="text-xs sm:text-sm text-gray-600">General Inquiry</span>
                   </label>
                 </div>

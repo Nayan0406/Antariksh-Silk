@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
 const FeedbackSection = () => {
   return (
@@ -16,18 +17,12 @@ const FeedbackSection = () => {
             {/* Section A: image / avatar */}
             <section className="relative flex items-center justify-center lg:justify-start order-1 lg:order-none">
               <div className="relative w-full">
-                {/* decorative pill shapes - hidden on small screens */}
-                {/* <div className="hidden lg:flex absolute left-0 top-6 flex-col items-center gap-6 z-0">
-                  <div className="w-6 h-20 rounded-r-full border-4 border-white bg-[#c77a93]/60" />
-                  <div className="w-6 h-40 rounded-r-full border-4 border-white bg-[#c77a93]/50 -mt-4" />
-                </div> */}
-
                 {/* circular image placed to the right of the shapes and overlapping them on large screens */}
-                <div className="flex justify-center lg:justify-end relative z-20">
+                <div className="flex justify-center lg:justify-end relative z-0">
                   <img 
                     src="/feedbacksection-img.jpg" 
                     alt="Leslie Alexander" 
-                    className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 rounded-full object-cover ring-2 sm:ring-4 ring-white shadow-lg sm:shadow-2xl relative lg:-ml-14" 
+                    className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 rounded-full object-cover ring-2 sm:ring-4 ring-white shadow-lg sm:shadow-2xl relative lg:-ml-50" 
                   />
                 </div>
               </div>
@@ -49,7 +44,16 @@ const FeedbackSection = () => {
           </div>
         </div>
 
-        
+        {/* arrows below the feedback card */}
+        <div className="flex justify-center items-center mt-6">
+          <button aria-label="previous" className="p-2 rounded text-[#3a2233] hover:text-[#111827] cursor-pointer">
+            <FaChevronLeft size={20} />
+          </button>
+
+          <button aria-label="next" className="ml-4 bg-[#550000] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-md cursor-pointer">
+            <FaChevronRight size={18} />
+          </button>
+        </div>
       </div>
     </section>
   )

@@ -107,7 +107,7 @@ const OurCollection = () => {
                     
                     <div className="mt-auto">
                       <Link to="/product">
-                        <button className="w-full py-2 sm:py-3 rounded border border-[#f2d6d9] text-[#b34d5b] text-xs sm:text-sm md:text-base font-medium hover:bg-[#f2d6d9] transition-colors duration-200">
+                        <button className="w-full py-2 sm:py-3 lg:py-1 rounded border border-[#f2d6d9] text-[#b34d5b] text-xs sm:text-sm md:text-base font-medium hover:bg-[#f2d6d9] transition-colors duration-200">
                           BUY NOW
                         </button>
                       </Link>

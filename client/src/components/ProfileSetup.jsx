@@ -19,9 +19,9 @@ const ProfileSetup = () => {
     // Handle skip logic here
     console.log('Profile setup skipped');
   };  return (
-    <div className="min-h-screen flex flex-col md:flex-row">
+  <div className="flex flex-col md:flex-row md:min-h-screen">
       {/* Left Side - Image */}
-      <div className="hidden lg:flex lg:w-1/2 relative">
+      <div className="hidden lg:flex lg:w-1/2 relative z-10">
         <img
           src="/login-img.png"
           alt="Woman in traditional saree"
@@ -30,22 +30,24 @@ const ProfileSetup = () => {
       </div>
 
       {/* Right Side - Profile Setup Form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center bg-[#550101] px-6 sm:px-8 py-8 sm:py-12">
+      <div className="w-full lg:w-1/2 relative overflow-visible flex items-start md:items-center justify-start md:justify-center bg-gradient-to-r from-[#550101] to-[#2e0303] px-4 sm:px-6 py-6 sm:py-10">
+        {/* Decorative shade that slightly overlaps the left image on large screens */}
+        <div className="hidden lg:block absolute -left-20 top-0 h-full w-10 pointer-events-none bg-gradient-to-l from-[#2e0303]" />
         <div className="w-full max-w-md md:max-w-lg lg:max-w-md">
           {/* Logo */}
-          <div className="text-center mb-6 sm:mb-8">
+      <div className="text-center mb-4 sm:mb-6">
             <img src="/home-logo.png" alt="Logo" className='w-28 sm:w-36 md:w-40 lg:w-44 h-auto mx-auto'/>
           </div>
 
           {/* Profile Setup Heading */}
-          <div className="mb-6 sm:mb-8">
+      <div className="mb-4 sm:mb-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-white tracking-wider text-center md:text-left">
               Profile Setup
             </h2>
           </div>
 
           {/* Profile Setup Form */}
-          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+      <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
             {/* Name */}
             <div>
               <input
@@ -53,7 +55,7 @@ const ProfileSetup = () => {
                 placeholder="Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-3 bg-[#6f2b2b] bg-opacity-50 border-0 rounded text-white placeholder-white focus:outline-none transition-all text-sm sm:text-base"
+        className="w-full px-4 py-2 bg-[#6f2b2b] bg-opacity-50 border-0 rounded text-white placeholder-white focus:outline-none transition-all text-sm sm:text-base"
                 required
               />
             </div>
@@ -65,7 +67,7 @@ const ProfileSetup = () => {
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 bg-[#6f2b2b] bg-opacity-50 border-0 rounded text-white placeholder-white focus:outline-none transition-all text-sm sm:text-base"
+                className="w-full px-4 py-2 bg-[#6f2b2b] bg-opacity-50 border-0 rounded text-white placeholder-white focus:outline-none transition-all text-sm sm:text-base"
                 required
               />
             </div>
@@ -77,7 +79,7 @@ const ProfileSetup = () => {
                 placeholder="Phone No."
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full px-4 py-3 bg-[#6f2b2b] bg-opacity-50 border-0 rounded text-white placeholder-white focus:outline-none transition-all text-sm sm:text-base"
+                className="w-full px-4 py-2 bg-[#6f2b2b] bg-opacity-50 border-0 rounded text-white placeholder-white focus:outline-none transition-all text-sm sm:text-base"
                 required
               />
             </div>
@@ -89,7 +91,7 @@ const ProfileSetup = () => {
                 placeholder="Street Address / House No. / Apartment Name"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
-                className="w-full px-4 py-3 bg-[#6f2b2b] bg-opacity-50 border-0 rounded text-white placeholder-white focus:outline-none transition-all text-sm sm:text-base"
+                className="w-full px-4 py-2 bg-[#6f2b2b] bg-opacity-50 border-0 rounded text-white placeholder-white focus:outline-none transition-all text-sm sm:text-base"
                 required
               />
             </div>
@@ -119,17 +121,17 @@ const ProfileSetup = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-3">
               <button
                 type="button"
                 onClick={handleSkip}
-                className="w-full bg-[#2e0303] border-0 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 cursor-pointer text-sm sm:text-base"
+        className="w-full bg-[#2e0303] border-0 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 cursor-pointer text-sm sm:text-base"
               >
                 Skip
               </button>
               <button
                 type="submit"
-                className="w-full bg-red-700 hover:bg-red-600 text-white font-medium py-3 px-4 rounded transition-colors duration-200 text-sm sm:text-base"
+        className="w-full bg-red-700 hover:bg-red-600 text-white font-medium py-2 px-4 rounded transition-colors duration-200 text-sm sm:text-base"
               >
                 Save & Continue
               </button>

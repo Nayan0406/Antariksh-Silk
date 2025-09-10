@@ -47,7 +47,7 @@ const PaymentSection = () => {
             <div className="space-y-4">
               <label className="flex items-center justify-between border rounded-lg p-4 border-[#b76e79] hover:shadow-md">
                 <div className="flex items-center gap-3">
-                  <input type="radio" name="payment" className="w-5 h-5 text-[#a31f1f]" defaultChecked />
+                  <input type="radio" name="payment" className="w-5 h-5 text-[#550000] accent-[#550000]" defaultChecked />
                   <span className="text-base font-medium">Cash On Delivery</span>
                 </div>
                 <div className="text-sm text-gray-700"><span className="text-gray-500 mr-2">Total Amount :</span><span className="font-semibold">Rs. 6,100</span></div>
@@ -55,7 +55,7 @@ const PaymentSection = () => {
 
               <label className="flex items-center justify-between border rounded-lg p-4 border-gray-300 hover:shadow-md">
                 <div className="flex items-center gap-3">
-                  <input type="radio" name="payment" className="w-5 h-5 text-[#a31f1f]" />
+                  <input type="radio" name="payment" className="w-5 h-5 text-[#550000] accent-[#550000]" />
                   <span className="text-base font-medium">Pay Online</span>
                 </div>
                 <div className="text-sm text-gray-700"><span className="text-gray-500 mr-2">Total Amount :</span><span className="font-semibold">Rs. 6,100</span></div>

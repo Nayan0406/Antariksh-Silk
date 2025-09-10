@@ -3,7 +3,7 @@ module.exports = {
     extend: {
       fontFamily: {
         prata: ["Prata", "serif"], 
-        'rosarivo': ['Rosarivo', 'serif'],
+        playfair: ['"Playfair Display"', 'serif'],
       },
     },
   },

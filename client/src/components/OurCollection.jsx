@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { FaRegStar, FaHeart } from "react-icons/fa";
 
 
+
 const items = [
   {
     img: '/irkal-saree.png',
@@ -67,7 +68,7 @@ const OurCollection = () => {
           <style>{`.hide-scrollbar::-webkit-scrollbar{display:none}.hide-scrollbar{-ms-overflow-style:none;scrollbar-width:none;}`}</style>
           
           <div className="overflow-x-auto hide-scrollbar py-2 sm:py-4">
-            <div className="flex gap-4 sm:gap-6 md:gap-6 lg:gap-8 items-stretch snap-x snap-mandatory px-2 sm:px-0">
+            <div className="flex gap-4 sm:gap-6 md:gap-6 lg:gap-12 lg:ml-4 items-stretch snap-x snap-mandatory px-2 sm:px-0">
               {items.map((item, index) => (
                 <article 
                   key={index}

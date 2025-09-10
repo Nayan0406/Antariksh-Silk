@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const FeedbackSection = () => {
   return (
@@ -13,6 +14,7 @@ const FeedbackSection = () => {
         </div>
 
         <div className="relative w-full bg-[#550000] text-white rounded-lg sm:rounded-xl md:rounded-2xl md:rounded-tr-[4rem] md:rounded-br-[4rem] md:rounded-bl-[4rem] lg:rounded-tr-[2rem] lg:rounded-br-[2rem] lg:rounded-bl-[2rem] xl:rounded-tr-[8rem] xl:rounded-br-[8rem] xl:rounded-bl-[8rem] overflow-hidden lg:py-20">
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center lg:items-start p-6 sm:p-8 md:p-10 lg:p-12 xl:p-16">
             {/* Section A: image / avatar */}
             <section className="relative flex items-center justify-center lg:justify-start order-1 lg:order-none">
@@ -30,6 +32,7 @@ const FeedbackSection = () => {
 
             {/* Section B: author + testimonial */}
             <section className="text-center lg:text-left order-2 lg:order-none">
+              <FaQuoteLeft />
               <h4 className="text-base sm:text-lg md:text-xl font-medium">Leslie Alexander</h4>
               <p className="text-xs sm:text-sm md:text-base text-white/80 mt-1 sm:mt-2">Moncton, Canada</p>
 
@@ -40,6 +43,7 @@ const FeedbackSection = () => {
               <p className="mt-3 sm:mt-4 md:mt-5 text-sm sm:text-base md:text-lg text-white/90 leading-relaxed max-w-none lg:max-w-lg xl:max-w-xl">
                 "It is a long established fact that a reader will be tracked distracted by the readable content of a page is when looking at its layout. The point of using Lorem of distribution it look like readable English."
               </p>
+              <FaQuoteRight className='lg:ml-90'/>
             </section>
           </div>
         </div>

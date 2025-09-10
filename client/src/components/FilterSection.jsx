@@ -8,10 +8,10 @@ const FilterSection = () => {
     return (
         <div className="w-full min-h-screen bg-white">
             {/* Header Section with Filters and Sort */}
-            <div className="w-full bg-white border-b p-3 sm:p-4 lg:p-6">
+            <div className="w-full bg-white p-3 sm:p-4 lg:p-6">
                 {/* Desktop Header */}
-                <div className="hidden lg:flex justify-between items-center">
-                    <div className="flex items-center gap-4 ml-10">
+                <div className="hidden lg:flex justify-between items-center px-4 lg:px-10">
+                    <div className="flex items-center gap-4">
                         <h2 className="text-3xl font-bold text-gray-900">Filters</h2>
                     </div>
                     
@@ -51,7 +51,7 @@ const FilterSection = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col lg:flex-row ml-5">
+            <div className="flex flex-col lg:flex-row px-4 lg:px-10">
                 {/* Left Filter Section */}
                 <div className={`${showFilters ? 'block' : 'hidden'} lg:block fixed lg:relative inset-0 lg:inset-auto z-50 lg:z-auto lg:w-1/4 bg-[#340808] text-white overflow-y-auto`}>
                     {/* Mobile Close Button */}
@@ -68,7 +68,7 @@ const FilterSection = () => {
                     <div className="p-6 space-y-6">
                         {/* Price Range */}
                         <div>
-                            <h3 className="text-xl font-bold mb-4 text-white">Price Range</h3>
+                            <h3 className="text-xl font-bold mb-4 text-white font-playfair">Price Range</h3>
                             <input type="range" min="1000" max="6100" className="w-full accent-red-600" />
                             <p className="text-red-400 mt-2 text-base font-medium">Rs. 6,100</p>
                         </div>
@@ -142,13 +142,13 @@ const FilterSection = () => {
                 )}
 
                 {/* Right Product Section */}
-                <div className="flex-1 lg:w-3/4 p-3 sm:p-4 lg:p-6">
+                <div className="flex-1 lg:w-3/4 p-3 sm:p-4 lg:p-6 lg:-mt-6">
                     {/* Product Cards Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
 
                         {/* Card 1 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-40 sm:h-48 lg:h-60 xl:h-64 bg-cover bg-center" style={{ backgroundImage: "url('/irkal-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-80 sm:h-64 lg:h-72 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/irkal-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">
@@ -177,7 +177,7 @@ const FilterSection = () => {
 
                         {/* Card 2 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-40 sm:h-48 lg:h-60 xl:h-64 bg-cover bg-center" style={{ backgroundImage: "url('/tussar-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-80 sm:h-64 lg:h-72 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/tussar-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">
@@ -206,7 +206,7 @@ const FilterSection = () => {
 
                         {/* Card 3 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-40 sm:h-48 lg:h-60 xl:h-64 bg-cover bg-center" style={{ backgroundImage: "url('/solapur-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-80 sm:h-64 lg:h-72 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/solapur-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">
@@ -235,7 +235,7 @@ const FilterSection = () => {
 
                         {/* Card 4 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-40 sm:h-48 lg:h-60 xl:h-64 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-80 sm:h-64 lg:h-82 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">
@@ -261,6 +261,65 @@ const FilterSection = () => {
                                 </div>
                             </div>
                         </article>
+
+                        {/* Card 5 */}
+                        <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
+                            <div className="h-80 sm:h-64 lg:h-82 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="p-3 sm:p-4 flex flex-col flex-1">
+                                <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
+                                    <div className="text-[#ba7894] text-xs sm:text-sm">
+                                        <div className='flex items-center gap-1 sm:gap-2'>
+                                            <FaRegStar size={12} className="sm:w-4 sm:h-4" /> 4.5
+                                        </div>
+                                    </div>
+                                    <div className="text-xs sm:text-sm text-black">104 reviews</div>
+                                </div>
+                                <h3 className="text-base sm:text-lg font-semibold text-[#2b1d20] mb-2">Kanjeevaram Saree</h3>
+                                <div className='flex items-start gap-2 mb-3 sm:mb-4'>
+                                    <span className="text-[#f44336] mt-1">
+                                        <FaHeart size={12} className="sm:w-4 sm:h-4" />
+                                    </span>
+                                    <p className="text-xs sm:text-sm text-gray-600 flex-1">Lightweight and comfortable for daily wear.</p>
+                                </div>
+                                <div className="mt-auto">
+                                    <Link to="/product">
+                                        <button className="w-full py-2 rounded border border-[#f2d6d9] text-[#b34d5b] text-xs sm:text-sm cursor-pointer hover:bg-[#f2d6d9] transition-colors">
+                                            BUY NOW
+                                        </button>
+                                    </Link>
+                                </div>
+                            </div>
+                        </article>
+
+                        {/* Card 6 */}
+                        <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
+                            <div className="h-80 sm:h-64 lg:h-82 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="p-3 sm:p-4 flex flex-col flex-1">
+                                <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
+                                    <div className="text-[#ba7894] text-xs sm:text-sm">
+                                        <div className='flex items-center gap-1 sm:gap-2'>
+                                            <FaRegStar size={12} className="sm:w-4 sm:h-4" /> 4.5
+                                        </div>
+                                    </div>
+                                    <div className="text-xs sm:text-sm text-black">104 reviews</div>
+                                </div>
+                                <h3 className="text-base sm:text-lg font-semibold text-[#2b1d20] mb-2">Kanjeevaram Saree</h3>
+                                <div className='flex items-start gap-2 mb-3 sm:mb-4'>
+                                    <span className="text-[#f44336] mt-1">
+                                        <FaHeart size={12} className="sm:w-4 sm:h-4" />
+                                    </span>
+                                    <p className="text-xs sm:text-sm text-gray-600 flex-1">Lightweight and comfortable for daily wear.</p>
+                                </div>
+                                <div className="mt-auto">
+                                    <Link to="/product">
+                                        <button className="w-full py-2 rounded border border-[#f2d6d9] text-[#b34d5b] text-xs sm:text-sm cursor-pointer hover:bg-[#f2d6d9] transition-colors">
+                                            BUY NOW
+                                        </button>
+                                    </Link>
+                                </div>
+                            </div>
+                        </article>
+
                     </div>
                 </div>
             </div>

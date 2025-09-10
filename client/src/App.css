@@ -1,1 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
 @import "tailwindcss";
+
+@layer utilities {
+  .custom-bg {
+    background: #550000;
+    background: linear-gradient(
+      75deg,
+      rgba(85, 0, 0, 1) 0%,
+      rgba(85, 0, 0, 1) 53%,
+      rgba(109, 0, 0, 0) 83%,
+      rgba(85, 0, 0, 0) 100%
+    );
+  }
+}

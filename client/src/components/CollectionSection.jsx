@@ -6,19 +6,17 @@ const CollectionSection = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+  <section className="relative md:min-h-screen flex items-start md:items-center overflow-hidden">
       {/* Background Container */}
       <div className="absolute inset-0 flex">
         {/* Left side - Gradient Background */}
         <div 
-          className="w-full lg:w-3/5 h-full"
-          style={{
-            background: 'linear-gradient(90deg, #550101 0%, #660202 25%, #770303 50%, rgba(119, 3, 3, 0.8) 75%, rgba(119, 3, 3, 0.4) 100%)'
-          }}
+          className="w-full lg:w-3/5 h-full custom-bg"
+          // className="w-full lg:w-3/5 h-full bg-gradient-to-r from-[#340808] to-[#870900] z-10"
         ></div>
         
         {/* Right side - Model Image */}
-        <div className="hidden lg:block lg:w-2/5 h-full relative">
+        <div className="hidden lg:block lg:w-3/5 h-full relative">
           <img
             src="/login-img.png"
             alt="Woman in traditional saree"
@@ -34,23 +32,10 @@ const CollectionSection = () => {
         </div>
       </div>
 
-      {/* Mobile Background Image with Overlay */}
-      <div className="lg:hidden absolute inset-0">
-        <img
-          src="/login-img.png"
-          alt="Woman in traditional saree"
-          className="w-full h-full object-cover object-center"
-        />
-        <div 
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(90deg, rgba(85, 1, 1, 0.9) 0%, rgba(85, 1, 1, 0.7) 50%, rgba(85, 1, 1, 0.3) 100%)'
-          }}
-        ></div>
-      </div>
+  {/* Mobile background image intentionally removed to keep mobile view clean */}
 
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-15 md:py-0">
         <div className="w-full lg:w-3/5">
           
           {/* Search Bar */}
@@ -72,13 +57,13 @@ const CollectionSection = () => {
 
           {/* Main Content */}
           <div className="text-center lg:text-left text-[#f7e5c1]">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif leading-tight mb-6">
-              <span className="block">Festive Saree</span>
-              <span className="block">Collection</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif leading-tight mb-6 lg:mb-6">
+              <span className="block font-playfair">Festive Saree</span>
+              <span className="block font-playfair">Collection</span>
             </h1>
             
             {/* Subtitle */}
-            <p className="text-lg sm:text-xl lg:text-2xl text-white text-opacity-95 mb-8 lg:mb-12 max-w-lg mx-auto lg:mx-0 leading-relaxed font-light">
+            <p className="text-lg sm:text-xl lg:text-2xl text-white text-opacity-95 mb-8 lg:mb-12 max-w-lg mx-auto lg:mx-0 leading-relaxed font-light font-inter">
               "Drape yourself in timeless traditions with a touch of modern elegance."
             </p>
             

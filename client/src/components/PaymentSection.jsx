@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaTruckFast } from "react-icons/fa6";
 
 const PaymentSection = () => {
+  const [payment, setPayment] = useState('cod')
+  const [qty, setQty] = useState(1)
+
+  // pricing
+  const unitPrice = 6000
+  const subtotal = unitPrice * qty
+  const gst = Math.round(subtotal * 0.01) // 1% as in example
+  const platformFee = 40 * qty
+  const totalAmount = subtotal + gst + platformFee
+
+  const fmt = (v) => v.toLocaleString('en-IN')
   return (
     <div className='max-w-full min-h-screen  flex flex-col items-center p-4 sm:p-6 lg:p-8'>
 
@@ -45,20 +56,34 @@ const PaymentSection = () => {
 
           <div className="w-full bg-[#fcf6f6] p-4 sm:p-6 lg:-mt-3 -mt-3">
             <div className="space-y-4">
-              <label className="flex items-center justify-between border rounded-lg p-4 border-[#b76e79] hover:shadow-md">
+              <label className={`flex items-center justify-between rounded-lg p-4 transition-border duration-150 ${payment === 'cod' ? 'border-[#b76e79] border' : 'border-gray-200 border'}`}>
                 <div className="flex items-center gap-3">
-                  <input type="radio" name="payment" className="w-5 h-5 text-[#550000] accent-[#550000]" defaultChecked />
+                  <input
+                    type="radio"
+                    name="payment"
+                    value="cod"
+                    checked={payment === 'cod'}
+                    onChange={() => setPayment('cod')}
+                    className="w-5 h-5 text-[#550000] accent-[#550000]"
+                  />
                   <span className="text-base font-medium">Cash On Delivery</span>
                 </div>
-                <div className="text-sm text-gray-700"><span className="text-gray-500 mr-2">Total Amount :</span><span className="font-semibold">Rs. 6,100</span></div>
+                <div className="text-sm text-gray-700"><span className="text-gray-500 mr-2">Total Amount :</span><span className="font-semibold">Rs. {fmt(totalAmount)}</span></div>
               </label>
 
-              <label className="flex items-center justify-between border rounded-lg p-4 border-gray-300 hover:shadow-md">
+              <label className={`flex items-center justify-between rounded-lg p-4 transition-border duration-150 ${payment === 'online' ? 'border-[#b76e79] border' : 'border-gray-200 border'}`}>
                 <div className="flex items-center gap-3">
-                  <input type="radio" name="payment" className="w-5 h-5 text-[#550000] accent-[#550000]" />
+                  <input
+                    type="radio"
+                    name="payment"
+                    value="online"
+                    checked={payment === 'online'}
+                    onChange={() => setPayment('online')}
+                    className="w-5 h-5 text-[#550000] accent-[#550000]"
+                  />
                   <span className="text-base font-medium">Pay Online</span>
                 </div>
-                <div className="text-sm text-gray-700"><span className="text-gray-500 mr-2">Total Amount :</span><span className="font-semibold">Rs. 6,100</span></div>
+                <div className="text-sm text-gray-700"><span className="text-gray-500 mr-2">Total Amount :</span><span className="font-semibold">Rs. {fmt(totalAmount)}</span></div>
               </label>
             </div>
 
@@ -77,11 +102,11 @@ const PaymentSection = () => {
               <div className="lg:col-span-2 flex flex-col sm:flex-row gap-6 items-start">
                 <img src="/greensilksaree-front.png" alt="Saree" className="w-40 sm:w-56 md:w-64 object-cover mx-auto sm:mx-0" />
 
-                <div className="flex-1 mt-4 sm:mt-0">
+                <div className="flex-1 mt-4 sm:mt-0 lg:mt-6">
                   <h5 className='text-xs font-normal'>VISIT OUR STORE!</h5>
                   <h3 className="text-2xl md:text-3xl font-serif font-bold">Silk Saree</h3>
                   <p className="text-sm text-gray-500 mt-1">known for best appearance in occasions like diwali.</p>
-                  <p className="text-lg font-semibold mt-4">Rs.6,000</p>
+                  <p className="text-lg font-semibold mt-4">Rs.{fmt(unitPrice)}</p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
                     <div>
@@ -93,17 +118,31 @@ const PaymentSection = () => {
 
                     <div>
                       <label className="block text-xs text-gray-500">Total Quantity</label>
-                      <div className="mt-1 flex items-center border rounded overflow-hidden w-full sm:w-36">
-                        <button type="button" className="px-3 py-2">-</button>
-                        <input readOnly value={1} className="w-full sm:w-20 text-center" />
-                        <button type="button" className="px-3 py-2">+</button>
+                      <div className="mt-1 flex items-center border rounded overflow-hidden w-full sm:w-36 bg-white">
+                        <button
+                          type="button"
+                          aria-label="decrease-qty"
+                          onClick={() => setQty((q) => Math.max(1, q - 1))}
+                          className="px-3 py-2"
+                        >
+                          -
+                        </button>
+                        <input readOnly value={qty} className="w-full sm:w-20 text-center" />
+                        <button
+                          type="button"
+                          aria-label="increase-qty"
+                          onClick={() => setQty((q) => q + 1)}
+                          className="px-3 py-2"
+                        >
+                          +
+                        </button>
                       </div>
                     </div>
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-3 mt-6">
-                    <button className="w-full sm:flex-1 bg-gray-800 text-white py-2 rounded">Move to Wishlist</button>
-                    <button className="w-full sm:flex-1 bg-[#c43d3d] text-white py-2 rounded">Remove</button>
+                    <button className="w-full sm:flex-1 bg-gray-800 text-white py-2 rounded cursor-pointer">Move to Wishlist</button>
+                    <button className="w-full sm:flex-1 bg-[#c43d3d] text-white py-2 rounded cursor-pointer">Remove</button>
                   </div>
                 </div>
               </div>
@@ -115,8 +154,8 @@ const PaymentSection = () => {
                     <h4 className="text-lg font-semibold mb-4">Price Details</h4>
                     <div className="text-sm text-gray-700 divide-y divide-gray-200">
                       <div className="py-3 flex justify-between">
-                        <span>Price (1 item)</span>
-                        <span>6,000</span>
+                        <span>Price ({qty} {qty > 1 ? 'items' : 'item'})</span>
+                        <span>{fmt(subtotal)}</span>
                       </div>
                       <div className="py-3 flex justify-between">
                         <span>Discount</span>
@@ -124,17 +163,17 @@ const PaymentSection = () => {
                       </div>
                       <div className="py-3 flex justify-between">
                         <span>GST</span>
-                        <span>60</span>
+                        <span>{fmt(gst)}</span>
                       </div>
                       <div className="py-3 flex justify-between">
                         <span>Platform fee</span>
-                        <span>40</span>
+                        <span>{fmt(platformFee)}</span>
                       </div>
                     </div>
 
                     <div className="mt-4 pt-4 border-t border-gray-200 flex justify-between items-center">
                       <p className="text-sm text-gray-500">(Including all taxes) <span className="font-medium">Total Amount</span></p>
-                      <p className="text-lg font-bold">Rs. 6,100</p>
+                      <p className="text-lg font-bold">Rs. {fmt(totalAmount)}</p>
                     </div>
                   </div>
                 </div>

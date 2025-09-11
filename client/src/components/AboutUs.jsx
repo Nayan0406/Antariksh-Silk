@@ -11,7 +11,7 @@ const AboutUs = () => {
             <img 
               src="/aboutus-img.png" 
               alt="Saree" 
-              className="w-72 h-70 sm:w-36 sm:h-54 md:w-40 md:h-60 lg:w-48 lg:h-72 xl:w-56 xl:h-84 2xl:w-64 2xl:h-96 object-contain rounded-sm shadow-lg" 
+              className="w-72 h-70 sm:w-36 sm:h-54 md:w-40 md:h-60 lg:w-48 lg:h-72 xl:w-56 xl:h-84 2xl:w-64 2xl:h-96 object-contain rounded-sm " 
             />
           </div>
           {/* Text content */}

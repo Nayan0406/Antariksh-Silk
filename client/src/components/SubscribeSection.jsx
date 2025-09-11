@@ -8,7 +8,7 @@ const SubscribeSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10">
           {/* Left image */}
           <div className="w-full order-2 lg:order-1">
-            <div className="rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-md">
+            <div className="rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden">
               <img 
                 src="/subscribe-img.jpg" 
                 alt="store" 

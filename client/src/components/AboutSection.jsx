@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const AboutSection = () => {
   return (
@@ -15,7 +16,7 @@ const AboutSection = () => {
         </h1>
       </div>
       <div className="flex justify-center w-full mt-4">
-        <button className="bg-[#8e4641] text-white py-3 px-8 md:py-4 md:px-12 transition text-sm md:text-base font-semibold cursor-pointer">CONTACT US</button>
+        <Link to="/contact"><button className="bg-[#8e4641] text-white py-3 px-8 md:py-4 md:px-12 transition text-sm md:text-base font-semibold cursor-pointer">CONTACT US</button></Link>
       </div>
     </section>
   )

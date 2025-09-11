@@ -30,7 +30,7 @@ const HomeProduct = () => {
               <img
                 src="/home-product-img.png"
                 alt="Saree Model"
-                className="w-full h-64 sm:h-80 md:h-96 lg:h-130 object-fit shadow-md rounded-lg sm:rounded-xl lg:rounded-l-2xl lg:rounded-r-none"
+                className="w-full h-80 sm:h-80 md:h-96 lg:h-130 object-fit rounded-lg sm:rounded-xl lg:rounded-l-2xl lg:rounded-r-none"
               />
             </div>
 

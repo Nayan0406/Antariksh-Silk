@@ -73,7 +73,7 @@ const ScrollSection = () => {
             >
               <article className="group">
                 <div className="flex items-center justify-center mb-3 sm:mb-4">
-                  <div className="w-24 h-24 xs:w-28 xs:h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 xl:w-44 xl:h-44 bg-[#faf1df] rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-300 shadow-sm">
+                  <div className="w-24 h-24 xs:w-28 xs:h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 xl:w-44 xl:h-44 bg-[#faf1df] rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                     <img
                       src={cat.img}
                       alt={cat.name}

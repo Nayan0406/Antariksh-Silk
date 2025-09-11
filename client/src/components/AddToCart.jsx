@@ -15,7 +15,7 @@ const AddToCart = () => {
     <div className="max-w-full mx-auto min-h-screen bg-gray-50 flex flex-col items-center p-8">
 
       {/* === Step Indicator === */}
-      <div className="w-full max-w-[400px] lg:w-4/2 flex items-center justify-between mb-8 lg:mb-12 px-4 lg:px-0">
+      <div className="w-full max-w-[700px] lg:w-4/2 flex items-center justify-between mb-8 lg:mb-12 px-4 lg:px-0">
         {/* Step 1 - Review */}
         <div className="flex-1 flex items-center">
           <div className="flex flex-col items-center text-center">
@@ -61,7 +61,7 @@ const AddToCart = () => {
 
         {/* Middle Column - Product Details */}
         <div className="w-full lg:w-1/3">
-          <div className="p-4 lg:p-6">
+          <div className="p-4 lg:p-6 lg:mt-5">
             <h3 className="uppercase text-xs tracking-[0.2em] text-gray-600 mb-3 lg:mb-4">
               VISIT OUR STORE!
             </h3>
@@ -80,7 +80,7 @@ const AddToCart = () => {
             <p className="text-xl lg:text-2xl font-bold text-gray-900 mb-4 lg:mb-6">Rs.6,000</p>
 
             {/* Color and Quantity in one row */}
-            <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 mb-4 lg:mb-6">
+            <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 mb-4 lg:mb-6 lg:-mt-5">
               {/* Color Selection */}
               <div className="flex-1">
                 <label className="block text-sm font-medium text-gray-700 mb-2">Color</label>
@@ -130,8 +130,8 @@ const AddToCart = () => {
         </div>
 
         {/* Right Column - Price Details */}
-        <div className="w-full lg:w-1/3 lg:mt-10">
-          <div className="">
+        <div className="w-full lg:w-1/3 lg:mt-15">
+          <div className="lg:border-l pl-0 lg:pl-6 lg:h-90">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-4 lg:p-6 border-b border-gray-200 gap-3 sm:gap-0">
               <h2 className="text-lg lg:text-xl font-bold text-gray-900">Price Details</h2>
               <Link to="/addnewaddress">

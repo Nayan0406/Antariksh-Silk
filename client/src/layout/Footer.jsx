@@ -6,7 +6,7 @@ import { FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="relative text-white border-t border-white pt-8 pb-10 px-4 md:px-0 overflow-hidden">
+    <footer className="relative text-white border-white pt-8 pb-10 px-4 md:px-0 overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover"

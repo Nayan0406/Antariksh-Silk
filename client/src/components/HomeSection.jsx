@@ -3,16 +3,23 @@ import { CiLocationOn } from "react-icons/ci";
 
 const HomeSection = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#1d0200]">
+  <section className="relative min-h-[60vh] md:min-h-screen overflow-hidden bg-[#1d0200]">
       {/* Decorative left gradient to blend with image - only on large screens */}
       <div className="hidden lg:block absolute inset-0 bg-gradient-to-l from-transparent via-[#1d0200] to-[#1d0200] pointer-events-none z-1" />
 
+      {/* Mobile background image (shows only on small screens) */}
+      <div
+        className="absolute inset-0 bg-center bg-cover lg:hidden pointer-events-none"
+        style={{ backgroundImage: "url('/homesection-img.png')", opacity: 0.35 }}
+        aria-hidden
+      />
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4 sm:py-6 lg:py-8">
-        <div className="relative lg:pr-24 min-h-screen lg:min-h-auto flex flex-col justify-center">
+  <div className="relative lg:pr-24 min-h-[60vh] md:min-h-screen lg:min-h-auto flex flex-col justify-center lg:-mt-10">
           {/* Left content: constrained width so right image can show */}
           <div className="max-w-2xl text-white">
             <div className="flex items-center justify-center lg:justify-start mb-4 sm:mb-6">
-              <img src="/home-logo.png" alt="Saree Logo" className="h-48 w-48 sm:h-64 sm:w-64 md:h-72 md:w-72 lg:h-80 lg:w-80 lg:ml-3 object-contain" />
+              <img src="/home-logo.png" alt="Saree Logo" className="h-48 w-48 sm:h-64 sm:w-64 md:h-72 md:w-72 lg:h-80 lg:w-80 lg:ml-3 lg:-mb-8 object-contain -mt-10 -mb-10 lg:mt-5" />
             </div>
 
             <div className="text-center lg:text-left mb-4 sm:mb-6">
@@ -31,11 +38,6 @@ const HomeSection = () => {
                 majority have suffered alteration in some form.
               </p>
             </div>
-          </div>
-
-          {/* Mobile image (stacked under content) */}
-          <div className="w-full mt-8 sm:mt-12 lg:hidden">
-            <img src="/homesection-img.png" alt="Saree" className="w-full h-48 sm:h-64 md:h-80 object-fit rounded-lg" />
           </div>
         </div>
       </div>

@@ -14,7 +14,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="w-full border-b border-gray-300 bg-white sticky top-0 z-20" role="navigation" aria-label="Main navigation">
+    <nav className="w-full bg-white sticky top-0 z-20" role="navigation" aria-label="Main navigation">
       <div className="w-full relative flex items-center justify-between py-4 sm:py-3 px-3 sm:px-4">
         {/* Logo and Brand */}
         <Link to="/"><div className="flex-shrink-0 flex items-center h-8 sm:h-10">
@@ -40,7 +40,7 @@ const Navbar = () => {
         </button>
 
         {/* Navigation Links (desktop) */}
-        <div className="hidden md:flex items-center gap-3 sm:gap-4 lg:gap-8 ml-4 md:ml-6 lg:ml-10 xl:ml-80">
+        <div className="hidden md:flex items-end-safe gap-3 sm:gap-4 lg:gap-8 ml-4 md:ml-6 lg:ml-10 xl:ml-80">
           <Link to="/" onClick={() => setMenuOpen(false)} className={`text-base font-medium transition ${isActive('/') ? 'text-[#550000]' : 'text-gray-800 hover:text-[#550000]'}`}>Home</Link>
           <Link to="/about" onClick={() => setMenuOpen(false)} className={`text-base font-medium transition ${isActive('/about') ? 'text-[#550000]' : 'text-gray-800 hover:text-[#550000]'}`}>About Us</Link>
           <Link to="/collections" onClick={() => setMenuOpen(false)} className={`text-base font-medium transition ${isActive('/collections') ? 'text-[#550000]' : 'text-gray-800 hover:text-[#550000]'}`}>Collections</Link>
@@ -48,9 +48,9 @@ const Navbar = () => {
           <Link to="/contact" onClick={() => setMenuOpen(false)} className={`text-base font-medium transition ${isActive('/contact') ? 'text-[#550000]' : 'text-gray-800 hover:text-[#550000]'}`}>Contact Us</Link>
         </div>
         {/* Icons (desktop) */}
-        <div className='hidden md:flex items-center gap-2 lg:gap-3 xl:gap-4 lg:mr-2 xl:mr-3'>
+        <div className='hidden md:flex items-end-safe gap-2 lg:gap-3 xl:gap-4 lg:mr-2 xl:mr-3'>
           <button aria-label="Wishlist" className="text-gray-700 cursor-pointer"><CiHeart className='w-6 h-6 lg:w-8 lg:h-8' /></button>
-          <Link to="/addtocart"><button aria-label="Cart" className="text-gray-700 cursor-pointer"><PiShoppingCartThin className='w-6 h-6 lg:w-8 lg:h-8' /></button></Link>
+          <Link to="/addtocart"><button aria-label="Cart" className="text-gray-700 cursor-pointer"><PiShoppingCartThin className='w-6 h-6 lg:w-8 lg:h-7' /></button></Link>
         </div>
         {/* Auth Buttons (desktop) */}
         <div className="hidden md:flex items-center gap-2 lg:gap-3 xl:gap-4 lg:mr-4 xl:mr-12">

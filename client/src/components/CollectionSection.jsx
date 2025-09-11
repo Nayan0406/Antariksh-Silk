@@ -6,73 +6,59 @@ const CollectionSection = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   return (
-  <section className="relative md:min-h-screen flex items-start md:items-center overflow-hidden">
-      {/* Background Container */}
-      <div className="absolute inset-0 flex">
-        {/* Left side - Gradient Background */}
-        <div 
-          className="w-full lg:w-3/5 h-full custom-bg"
-          // className="w-full lg:w-3/5 h-full bg-gradient-to-r from-[#340808] to-[#870900] z-10"
-        ></div>
-        
-        {/* Right side - Model Image */}
-        <div className="hidden lg:block lg:w-3/5 h-full relative">
-          <img
-            src="/login-img.png"
-            alt="Woman in traditional saree"
-            className="w-full h-full object-cover object-center"
-          />
-          {/* Subtle overlay for blending */}
-          <div 
-            className="absolute inset-0"
-            style={{
-              background: 'linear-gradient(270deg, transparent 60%, rgba(119, 3, 3, 0.3) 100%)'
-            }}
-          ></div>
-        </div>
-      </div>
+  <section className="relative min-h-[60vh] md:min-h-[650px] overflow-hidden bg-[#550000]">
+      {/* Decorative left gradient to blend with image - only on large screens */}
+      <div className="hidden lg:block absolute inset-0 bg-gradient-to-l from-transparent via-[#550000] to-[#550000] pointer-events-none z-1" />
 
-  {/* Mobile background image intentionally removed to keep mobile view clean */}
+      {/* Mobile background image (shows only on small screens) */}
+      <div
+        className="absolute inset-0 bg-center bg-cover lg:hidden pointer-events-none"
+        style={{ backgroundImage: "url('/login-img.png')", opacity: 0.45 }}
+        aria-hidden
+      />
 
-      {/* Content Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-15 md:py-0">
-        <div className="w-full lg:w-3/5">
-          
-          {/* Search Bar */}
-          <div className="mb-8 lg:mb-6">
-            <div className="relative max-w-md mx-auto lg:mx-0">
-              <div className="flex items-center bg-opacity-20 backdrop-blur-sm rounded-full px-4 py-3 border border-white border-opacity-30">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4 sm:py-6 lg:py-8">
+  <div className="relative lg:pr-24 min-h-[60vh] md:min-h-[650px] lg:min-h-auto flex flex-col justify-center lg:mt-20">
+          {/* Left content: constrained width so right image can show */}
+          <div className="w-full max-w-xl md:max-w-2xl text-white mx-auto lg:mx-0 px-4">
+            {/* Search Bar */}
+          <div className="mb-6 lg:mb-6">
+            <div className="relative max-w-md w-full mx-auto lg:mx-0">
+              <div className="flex items-center bg-[#6e3c3c] backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 sm:py-3 border border-white border-opacity-30 w-full">
                 <CiSearch className="text-white text-opacity-80 mr-3" size={24} />
                 <input
                   type="text"
                   placeholder="Search"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="flex-1 bg-transparent text-white placeholder-white placeholder-opacity-80 focus:outline-none text-sm"
+                  className="flex-1 bg-transparent text-white placeholder-white placeholder-opacity-80 focus:outline-none text-sm sm:text-base"
                 />
                 <IoMicOutline className="text-white text-opacity-80 ml-3 cursor-pointer hover:text-opacity-100 transition-opacity" size={24} />
               </div>
             </div>
           </div>
 
-          {/* Main Content */}
-          <div className="text-center lg:text-left text-[#f7e5c1]">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif leading-tight mb-6 lg:mb-6">
-              <span className="block font-playfair">Festive Saree</span>
-              <span className="block font-playfair">Collection</span>
-            </h1>
-            
-            {/* Subtitle */}
-            <p className="text-lg sm:text-xl lg:text-2xl text-white text-opacity-95 mb-8 lg:mb-12 max-w-lg mx-auto lg:mx-0 leading-relaxed font-light font-inter">
-              "Drape yourself in timeless traditions with a touch of modern elegance."
-            </p>
-            
+            <div className="space-y-4 sm:space-y-6 text-center lg:text-left">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-[#f7e5c1] font-playfair">
+                Festive Saree<br />
+                <span className="text-[#f7e5c1]">Collection</span>
+              </h1>
+              <p className="text-sm sm:text-base md:text-lg text-[#ffffff] max-w-lg leading-relaxed mx-auto lg:mx-0">
+                “Drape yourself in timeless traditions with a touch of <br />  modern elegance.”
+              </p>
+            </div>
+
             {/* Shop Now Button */}
-            <button className="bg-[#870900]  text-white font-semibold py-4 px-10 lg:px-12 rounded-sm transition-colors duration-300 uppercase  text-sm lg:text-base cursor-pointer ">
+            <button className="bg-[#870900] text-white font-semibold py-3 px-6 lg:px-12 rounded-sm transition-colors duration-300 uppercase text-sm lg:text-base cursor-pointer mt-8 lg:mt-10 w-full lg:w-auto">
               SHOP NOW
             </button>
           </div>
         </div>
+      </div>
+
+      {/* Right image covers full right half on large screens */}
+      <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2 overflow-hidden">
+        <img src="/login-img.png" alt="Beautiful Pink Saree" className="w-full h-full object-cover" />
       </div>
     </section>
   );

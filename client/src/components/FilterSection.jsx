@@ -6,7 +6,7 @@ const FilterSection = () => {
     const [showFilters, setShowFilters] = useState(false);
 
     return (
-        <div className="w-full min-h-screen bg-white">
+        <div className="w-full min-h-screen bg-white mb-10">
             {/* Header Section with Filters and Sort */}
             <div className="w-full bg-white p-3 sm:p-4 lg:p-6">
                 {/* Desktop Header */}

@@ -17,24 +17,26 @@ const SignUp = () => {
     // Handle signup logic here
     console.log('Signup attempted with:', { name, email, password, confirmPassword, rememberMe });
   };  return (
-  <div className="relative flex flex-col md:flex-row md:min-h-screen overflow-hidden bg-[#560101]">
-      {/* Mobile background image (shows only on small screens) */}
+  <div className="relative flex flex-col md:flex-row min-h-screen items-center justify-center overflow-hidden bg-[#560101]">
+      {/* Mobile gradient background (shows only on small screens) */}
       <div
-        className="absolute inset-0 bg-center bg-cover md:hidden pointer-events-none"
-        style={{ backgroundImage: "url('/login-img.png')", opacity: 0.70 }}
+        className="absolute inset-0 md:hidden pointer-events-none"
+        style={{
+          background: 'linear-gradient(90deg, #1D0200 0%, #5A1D19 50%, #1D0200 100%)',
+        }}
         aria-hidden
       />
           {/* Left Side - Image */}
-          <div className="hidden md:flex md:w-1/2 relative">
-            <img
-              src="/login-img.png"
-              alt="Woman in traditional saree"
-              className="w-full h-full object-cover"
-            />
-          </div>
+                  <div className="hidden md:flex md:w-1/2 relative md:h-screen">
+                    <img
+                      src="/login-img.png"
+                      alt="Woman in traditional saree"
+                      className="w-full h-full object-cover object-center"
+                    />
+                  </div>
     
         {/* Right Side - SignUp Form */}
-  <div className="w-full md:w-1/2 flex items-start md:items-center justify-start md:justify-center bg-transparent md:bg-[#550101] px-4 sm:px-6 py-6 sm:py-10 relative z-10">
+  <div className="w-full md:w-1/2 flex items-center md:items-center justify-center bg-transparent md:bg-[#550101] px-4 sm:px-6 md:px-12 py-6 sm:py-10 md:py-14 relative z-10">
           <div className="w-full max-w-md md:max-w-lg lg:max-w-md">
             {/* Logo */}
             <div className="text-center mb-4 sm:mb-6">

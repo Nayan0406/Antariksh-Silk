@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import Navbar from './layout/Navbar'
 import Footer from './layout/Footer'
 import ScrollToTop from './components/ScrollToTop'
@@ -35,7 +35,19 @@ function App() {
   return (
     <BrowserRouter>
 
-      <Navbar />
+      <AppContent />
+
+    </BrowserRouter>
+  )
+}
+
+function AppContent() {
+  const location = useLocation()
+  const hideLayout = ['/login', '/signup', '/profilesetup'].includes(location.pathname)
+
+  return (
+    <>
+  {!hideLayout && <Navbar />}
       <ScrollToTop />
 
       <Routes>
@@ -77,9 +89,9 @@ function App() {
 
       </Routes>
 
-      <Footer />
+  {!hideLayout && <Footer />}
 
-    </BrowserRouter>
+    </>
   )
 }
 

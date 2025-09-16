@@ -16,27 +16,29 @@ const Login = () => {
   };
 
   return (
-    <div className="relative flex flex-col md:flex-row md:min-h-screen overflow-hidden bg-[#560101]">
+    <div className="relative flex flex-col md:flex-row min-h-screen items-center md:items-stretch justify-center md:justify-start overflow-hidden bg-[#560101]">
 
-      {/* Mobile background image (shows only on small screens) */}
+      {/* Mobile gradient background (shows only on small screens) */}
       <div
-        className="absolute inset-0 bg-center bg-cover lg:hidden pointer-events-none"
-        style={{ backgroundImage: "url('/login-img.png')", opacity: 0.70 }}
+        className="absolute inset-0 lg:hidden pointer-events-none"
+        style={{
+          background: 'linear-gradient(90deg, #1D0200 0%, #5A1D19 50%, #1D0200 100%)',
+        }}
         aria-hidden
       />
 
-      {/* Left Side - Image */}
-  <div className="hidden md:flex md:w-1/2 lg:w-1/2 relative">
+    {/* Left Side - Image */}
+  <div className="hidden md:flex md:w-1/2 lg:w-1/2 relative md:h-screen">
         <img
           src="/login-img.png"
           alt="Woman in traditional saree"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
         />
       </div>
 
       {/* Right Side - Login Form */}
-      <div className="w-full md:w-1/2 flex items-start md:items-center justify-start md:justify-center bg-transparent md:bg-[#550101] px-4 sm:px-8 py-6 sm:py-12 relative z-10">
-        <div className="w-full max-w-md md:max-w-lg lg:max-w-md">
+  <div className="w-full md:w-1/2 flex items-center md:items-center justify-center bg-transparent md:bg-[#550101] px-4 sm:px-8 md:px-12 py-6 sm:py-12 md:py-16 relative z-10">
+    <div className="w-full max-w-md md:max-w-lg lg:max-w-md">
           {/* Logo */}
           <div className="text-center mb-6 sm:mb-8">
             <img src="/home-logo.png" alt="Logo" className='w-28 sm:w-36 md:w-40 lg:w-44 h-auto mx-auto' />

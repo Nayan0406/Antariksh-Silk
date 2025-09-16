@@ -16,9 +16,17 @@ const Login = () => {
   };
 
   return (
-  <div className="flex flex-col md:flex-row md:min-h-screen">
+    <div className="relative flex flex-col md:flex-row md:min-h-screen overflow-hidden bg-[#560101]">
+
+      {/* Mobile background image (shows only on small screens) */}
+      <div
+        className="absolute inset-0 bg-center bg-cover lg:hidden pointer-events-none"
+        style={{ backgroundImage: "url('/login-img.png')", opacity: 0.70 }}
+        aria-hidden
+      />
+
       {/* Left Side - Image */}
-  <div className="hidden lg:flex lg:w-1/2 relative">
+  <div className="hidden md:flex md:w-1/2 lg:w-1/2 relative">
         <img
           src="/login-img.png"
           alt="Woman in traditional saree"
@@ -27,7 +35,7 @@ const Login = () => {
       </div>
 
       {/* Right Side - Login Form */}
-  <div className="w-full md:w-1/2 flex items-start md:items-center justify-start md:justify-center bg-[#550101] px-6 sm:px-8 py-6 sm:py-12">
+      <div className="w-full md:w-1/2 flex items-start md:items-center justify-start md:justify-center bg-transparent md:bg-[#550101] px-4 sm:px-8 py-6 sm:py-12 relative z-10">
         <div className="w-full max-w-md md:max-w-lg lg:max-w-md">
           {/* Logo */}
           <div className="text-center mb-6 sm:mb-8">
@@ -84,11 +92,10 @@ const Login = () => {
                     onChange={(e) => setRememberMe(e.target.checked)}
                     className="sr-only"
                   />
-                  <div className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all duration-200 ${
-                    rememberMe 
-                      ? ' border-white' 
-                        : 'bg-transparent border-white hover:border-white'
-                  }`}>
+                  <div className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all duration-200 ${rememberMe
+                      ? ' border-white'
+                      : 'bg-transparent border-white hover:border-white'
+                    }`}>
                     {rememberMe && (
                       <svg
                         className="w-3 h-3 text-white"
@@ -104,7 +111,7 @@ const Login = () => {
                     )}
                   </div>
                 </div>
-                <span className="ml-3">Remember Me</span>
+                <span className="ml-3 text-white">Remember Me</span>
               </label>
               <Link to="/forgot-password" className="text-[#f7e5c1] underline">
                 Forget Password
@@ -127,7 +134,7 @@ const Login = () => {
             </button>
             <button className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center hover:scale-105 transition-transform shadow-lg">
               <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
               </svg>
             </button>
           </div>

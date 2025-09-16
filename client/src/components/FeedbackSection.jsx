@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaChevronLeft, FaChevronRight, FaQuoteLeft, FaQuoteRight } from 'react-icons/fa'
 
 const FeedbackSection = () => {
+  const [pressed, setPressed] = useState(null)
+
   return (
-    <section className="py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20">
+    <section className="py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
           <span className="text-xs sm:text-sm md:text-base tracking-widest text-[#c77a93] uppercase">FEEDBACK</span>
@@ -45,11 +47,31 @@ const FeedbackSection = () => {
 
         {/* arrows below the feedback card */}
         <div className="flex justify-center items-center mt-6">
-          <button aria-label="previous" className="p-2 rounded text-[#3a2233] hover:text-[#111827] cursor-pointer">
-            <FaChevronLeft size={20} />
+          {/* Previous arrow: background only while pressed */}
+          <button
+            aria-label="previous"
+            onClick={() => {/* TODO: previous action */}}
+            onMouseDown={() => setPressed('prev')}
+            onMouseUp={() => setPressed(null)}
+            onMouseLeave={() => setPressed(null)}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setPressed('prev') }}
+            onKeyUp={() => setPressed(null)}
+            className={`w-12 h-12 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ${pressed === 'prev' ? 'bg-[#550000] text-white' : 'text-[#3a2233] hover:text-[#111827]'}`}
+          >
+            <FaChevronLeft size={18} />
           </button>
 
-          <button aria-label="next" className="ml-4 bg-[#550000] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-md cursor-pointer">
+          {/* Next arrow: background only while pressed */}
+          <button
+            aria-label="next"
+            onClick={() => {/* TODO: next action */}}
+            onMouseDown={() => setPressed('next')}
+            onMouseUp={() => setPressed(null)}
+            onMouseLeave={() => setPressed(null)}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setPressed('next') }}
+            onKeyUp={() => setPressed(null)}
+            className={`ml-4 w-12 h-12 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ${pressed === 'next' ? 'bg-[#550000] text-white' : 'text-[#3a2233] hover:text-[#111827]'}`}
+          >
             <FaChevronRight size={18} />
           </button>
         </div>

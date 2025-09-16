@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { FaRegStar, FaChevronRight, FaInfoCircle, FaUndo, FaTruck, FaEye, FaChevronUp, FaChevronDown } from "react-icons/fa";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { LuUndo2 } from "react-icons/lu";
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+
 
 const SilkSareeDetail = () => {
   const [quantity, setQuantity] = useState(1);
@@ -56,6 +58,25 @@ const SilkSareeDetail = () => {
   };
   const scrollDown = () => {
     if (thumbRef.current) thumbRef.current.scrollBy({ top: scrollAmount, behavior: 'smooth' });
+  };
+
+  // desktop scroller ref for the main horizontal gallery
+  const desktopScrollerRef = useRef(null);
+
+  // mobile scroller ref for mobile horizontal gallery
+  const mobileScrollerRef = useRef(null);
+
+  const scrollDesktopNext = () => {
+    const el = desktopScrollerRef.current;
+    if (!el) return;
+    // scroll by the scroller's clientWidth (one 'page')
+    el.scrollBy({ left: el.clientWidth, behavior: 'smooth' });
+  };
+
+  const scrollDesktopPrev = () => {
+    const el = desktopScrollerRef.current;
+    if (!el) return;
+    el.scrollBy({ left: -el.clientWidth, behavior: 'smooth' });
   };
 
   useEffect(() => {
@@ -150,8 +171,8 @@ const SilkSareeDetail = () => {
         {/* Product Images - desktop: horizontal scroller showing 2 images per view; mobile: first image + vertical thumbnails on right */}
 
         {/* Desktop / Tablet: horizontal scroller (kept as before) */}
-        <div className="hidden lg:block w-full lg:w-1/2">
-          <div className="overflow-x-auto hide-scrollbar">
+        <div className="hidden lg:block w-full lg:w-1/2 relative">
+          <div className="overflow-x-auto hide-scrollbar" ref={desktopScrollerRef}>
             <div className="flex gap-2 sm:gap-3 lg:gap-4 snap-x snap-mandatory">
               {
                 [
@@ -166,54 +187,77 @@ const SilkSareeDetail = () => {
                     <img
                       src={src}
                       alt={`saree-${idx}`}
-                      className="w-full h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] object-cover transition-all duration-300 rounded-md"
+                      className="w-full h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] object-cover transition-all duration-300"
                     />
                   </div>
                 ))
               }
             </div>
           </div>
+          {/* Right arrow overlay - desktop only */}
+          <button
+            onClick={scrollDesktopNext}
+            aria-label="Next images"
+            className="hidden lg:flex items-center justify-center w-10 h-10 rounded-full bg-white/90 shadow-md border border-gray-200 absolute right-4 top-1/2 -translate-y-1/2 z-20 lg:-mt-15"
+          >
+            <IoIosArrowForward className="text-black"/>
+          </button>
+          {/* Left arrow overlay - desktop only */}
+          <button
+            onClick={scrollDesktopPrev}
+            aria-label="Previous images"
+            className="hidden lg:flex items-center justify-center w-10 h-10 rounded-full bg-white/90 shadow-md border border-gray-200 absolute left-4 top-1/2 -translate-y-1/2 z-20 lg:-mt-15"
+          >
+            <IoIosArrowBack className="text-black"/>
+          </button>
         </div>
 
-        {/* Mobile: show main front image and a vertical stack of small thumbnails on the right */}
-        <div className="block lg:hidden w-full lg:w-1/2">
-          <div className="flex items-start gap-2">
-            <div className="flex-1">
-              <img
-                src={selectedImage}
-                alt="saree-front-mobile"
-                className="w-full h-[414px] sm:h-[360px] object-cover rounded-md"
-              />
+        {/* Mobile: horizontal scroller matching desktop behavior */}
+        <div className="block lg:hidden w-full lg:w-1/2 relative">
+          {/* mobile scroller */}
+          <div className="overflow-x-auto hide-scrollbar px-3" ref={mobileScrollerRef}>
+            <div className="flex gap-2 snap-x snap-mandatory">
+              {
+                [
+                  colorImages[selectedColor]?.front || "/silk-saree.png",
+                  colorImages[selectedColor]?.back || "/silksaree-back.png",
+                  "/product-1-img.jpg",
+                  "/product-2-img.png",
+                  "/product-3-img.png",
+                  "/product-4-img.png",
+                ].map((src, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setSelectedImage(src)}
+                    className="flex-shrink-0 w-1/2 overflow-hidden snap-start"
+                  >
+                    <img
+                      src={src}
+                      alt={`saree-mobile-${idx}`}
+                      className="w-full h-[320px] sm:h-[360px] object-cover"
+                    />
+                  </button>
+                ))
+              }
             </div>
-
-            <div className="w-24 sm:w-28 flex flex-col gap-1 h-[414px] sm:h-[360px]">
-              <button type="button" onClick={scrollUp} className="p-1 rounded bg-white shadow-sm mb-1">
-                <FaChevronUp />
-              </button>
-              <div ref={thumbRef} className="flex-1 overflow-y-auto no-scrollbar space-y-1">
-                {
-                  mobileGallery.map((src, idx) => (
-                      <button
-                        key={idx}
-                        type="button"
-                        onClick={() => setSelectedImage(src)}
-                        className="h-20 sm:h-24 rounded-md overflow-hidden w-full bg-transparent p-0 flex items-center justify-center"
-                      >
-                        <img src={src} alt={`thumb-${idx}`} className="w-full h-full object-fit block" />
-                      </button>
-                  ))
-                }
-              </div>
-              <button type="button" onClick={scrollDown} className="p-1 rounded bg-white shadow-sm mt-1">
-                <FaChevronDown />
-              </button>
-            </div>
+          </div>
+          {/* mobile left/right arrows */}
+          <div className="absolute left-3 top-1/2 -translate-y-1/2 z-50">
+            <button onClick={() => { const el = mobileScrollerRef.current; if (el) el.scrollBy({ left: -el.clientWidth, behavior: 'smooth' }); }} className="flex lg:hidden items-center justify-center w-8 h-8 rounded-full bg-white/90 shadow-md border border-gray-200">
+              <IoIosArrowBack className="text-gray-700" />
+            </button>
+          </div>
+          <div className="absolute right-3 top-1/2 -translate-y-1/2 z-50">
+            <button onClick={() => { const el = mobileScrollerRef.current; if (el) el.scrollBy({ left: el.clientWidth, behavior: 'smooth' }); }} className="flex lg:hidden items-center justify-center w-8 h-8 rounded-full bg-white/90 shadow-md border border-gray-200">
+              <IoIosArrowForward className="text-gray-700" />
+            </button>
           </div>
         </div>
 
         {/* Product Details */}
         <div className="w-full lg:w-1/2 p-3 sm:p-4 lg:p-6 xl:p-12">
-          <h3 className="uppercase text-xs tracking-[0.2em] text-gray-600 mb-2 sm:mb-3 lg:mb-4 text-center lg:text-left">
+          <h3 className="uppercase text-xs tracking-[0.2em] text-gray-600 mb-2 sm:mb-3 lg:mb-4 text-start lg:text-left mt-4 lg:-mt-4">
             VISIT OUR STORE!
           </h3>
           
@@ -245,13 +289,13 @@ const SilkSareeDetail = () => {
           <p className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 lg:-mt-5">Rs.6,000</p>
 
           {/* Colors */}
-    <div className="flex items-center gap-1 sm:gap-2 mb-6 sm:mb-8">
+          <div className="flex items-center gap-3 mb-6 sm:mb-8">
             {colors.map((c) => (
               <div key={c.name} className="flex flex-col items-center">
                 <div
                   onClick={() => setSelectedColor(c.name)}
-      className={`w-5 h-5 sm:w-8 sm:h-8 rounded-full border-2 cursor-pointer ${
-                    selectedColor === c.name ? "border-gray-800" : "border-gray-300"
+      className={`w-10 h-10 sm:w-10 sm:h-10 rounded-full border-2 cursor-pointer ${
+                    selectedColor === c.name ? "border-gray-400" : "border-gray-300"
                   }`}
                   style={{ backgroundColor: c.color }}
                 ></div>
@@ -261,27 +305,25 @@ const SilkSareeDetail = () => {
           </div>
 
           {/* Quantity + Add to Cart */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
-            <div className="flex items-center">
-              <button
-                className="w-8 h-8 sm:w-10 sm:h-10 border border-gray-300 flex items-center justify-center text-base sm:text-lg font-medium cursor-pointer"
-                onClick={() => setQuantity(Math.max(1, quantity - 1))}
-              >
-                -
-              </button>
-              <div className="w-8 h-8 sm:w-10 sm:h-10 border border-gray-300 flex items-center justify-center text-xs sm:text-sm">
-                {quantity}
-              </div>
-              <button
-                className="w-8 h-8 sm:w-10 sm:h-10 border border-gray-300 flex items-center justify-center text-base sm:text-lg font-medium cursor-pointer"
-                onClick={() => setQuantity(quantity + 1)}
-              >
-                +
-              </button>
-            </div>
+          <div className="flex flex-row flex-wrap items-center gap-4 sm:gap-4 mb-8 sm:mb-12">
+            <div className="flex items-center border border-gray-300 rounded-md py-1.5 lg:w-[35%] w-[45%]">
+                  <button
+                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                    className="w-6 h-6 flex items-start justify-start text-lg font-extrabold text-red-600 ml-3 -mt-2"
+                  >
+                    -
+                  </button>
+                  <span className="flex-1 text-center py-0 text-lg font-medium ">{quantity}</span>
+                  <button
+                    onClick={() => setQuantity(quantity + 1)}
+                    className="w-6 h-6 flex items-end justify-end text-lg font-extrabold text-red-600 mr-3"
+                  >
+                    +
+                  </button>
+                </div>
             
             <Link to="/addtocart">
-              <button className="bg-red-900 text-white px-6 sm:px-12 lg:px-16 py-2 sm:py-2.5 text-xs sm:text-sm font-medium w-full sm:w-auto cursor-pointer rounded-md">
+              <button className="bg-red-900 text-white px-13 sm:px-8 lg:px-20 py-3 sm:py-2.5 text-xs sm:text-sm font-medium w-auto cursor-pointer rounded-md">
                 Add to Cart
               </button>
             </Link>
@@ -319,8 +361,8 @@ const SilkSareeDetail = () => {
 
       {/* Bottom Section - Product Details and Description */}
       <div className="flex flex-col lg:flex-row -mt-3 sm:-mt-4 lg:-mt-5 px-3 sm:px-4 lg:px-6">
-        {/* Left Section - Expandable Options */}
-        <div className="w-full lg:w-1/2 pr-0">
+        {/* Desktop: two-column details (unchanged) */}
+        <div className="hidden lg:block w-1/2 pr-0">
           <div className="space-y-3 sm:space-y-4 max-h-72 sm:max-h-96 lg:max-h-[420px] overflow-y-auto pr-2">
             {Object.keys(productDetails).map((key) => {
               const detail = productDetails[key];
@@ -342,9 +384,9 @@ const SilkSareeDetail = () => {
                   onClick={() => setSelectedDetail(key)}
                   className={`flex items-center justify-between p-3 sm:p-4 rounded-lg border cursor-pointer transition-all ${
                     selectedDetail === key 
-                      ? 'bg-[#c2969d] text-white border-[#c08888]' 
-                      : 'bg-[#fffbfb] text-gray-700 border-[#c08888]'
-                  }`}
+                      ? 'bg-[#550000] text-white border-[#550000]' 
+                      : 'bg-[#fffbfb] text-gray-700 border-[#550000]'
+                  }`} 
                 >
                   <div className="flex items-center gap-2 sm:gap-3">
                     {getIcon(detail.title, selectedDetail === key)}
@@ -362,8 +404,7 @@ const SilkSareeDetail = () => {
           </div>
         </div>
 
-        {/* Right Section - Details Content */}
-  <div className="w-full lg:w-1/2 mt-6 sm:mt-8 lg:mt-0 lg:pl-6">
+        <div className="hidden lg:block w-1/2 mt-6 sm:mt-8 lg:mt-0 lg:pl-6">
           <div className="bg-[#fff0f0] p-4 sm:p-6 rounded-lg border-0 max-h-72 sm:max-h-96 lg:max-h-[420px] overflow-y-auto pr-2">
             <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">
               {productDetails[selectedDetail].title}
@@ -381,6 +422,58 @@ const SilkSareeDetail = () => {
                 );
               })}
             </div>
+          </div>
+        </div>
+
+        {/* Mobile: accordion view for product details */}
+        <div className="block lg:hidden w-full mt-4">
+          <div className="space-y-3">
+            {Object.keys(productDetails).map((key, idx) => {
+              const detail = productDetails[key];
+              const isOpen = selectedDetail === key;
+              // local getIcon reused
+              const getIcon = (title, active) => {
+                const iconColorClass = active ? 'text-white' : 'text-[#550000]';
+                const iconSize = 18;
+                switch(title) {
+                  case "Product details": return <AiOutlineInfoCircle className={iconColorClass} size={iconSize} />;
+                  case "Return & Refund": return <LuUndo2 className={`${iconColorClass} scale-y-[-1]`} size={iconSize} />;
+                  case "Shipping Policy": return <FaTruck className={iconColorClass} size={iconSize} />;
+                  case "Care": return <FaEye className={iconColorClass} size={iconSize} />;
+                  default: return <AiOutlineInfoCircle className={iconColorClass} size={iconSize} />;
+                }
+              };
+
+              const panelId = `detail-panel-${idx}`;
+              const headerId = `detail-header-${idx}`;
+
+              return (
+                <div key={key} className="overflow-hidden">
+                  <button
+                    id={headerId}
+                    aria-controls={panelId}
+                    aria-expanded={isOpen}
+                    onClick={() => setSelectedDetail(isOpen ? "" : key)}
+                    className={`w-full flex items-center justify-between p-4 ${isOpen ? 'bg-[#550000] text-white' : 'bg-white border border-[#550000]'} rounded-md`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className={`${isOpen ? 'bg-white/0' : ''} p-0`}>{getIcon(detail.title, isOpen)}</div>
+                      <span className={`font-medium text-sm ${isOpen ? 'text-white' : 'text-[#2b1d20]'}`}>{detail.title}</span>
+                    </div>
+                    <div className={`transform transition-transform ${isOpen ? 'rotate-90' : ''}`}>
+                      <FaChevronRight className={`${isOpen ? 'text-white' : 'text-[#550000]'}`} />
+                    </div>
+                  </button>
+                  <div id={panelId} role="region" aria-labelledby={headerId} className={`${isOpen ? 'block' : 'hidden'} p-4 bg-[#fff0f0]`}> 
+                    <div className="space-y-2">
+                      {detail.content.map((item, i) => (
+                        <p key={i} className="text-sm text-gray-700">{item}</p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

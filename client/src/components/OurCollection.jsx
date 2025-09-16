@@ -53,7 +53,7 @@ const OurCollection = () => {
   }
 
   return (
-    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 bg-[#dfb8b8] md:rounded-tl-[6rem] lg:rounded-tl-[8rem] xl:rounded-tl-[10rem]">
+    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 bg-[#ecd5d5] md:rounded-tl-[10rem] lg:rounded-tl-[10rem] xl:rounded-tl-[15rem]">
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 lg:-mt-10">
           <p className="text-xs sm:text-sm text-pink-400 uppercase tracking-wider mb-2">Our Collection</p>

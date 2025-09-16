@@ -6,8 +6,8 @@ const SubscribeSection = () => {
     <section className="py-6 max-w-full lg:ml-10 lg:mr-10 lg:mb-10 sm:py-8 md:py-12 lg:py-16 bg-[#e9dadb] md:rounded-tl-[6rem] lg:rounded-tl-[8rem] xl:rounded-tl-[10rem] md:rounded-br-[6rem] lg:rounded-br-[8rem] xl:rounded-br-[10rem]">
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10">
-          {/* Left image */}
-          <div className="w-full order-2 lg:order-1">
+          {/* Left image (moved to top on mobile) */}
+          <div className="w-full order-1 lg:order-1">
             <div className="rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden">
               <img 
                 src="/subscribe-img.jpg" 
@@ -18,7 +18,7 @@ const SubscribeSection = () => {
           </div>
 
           {/* Right content */}
-          <div className="w-full order-1 lg:order-2 text-center lg:text-left">
+          <div className="w-full order-2 lg:order-2 text-center lg:text-left">
             <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-prata font-bold text-[#1f1f1f] leading-tight">
               Subscribe to newsletter
             </h3>

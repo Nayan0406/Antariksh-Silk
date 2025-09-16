@@ -32,7 +32,7 @@ const ScrollSection = () => {
   }
 
   return (
-    <section className="py-6 sm:py-8 md:py-12 bg-white w-full">
+    <section className="py-2 sm:py-8 md:py-12 bg-white w-full lg:-mb-22 lg:-mt-5">
       <div className="relative w-full max-w-full mx-auto">
         {/* hide scrollbar styles (WebKit, Firefox, IE/Edge) */}
         <style>{`.hide-scrollbar::-webkit-scrollbar{display:none}.hide-scrollbar{-ms-overflow-style:none;scrollbar-width:none;}`}</style>
@@ -62,7 +62,7 @@ const ScrollSection = () => {
         {/* Scrollable Row */}
         <div
           ref={ref}
-          className="flex gap-4 sm:gap-6 md:gap-8 lg:gap-12 overflow-x-auto scroll-smooth py-4 sm:py-6 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 snap-x snap-mandatory hide-scrollbar items-start w-full"
+          className="flex gap-0 sm:gap-6 md:gap-8 lg:gap-6 overflow-x-auto scroll-smooth py-4 sm:py-6 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 snap-x snap-mandatory hide-scrollbar items-start w-full"
           role="list"
         >
           {categories.map((cat) => (
@@ -71,13 +71,13 @@ const ScrollSection = () => {
               to={cat.path || `/${slugify(cat.name)}`} 
               className="snap-center flex-shrink-0 w-32 xs:w-36 sm:w-44 md:w-52 lg:w-56 xl:w-64 text-center no-underline"
             >
-              <article className="group">
-                <div className="flex items-center justify-center mb-3 sm:mb-4">
-                  <div className="w-24 h-24 xs:w-28 xs:h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 xl:w-44 xl:h-44 bg-[#faf1df] rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+              <article className="group ">
+                <div className="flex items-center justify-center mb-3 sm:mb-4 ">
+                  <div className="w-20 h-20 xs:w-28 xs:h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 xl:w-24 xl:h-24 bg-[#faf1df] rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                     <img
                       src={cat.img}
                       alt={cat.name}
-                      className="w-12 h-12 xs:w-14 xs:h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 object-contain"
+                      className="w-25 h-25 xs:w-14 xs:h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-35 object-contain"
                     />
                   </div>
                 </div>

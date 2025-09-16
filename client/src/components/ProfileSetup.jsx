@@ -18,10 +18,18 @@ const ProfileSetup = () => {
   const handleSkip = () => {
     // Handle skip logic here
     console.log('Profile setup skipped');
-  };  return (
-  <div className="flex flex-col md:flex-row md:min-h-screen">
-      {/* Left Side - Image */}
-      <div className="hidden lg:flex lg:w-1/2 relative z-10">
+  };
+
+  return (
+  <div className="relative flex flex-col md:flex-row md:min-h-screen overflow-hidden bg-[#560101]">
+      {/* Mobile background image (shows only on small screens) */}
+      <div
+        className="absolute inset-0 bg-center bg-cover md:hidden pointer-events-none"
+        style={{ backgroundImage: "url('/login-img.png')", opacity: 0.70 }}
+        aria-hidden
+      />
+      {/* Left Side - Image (shows from md up) */}
+      <div className="hidden md:flex md:w-1/2 relative z-10">
         <img
           src="/login-img.png"
           alt="Woman in traditional saree"
@@ -30,9 +38,9 @@ const ProfileSetup = () => {
       </div>
 
       {/* Right Side - Profile Setup Form */}
-      <div className="w-full lg:w-1/2 relative overflow-visible flex items-start md:items-center justify-start md:justify-center bg-gradient-to-r from-[#550101] to-[#2e0303] px-4 sm:px-6 py-6 sm:py-10">
+  <div className="w-full md:w-1/2 relative overflow-visible flex items-start md:items-center justify-start md:justify-center bg-transparent md:bg-gradient-to-r md:from-[#550101] md:to-[#2e0303] px-4 sm:px-6 py-6 sm:py-10 z-10">
         {/* Decorative shade that slightly overlaps the left image on large screens */}
-        <div className="hidden lg:block absolute -left-20 top-0 h-full w-10 pointer-events-none bg-gradient-to-l from-[#2e0303]" />
+        {/* <div className="hidden lg:block absolute -left-20 top-0 h-full w-10 pointer-events-none bg-gradient-to-l from-[#2e0303]" /> */}
         <div className="w-full max-w-md md:max-w-lg lg:max-w-md">
           {/* Logo */}
       <div className="text-center mb-4 sm:mb-6">

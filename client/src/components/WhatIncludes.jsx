@@ -46,7 +46,28 @@ const WhatIncludes = () => {
         <section className="w-full flex flex-col lg:flex-row items-center justify-center py-12 px-4 md:px-8 lg:px-24 bg-white">
             {/* Left: Content */}
             <div className="w-full lg:w-1/2 flex flex-col justify-center items-start max-w-2xl mb-8 lg:mb-0 lg:pr-8">
-                <div className="text-xs md:text-sm tracking-widest font-semibold mb-2 text-[#c97a9b] uppercase">WHAT INCLUDES?</div>
+                <div className="text-xs md:text-sm tracking-widest font-semibold mb-2 text-[#c97a9b] uppercase self-center md:self-start text-center md:text-left">WHAT INCLUDES?</div>
+
+                {/* Mobile-only video directly under the small title */}
+                <div className="block lg:hidden w-full mb-4">
+                    <div className="relative">
+                        <div className="p-2">
+                            <video
+                                className="w-full h-56 md:h-72 object-cover bg-center bg-no-repeat"
+                                preload="metadata"
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                poster="/video-poster.jpg"
+                                onClick={(e) => { try { e.currentTarget.play() } catch (err) {} }}
+                            >
+                                <source src="/saree-video.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight text-[#232323]" style={{ fontFamily: 'serif' }}>
                     The start of the journey
                 </h2>
@@ -90,7 +111,7 @@ const WhatIncludes = () => {
             </div>
 
             {/* Right: Video with border */}
-            <div className="w-full lg:w-1/2 flex justify-center items-center">
+            <div className="hidden lg:flex w-full lg:w-1/2 justify-center items-center">
                 <div className="relative">
                     <div className="p-2">
                         <video

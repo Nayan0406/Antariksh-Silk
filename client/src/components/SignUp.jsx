@@ -17,9 +17,15 @@ const SignUp = () => {
     // Handle signup logic here
     console.log('Signup attempted with:', { name, email, password, confirmPassword, rememberMe });
   };  return (
-  <div className="flex flex-col md:flex-row md:min-h-screen">
+  <div className="relative flex flex-col md:flex-row md:min-h-screen overflow-hidden bg-[#560101]">
+      {/* Mobile background image (shows only on small screens) */}
+      <div
+        className="absolute inset-0 bg-center bg-cover md:hidden pointer-events-none"
+        style={{ backgroundImage: "url('/login-img.png')", opacity: 0.70 }}
+        aria-hidden
+      />
           {/* Left Side - Image */}
-          <div className="hidden lg:flex lg:w-1/2 relative">
+          <div className="hidden md:flex md:w-1/2 relative">
             <img
               src="/login-img.png"
               alt="Woman in traditional saree"
@@ -28,7 +34,7 @@ const SignUp = () => {
           </div>
     
         {/* Right Side - SignUp Form */}
-        <div className="w-full lg:w-1/2 flex items-start md:items-center justify-start md:justify-center bg-[#550101] px-4 sm:px-6 py-6 sm:py-10">
+  <div className="w-full md:w-1/2 flex items-start md:items-center justify-start md:justify-center bg-transparent md:bg-[#550101] px-4 sm:px-6 py-6 sm:py-10 relative z-10">
           <div className="w-full max-w-md md:max-w-lg lg:max-w-md">
             {/* Logo */}
             <div className="text-center mb-4 sm:mb-6">
@@ -136,7 +142,7 @@ const SignUp = () => {
                       )}
                     </div>
                   </div>
-                  <span className="ml-3">
+                  <span className="ml-3 text-white">
                     I accept the <span className='text-blue-400 hover:text-blue-300 transition-colors'>Terms</span> & <span className='text-blue-400 hover:text-blue-300 transition-colors'>Policy</span>
                   </span>
                 </label>
@@ -155,7 +161,7 @@ const SignUp = () => {
 
             {/* Login Link */}
             <div className="text-center mt-6 sm:mt-8">
-              <p className="text-red-200 text-sm">
+              <p className="text-white text-sm">
                 Already have an account ?{' '}
                 <Link to="/login" className="text-blue-400 underline transition-colors font-medium cursor-pointer">
                   Login

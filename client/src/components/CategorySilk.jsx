@@ -38,7 +38,7 @@ const CategorySilk = () => {
   return (
     <div>
         <ScrollSection />
-        <section className="px-6 md:px-12 py-8 bg-white">
+        <section className="px-6 md:px-12 py-8 bg-white lg:mt-5">
           <h2 className="text-2xl font-semibold text-[#7a1212] mb-6">Silk Saree</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

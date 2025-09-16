@@ -1,55 +1,119 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import { FaRegStar, FaHeart, FaFilter, FaTimes } from "react-icons/fa";
+import { FaRegStar, FaHeart, FaTimes } from "react-icons/fa";
+import { IoFilterOutline } from "react-icons/io5";
+import { HiOutlineMicrophone } from "react-icons/hi2";
+import { CiSearch } from "react-icons/ci";
+import { PiArrowsDownUp } from "react-icons/pi";
 
 const FilterSection = () => {
     const [showFilters, setShowFilters] = useState(false);
+    const [showSort, setShowSort] = useState(false);
+    const [sortOption, setSortOption] = useState('Featured');
 
     return (
         <div className="w-full min-h-screen bg-white mb-10">
             {/* Header Section with Filters and Sort */}
             <div className="w-full bg-white p-3 sm:p-4 lg:p-6">
-                {/* Desktop Header */}
-                <div className="hidden lg:flex justify-between items-center px-4 lg:px-10">
-                    <div className="flex items-center gap-4">
-                        <h2 className="text-3xl font-bold text-gray-900">Filters</h2>
-                    </div>
-                    
-                    <div className="flex items-center gap-6">
-                        <h3 className="text-2xl font-bold text-gray-900">Sort by</h3>
-                        <select className="border-none bg-[#8B0000] text-white px-6 py-3 rounded-md text-base font-medium cursor-pointer min-w-[120px]">
-                            <option>LATEST</option>
-                            <option>Price: Low to High</option>
-                            <option>Price: High to Low</option>
-                            <option>Most Popular</option>
-                        </select>
-                    </div>
-                </div>
-
-                {/* Mobile Header */}
-                <div className="lg:hidden">
-                    <div className="flex justify-between items-center mb-3">
-                        <h2 className="text-lg sm:text-xl font-bold text-gray-900">Products</h2>
-                        <button 
+                {/* Mobile/Desktop unified header */}
+                <div className="px-2 lg:px-10">
+                    {/* Mobile header: compact row with Filter, Sort (Latest), and Search */}
+                    <div className="flex items-center gap-3 lg:hidden">
+                        <button
                             onClick={() => setShowFilters(!showFilters)}
-                            className="flex items-center gap-2 bg-[#340808] text-white px-3 py-2 rounded text-sm"
+                            className="flex items-center gap-2 bg-[#560b0b] text-white px-4 py-2 rounded-md"
                         >
-                            <FaFilter size={12} />
-                            Filters
+                            <IoFilterOutline size={18} />
+                            <span className="text-sm font-medium">Filter</span>
                         </button>
+
+                        <button onClick={() => setShowSort(true)} className="flex items-center gap-2 border border-gray-200 rounded-md px-3 py-2 bg-white text-gray-900">
+                            <PiArrowsDownUp size={18} className="text-[#8b0000]" />
+                            <span className="text-sm font-medium">Sort by</span>
+                        </button>
+
+                        <div className="relative flex-1">
+                            <CiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" size={18} />
+                            <input
+                                type="text"
+                                placeholder="Search"
+                                className="w-full bg-white rounded-full px-10 py-2 text-sm border border-gray-200 focus:outline-none focus:ring-1 focus:ring-[#8b0000]"
+                            />
+                            <HiOutlineMicrophone className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" size={18} />
+                        </div>
                     </div>
-                    
-                    <div className="flex justify-between items-center">
-                        <h3 className="text-base sm:text-lg font-bold text-gray-900">Sort by</h3>
-                        <select className="border-none bg-[#8B0000] text-white px-3 py-2 rounded-md text-xs sm:text-sm font-medium cursor-pointer">
-                            <option>LATEST</option>
-                            <option>Price: Low to High</option>
-                            <option>Price: High to Low</option>
-                            <option>Most Popular</option>
-                        </select>
+
+                    {/* Desktop / large screens header (unchanged) */}
+                    <div className="hidden lg:flex items-center justify-between">
+                        {/* Left - Filters */}
+                        <div className="flex items-center gap-3">
+                            <button
+                                onClick={() => setShowFilters(!showFilters)}
+                                className="flex items-center gap-2"
+                            >
+                                <IoFilterOutline size={30} className="text-gray-900 h-10" />
+                                <span className="text-lg lg:text-3xl font-bold text-gray-900">Filters</span>
+                            </button>
+                        </div>
+
+                        {/* Center - Sort by + Features dropdown */}
+                        <div className="flex items-center gap-3 lg:gap-6">
+                            <h3 className="text-lg lg:text-2xl font-bold text-gray-900 lg:ml-4">Sort by</h3>
+
+                            {/* Features dropdown - pill style */}
+                            <div className="relative">
+                                <button
+                                    onClick={() => setShowSort(true)}
+                                    className="flex items-center gap-3 border border-[#8B0000] text-[#8B0000] bg-white px-4 lg:px-10 py-2 lg:py-1.5 rounded-md text-sm lg:text-base font-medium uppercase lg:w-[200px]"
+                                >
+                                    <span className="text-sm lg:text-base justify-items-center">Featured</span>
+                                    <svg className="w-4 h-4" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 8l4 4 4-4" stroke="#8B0000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Right - Search */}
+                        <div className="flex items-center relative min-w-[500px]">
+                            <div className="relative w-full max-w-[900px]">
+                                <CiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-black" size={22} />
+                                <input
+                                    type="text"
+                                    placeholder="Search"
+                                    className="w-full bg-white border border-gray-300 rounded-full px-12 py-3 text-base lg:text-lg focus:outline-none focus:ring-1 focus:ring-[#8b0000]"
+                                />
+
+                                <HiOutlineMicrophone className="absolute right-4 top-1/2 transform -translate-y-1/2 text-black" size={20} />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            {/* Mobile bottom-sheet for Sort options */}
+            {showSort && (
+                <div className="fixed inset-0 z-20 flex items-end lg:hidden">
+                    {/* backdrop */}
+                    <div className="absolute inset-0 bg-black bg-opacity-40" onClick={() => setShowSort(false)} />
+
+                    {/* sheet */}
+                    <div className="relative w-full max-w-xl mx-auto mb-6 rounded-t-lg bg-[#340808] text-white p-4 shadow-lg transform transition-transform duration-300" style={{ maxHeight: '90vh' }}>
+                        <div className="flex items-center justify-between">
+                            <h3 className="text-lg font-semibold">Sort by</h3>
+                            <button onClick={() => setShowSort(false)} className="text-white text-xl">×</button>
+                        </div>
+                        <div className="border-t border-gray-700 mt-3 pt-3 space-y-3 overflow-auto">
+                            {['Featured', 'Price: Low to High', 'Price: High to Low', 'New Arrivals', 'Best Sellers', 'Customer Reviews', 'Discount'].map((opt) => (
+                                <label key={opt} className="flex items-center justify-between cursor-pointer">
+                                    <span className="text-base">{opt}</span>
+                                    <input type="radio" name="sort" value={opt} checked={sortOption === opt} onChange={() => setSortOption(opt)} className="accent-white" />
+                                </label>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )}
 
             <div className="flex flex-col lg:flex-row px-4 lg:px-10">
                 {/* Left Filter Section */}
@@ -144,11 +208,11 @@ const FilterSection = () => {
                 {/* Right Product Section */}
                 <div className="flex-1 lg:w-3/4 p-3 sm:p-4 lg:p-6 lg:-mt-6">
                     {/* Product Cards Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
+                    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
 
                         {/* Card 1 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-80 sm:h-64 lg:h-72 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/irkal-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-44 sm:h-64 lg:h-72 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/irkal-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">
@@ -177,7 +241,7 @@ const FilterSection = () => {
 
                         {/* Card 2 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-80 sm:h-64 lg:h-72 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/tussar-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-44 sm:h-64 lg:h-72 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/tussar-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">
@@ -206,7 +270,7 @@ const FilterSection = () => {
 
                         {/* Card 3 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-80 sm:h-64 lg:h-72 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/solapur-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-44 sm:h-64 lg:h-72 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/solapur-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">
@@ -235,7 +299,7 @@ const FilterSection = () => {
 
                         {/* Card 4 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-80 sm:h-64 lg:h-82 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-44 sm:h-64 lg:h-82 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">
@@ -264,7 +328,7 @@ const FilterSection = () => {
 
                         {/* Card 5 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-80 sm:h-64 lg:h-82 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-44 sm:h-64 lg:h-82 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">
@@ -293,7 +357,7 @@ const FilterSection = () => {
 
                         {/* Card 6 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-80 sm:h-64 lg:h-82 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-44 sm:h-64 lg:h-82 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">

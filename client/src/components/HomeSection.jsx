@@ -17,7 +17,7 @@ const HomeSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4 sm:py-6 lg:py-8">
   <div className="relative lg:pr-24 min-h-[60vh] md:min-h-screen lg:min-h-auto flex flex-col justify-center lg:-mt-10">
           {/* Left content: constrained width so right image can show */}
-          <div className="max-w-2xl text-white mt-30">
+          <div className="max-w-2xl text-white mt-30 lg:-mt-8">
             <div className="flex items-center justify-center lg:justify-start mb-4 sm:mb-6">
               <img src="/home-logo.png" alt="Saree Logo" className="h-48 w-48 sm:h-64 sm:w-64 md:h-72 md:w-72 lg:h-80 lg:w-80 lg:ml-3 lg:-mb-8 object-contain -mt-10 -mb-10 lg:mt-5" />
             </div>

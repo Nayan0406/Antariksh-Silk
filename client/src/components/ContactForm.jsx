@@ -11,8 +11,8 @@ const ContactForm = () => {
         {/* Overlay content */}
         <div className="relative z-10 w-full flex flex-col px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8">
           {/* page heading outside the card */}
-          <div className="text-center mb-6 sm:mb-8 md:mb-10">
-            <div className="text-xs sm:text-sm md:text-base tracking-widest font-semibold mb-2 sm:mb-3 text-[#f44336] uppercase">
+          <div className="hidden sm:block text-center mb-6 sm:mb-8 md:mb-10">
+          <div className="hidden sm:block text-xs sm:text-sm md:text-base tracking-widest font-semibold mb-2 sm:mb-3 text-[#f44336] uppercase">
               GET IN TOUCH!
             </div>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#550000] font-serif leading-tight">
@@ -23,16 +23,16 @@ const ContactForm = () => {
           <div className="w-full max-w-full">
             <div className="flex flex-col xl:flex-row shadow-lg rounded-lg sm:rounded-xl overflow-hidden">
               {/* Left image panel with contact details */}
-              <div className="w-full xl:w-1/2 relative order-2 xl:order-1">
+              <div className="w-full xl:w-1/2 relative order-1 xl:order-1">
                 {/* background image layer */}
                 <div className="absolute inset-0" style={{
                   backgroundImage: "url('/homesection-img.png')",
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }} />
-                <div className="relative p-4 sm:p-6 md:p-8 text-white flex flex-col justify-between min-h-[300px] sm:min-h-[400px] md:min-h-[420px] lg:min-h-[500px]">
+                <div className="relative p-4 sm:p-6 md:p-8 text-white flex flex-col justify-between min-h-[500px] sm:min-h-[400px] md:min-h-[420px] lg:min-h-[500px]">
                   <div>
-                    <div className="text-xs md:text-sm tracking-widest font-semibold mb-2 text-pink-300 uppercase">GET IN TOUCH</div>
+                    <div className="text-xs md:text-sm tracking-widest font-semibold mb-2 text-[#facbc7] uppercase">GET IN TOUCH</div>
                     <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4">Contact Information</h3>
                     <p className="text-sm mb-6 max-w-md">“Have a query? Wrap it in a message—we'll unfold the answer.”</p>
 
@@ -71,7 +71,7 @@ const ContactForm = () => {
               </div>
 
               {/* Right: form panel */}
-              <div className="w-full xl:w-1/2 bg-white p-4 sm:p-6 md:p-8 lg:p-10 flex items-center order-1 xl:order-2">
+              <div className="w-full xl:w-1/2 bg-white p-4 sm:p-6 md:p-8 lg:p-10 flex items-center order-2 xl:order-2">
                 {/* heading moved above the card */}
 
                 <form className="w-full max-w-5xl bg-white bg-opacity-100 rounded-md">

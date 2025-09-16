@@ -51,7 +51,7 @@ const Navbar = () => {
         {/* Icons (desktop) */}
         <div className='hidden md:flex items-end-safe gap-2 lg:gap-2 xl:gap-2 lg:mr-2 xl:-mr-3'>
           <button aria-label="Wishlist" className="text-gray-700 cursor-pointer"><CiHeart className='w-6 h-6 lg:w-8 lg:h-8' /></button>
-          <button aria-label="Cart" className="text-gray-700 cursor-pointer"><HiOutlineShoppingCart className='w-6 h-6 lg:w-8 lg:h-7 lg:-mt-1' /></button>
+          <Link to="/addtocart"><button aria-label="Cart" className="text-gray-700 cursor-pointer"><HiOutlineShoppingCart className='w-6 h-6 lg:w-8 lg:h-7 lg:-mt-1' /></button></Link>
         </div>
         {/* Auth Buttons (desktop) */}
         <div className="hidden md:flex items-center gap-2 lg:gap-3 xl:gap-4 lg:mr-4 xl:mr-12">

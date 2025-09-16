@@ -15,7 +15,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="w-full bg-white sticky top-0 z-20" role="navigation" aria-label="Main navigation">
+    <nav className="w-full bg-white sticky top-0 z-30" role="navigation" aria-label="Main navigation">
       <div className="w-full relative flex items-center justify-between py-4 sm:py-3 px-3 sm:px-4">
         {/* Logo and Brand */}
         <Link to="/"><div className="flex-shrink-0 flex items-center h-8 sm:h-10">

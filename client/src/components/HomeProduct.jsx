@@ -13,7 +13,7 @@ const HomeProduct = () => {
           {/* Decorative pink background with curved left and bottom */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 overflow-hidden rounded-bl-[6rem] lg:rounded-bl-[20rem]"
+            className="absolute inset-0 overflow-hidden lg:rounded-bl-[20rem]"
             style={{
               background: '#e0c3c3',
             }}
@@ -37,13 +37,13 @@ const HomeProduct = () => {
         <div className="block lg:hidden relative -mt-6 z-20">
           {/* helper CSS to hide the scrollbar on mobile */}
           <style>{`.hide-scrollbar{-ms-overflow-style:none;scrollbar-width:none}.hide-scrollbar::-webkit-scrollbar{display:none}`}</style>
-          <div className="absolute inset-0 bg-[#f6e3e2] rounded-tl-[15rem] sm:rounded-xl md:rounded-2xl" />
+          <div className="absolute inset-0 bg-[#f6e3e2] sm:rounded-xl md:rounded-2xl" />
 
           <div className="relative z-30 p-4 sm:p-6 md:p-8">
             {/* Large image full-width */}
             <div className="mb-4">
               <img
-                src="/home-product-img.png"
+                src="/homeproduct-img.png"
                 alt="Saree Model"
                 loading="lazy"
                 className="w-full h-80 sm:h-96 object-fit rounded-lg"
@@ -81,9 +81,9 @@ const HomeProduct = () => {
             {/* Left side big image */}
             <div className="lg:row-span-2 order-1 lg:order-none">
               <img
-                src="/home-product-img.png"
+                src="/homeproduct-img.png"
                 alt="Saree Model"
-                className="w-full h-80 sm:h-80 md:h-96 lg:h-130 object-fit rounded-lg sm:rounded-xl lg:rounded-l-2xl lg:rounded-r-none"
+                className="w-full h-80 sm:h-80 md:h-96 lg:h-133 object-cover rounded-lg sm:rounded-xl lg:rounded-l-2xl lg:rounded-r-none"
               />
             </div>
 

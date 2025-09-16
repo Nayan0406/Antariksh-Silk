@@ -72,10 +72,11 @@ const OurCollection = () => {
               {items.map((item, index) => (
                 <article 
                   key={index}
-                  className="snap-center flex-shrink-0 w-64 sm:w-72 md:w-80 lg:w-72 xl:w-80 bg-white rounded-lg sm:rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col"
+                  // On mobile make each card take half the viewport so 2 are visible in a row
+                  className="snap-center flex-shrink-0 w-1/2 sm:w-72 md:w-80 lg:w-72 xl:w-80 bg-white rounded-lg sm:rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col"
                 >
                   <div 
-                    className="h-75 sm:h-56 md:h-64 lg:h-60 xl:h-90 bg-cover bg-center" 
+                    className="h-50 sm:h-56 md:h-64 lg:h-60 xl:h-90 bg-cover bg-center" 
                     style={{
                       backgroundImage: `url('${item.img}')`, 
                       backgroundPosition: 'center 1%', 

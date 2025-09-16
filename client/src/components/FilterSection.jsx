@@ -212,7 +212,7 @@ const FilterSection = () => {
 
                         {/* Card 1 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-44 sm:h-64 lg:h-72 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/irkal-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-50 sm:h-64 lg:h-72 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/irkal-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">
@@ -241,7 +241,7 @@ const FilterSection = () => {
 
                         {/* Card 2 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-44 sm:h-64 lg:h-72 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/tussar-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-50 sm:h-64 lg:h-72 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/tussar-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">
@@ -270,7 +270,7 @@ const FilterSection = () => {
 
                         {/* Card 3 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-44 sm:h-64 lg:h-72 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/solapur-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-50 sm:h-64 lg:h-72 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/solapur-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">
@@ -299,7 +299,7 @@ const FilterSection = () => {
 
                         {/* Card 4 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-44 sm:h-64 lg:h-82 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-50 sm:h-64 lg:h-82 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">
@@ -328,7 +328,7 @@ const FilterSection = () => {
 
                         {/* Card 5 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-44 sm:h-64 lg:h-82 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-50 sm:h-64 lg:h-82 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">
@@ -357,7 +357,7 @@ const FilterSection = () => {
 
                         {/* Card 6 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-44 sm:h-64 lg:h-82 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-50 sm:h-64 lg:h-82 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">

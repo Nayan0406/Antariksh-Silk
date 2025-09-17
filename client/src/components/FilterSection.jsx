@@ -134,7 +134,7 @@ const FilterSection = () => {
                     <div className="absolute inset-0 bg-black bg-opacity-40" onClick={() => setShowSort(false)} />
 
                     {/* sheet */}
-                    <div className="relative w-full max-w-xl mx-auto mb-6 rounded-t-lg bg-[#340808] text-white p-4 shadow-lg transform transition-transform duration-300" style={{ maxHeight: '90vh' }}>
+                        <div className="relative w-full max-w-xl mx-auto mb-6 rounded-t-lg bg-[#340808] text-white p-4 shadow-lg transform transition-transform duration-300" style={{ height: '40vh', maxHeight: '40vh', marginBottom: '12px' }}>
                         <div className="flex items-center justify-between">
                             <h3 className="text-lg font-semibold">Sort by</h3>
                             <button onClick={() => setShowSort(false)} className="text-white text-xl">×</button>
@@ -152,19 +152,98 @@ const FilterSection = () => {
             )}
 
             <div className="flex flex-col lg:flex-row px-4 lg:px-10">
-                {/* Left Filter Section */}
-                <div className={`${showFilters ? 'block' : 'hidden'} lg:block fixed lg:relative inset-0 lg:inset-auto z-50 lg:z-auto lg:w-1/4 bg-[#340808] text-white overflow-y-auto`}>
-                    {/* Mobile Close Button */}
-                    <div className="lg:hidden flex justify-between items-center p-4 border-b border-gray-600">
-                        <h2 className="text-lg font-bold">Filters</h2>
-                        <button
-                            onClick={() => setShowFilters(false)}
-                            className="text-white hover:text-gray-300"
-                        >
-                            <FaTimes size={18} />
-                        </button>
-                    </div>
+                {/* Mobile bottom-sheet filter (half-height) */}
+                {showFilters && (
+                    <div className="lg:hidden fixed inset-0 z-50 flex items-end">
+                        {/* backdrop */}
+                        <div className="absolute inset-0 bg-black bg-opacity-50" onClick={() => setShowFilters(false)} />
 
+                        {/* sheet - stop at header height so it aligns with filter button (calc) */}
+                        <div className="relative w-full bg-[#340808] text-white rounded-t-xl p-6 shadow-xl overflow-y-auto transform transition-transform duration-300 translate-y-0" style={{ height: 'calc(100vh - 52px)', maxHeight: 'calc(100vh - 52px)' }}>
+                            {/* Mobile Close Button */}
+                            <div className="flex justify-between items-center pb-3 border-b border-gray-600 mb-4">
+                                <h2 className="text-lg font-bold">Filters</h2>
+                                <button
+                                    onClick={() => setShowFilters(false)}
+                                    className="text-white hover:text-gray-300"
+                                >
+                                    <FaTimes size={18} />
+                                </button>
+                            </div>
+
+                            <div className="space-y-6">
+                                        {/* Price Range */}
+                                        <div>
+                                            <h3 className="text-xl font-bold mb-4 text-white font-playfair">Price Range</h3>
+                                            <input type="range" min="1000" max="6100" className="w-full accent-red-600" />
+                                            <p className="text-red-400 mt-2 text-base font-medium">Rs. 6,100</p>
+                                        </div>
+
+                                        {/* Category (3 columns) */}
+                                        <div>
+                                            <h3 className="text-xl font-bold mb-4 text-white">Category</h3>
+                                            <ul className="grid grid-cols-3 gap-3">
+                                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Paithani Sarees</label></li>
+                                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Nauvari Sarees</label></li>
+                                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Shalu Sarees</label></li>
+                                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Narayan Peth Sarees</label></li>
+                                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Silk Sarees</label></li>
+                                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> All types</label></li>
+                                            </ul>
+                                        </div>
+
+                                        {/* Occasion (3 columns) */}
+                                        <div>
+                                            <h3 className="text-xl font-bold mb-4 text-white">Occasion</h3>
+                                            <ul className="grid grid-cols-3 gap-3">
+                                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Wedding</label></li>
+                                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Festival</label></li>
+                                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Party</label></li>
+                                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Office Wear</label></li>
+                                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Daily Wear</label></li>
+                                            </ul>
+                                        </div>
+
+                                        {/* Color (3 columns) */}
+                                        <div>
+                                            <h3 className="text-xl font-bold mb-4 text-white">Color</h3>
+                                            <ul className="grid grid-cols-3 gap-3">
+                                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Red</label></li>
+                                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Green</label></li>
+                                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Blue</label></li>
+                                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> White</label></li>
+                                                <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Multi-color</label></li>
+                                            </ul>
+                                        </div>
+
+                                {/* Best Seller & New Arrivals */}
+                                <div className="space-y-3">
+                                    <label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Best Seller</label>
+                                    <label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> New Arrivals</label>
+                                </div>
+
+                                {/* Offers */}
+                                <div>
+                                    <h3 className="text-xl font-bold mb-4 text-white">Offers</h3>
+                                    <ul className="space-y-3">
+                                        <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Flat % Off</label></li>
+                                        <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Clearance Sale</label></li>
+                                        <li><label className="flex items-center cursor-pointer text-base"><input type="checkbox" className="mr-3 bg-transparent border-white border-2 accent-white w-4 h-4" /> Under 1000 / 1999</label></li>
+                                    </ul>
+                                </div>
+
+                                {/* Clear Filter Button */}
+                                <button className="w-full bg-red-700 py-3 rounded hover:bg-red-800 transition-colors font-medium text-base">
+                                    Clear Filter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {/* Desktop left sidebar (lg and up) */}
+                <div className="hidden lg:block lg:relative lg:w-1/4 bg-[#340808] text-white overflow-y-auto">
+                    {/* Desktop Filters content (same markup as mobile sheet content) */}
                     <div className="p-6 space-y-6">
                         {/* Price Range */}
                         <div>
@@ -233,14 +312,6 @@ const FilterSection = () => {
                     </div>
                 </div>
 
-                {/* Overlay for mobile when filters are open */}
-                {showFilters && (
-                    <div
-                        className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
-                        onClick={() => setShowFilters(false)}
-                    ></div>
-                )}
-
                 {/* Right Product Section */}
                 <div className="flex-1 lg:w-3/4 p-3 sm:p-4 lg:p-6 lg:-mt-6">
                     {/* Product Cards Grid */}
@@ -248,7 +319,7 @@ const FilterSection = () => {
 
                         {/* Card 1 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-50 sm:h-64 lg:h-72 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/irkal-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-42 sm:h-64 lg:h-72 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/irkal-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">
@@ -277,7 +348,7 @@ const FilterSection = () => {
 
                         {/* Card 2 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-50 sm:h-64 lg:h-72 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/tussar-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-42 sm:h-64 lg:h-72 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/tussar-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">
@@ -306,7 +377,7 @@ const FilterSection = () => {
 
                         {/* Card 3 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-50 sm:h-64 lg:h-72 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/solapur-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-42 sm:h-64 lg:h-72 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/solapur-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">
@@ -335,7 +406,7 @@ const FilterSection = () => {
 
                         {/* Card 4 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-50 sm:h-64 lg:h-82 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-42 sm:h-64 lg:h-82 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">
@@ -364,7 +435,7 @@ const FilterSection = () => {
 
                         {/* Card 5 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-50 sm:h-64 lg:h-82 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-42 sm:h-64 lg:h-82 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">
@@ -393,7 +464,7 @@ const FilterSection = () => {
 
                         {/* Card 6 */}
                         <article className="bg-white rounded-lg lg:rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                            <div className="h-50 sm:h-64 lg:h-82 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
+                            <div className="h-42 sm:h-64 lg:h-82 xl:h-90 bg-cover bg-center" style={{ backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover' }} />
                             <div className="p-3 sm:p-4 flex flex-col flex-1">
                                 <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                                     <div className="text-[#ba7894] text-xs sm:text-sm">

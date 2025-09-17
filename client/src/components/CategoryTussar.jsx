@@ -44,7 +44,7 @@ const CategoryTussar = () => {
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {products.map((p) => (
               <article key={p.id} className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                <div className="h-44 sm:h-64 lg:h-96 bg-cover bg-top" style={{ backgroundImage: `url('${p.img}')` }} />
+                <div className="h-42 sm:h-64 lg:h-96 bg-cover bg-top" style={{ backgroundImage: `url('${p.img}')` }} />
                 <div className="p-4 flex flex-col flex-1">
                   <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                     <div className="text-[#ba7894] text-sm"><div className='flex items-center gap-2'><FaRegStar className='text-[#cf2f2f]'/> 4.5</div></div>
@@ -68,7 +68,7 @@ const CategoryTussar = () => {
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-5">
             {products.map((p) => (
               <article key={p.id} className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                <div className="h-44 sm:h-64 lg:h-96 bg-cover bg-top" style={{ backgroundImage: `url('${p.img}')` }} />
+                <div className="h-42 sm:h-64 lg:h-96 bg-cover bg-top" style={{ backgroundImage: `url('${p.img}')` }} />
                 <div className="p-4 flex flex-col flex-1">
                   <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                     <div className="text-[#ba7894] text-sm"><div className='flex items-center gap-2'><FaRegStar className='text-[#cf2f2f]'/> 4.5</div></div>
@@ -92,7 +92,7 @@ const CategoryTussar = () => {
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-5">
             {products.map((p) => (
               <article key={p.id} className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-                <div className="h-44 sm:h-64 lg:h-96 bg-cover bg-top" style={{ backgroundImage: `url('${p.img}')` }} />
+                <div className="h-42 sm:h-64 lg:h-96 bg-cover bg-top" style={{ backgroundImage: `url('${p.img}')` }} />
                 <div className="p-4 flex flex-col flex-1">
                   <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                     <div className="text-[#ba7894] text-sm"><div className='flex items-center gap-2'><FaRegStar className='text-[#cf2f2f]'/> 4.5</div></div>

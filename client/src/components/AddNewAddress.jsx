@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const AddNewAddress = () => {
-  const [selectedAddress, setSelectedAddress] = useState(0) // 0 for first address selected by default
+  const [selectedAddress, setSelectedAddress] = useState(null) // null means no address selected by default
 
   // sample addresses to display
   const addresses = [
@@ -14,9 +14,9 @@ const AddNewAddress = () => {
       addressLine: 'Flat No. 203, Green Residency Apartments',
       landmark: 'Near City Mall',
       pincode: '411001',
+      locality: 'Pune',
       city: 'Pune',
       state: 'Maharashtra',
-      country: 'India'
     },
     {
       name: 'Riya Sharma',
@@ -26,9 +26,9 @@ const AddNewAddress = () => {
       addressLine: 'B-14, Lotus Heights, MG Road',
       landmark: 'Opposite Central Park',
       pincode: '110001',
+      locality: 'New Delhi',
       city: 'New Delhi',
       state: 'Delhi',
-      country: 'India'
     },
     {
       name: 'Ananya Sharma',
@@ -38,9 +38,9 @@ const AddNewAddress = () => {
       addressLine: 'B-402, Lotus Heights, MG Road',
       landmark: 'Opposite Central Park',
       pincode: '560001',
+      locality: 'Bangalore',
       city: 'Bengaluru',
       state: 'Karnataka',
-      country: 'India'
     }
   ]
 
@@ -111,17 +111,20 @@ const AddNewAddress = () => {
                   <p className="font-normal">Street Address / House No. / Apartment Name: {addr.addressLine}</p>
                   <p className="font-normal">Landmark: {addr.landmark}</p>
                   <p className="font-normal">Pin code: {addr.pincode}</p>
+                  <p className="font-normal">Locality: {addr.locality}</p>
                   <p className="font-normal">City: {addr.city}</p>
                   <p className="font-normal">State: {addr.state}</p>
-                  <p className="font-normal">Country: {addr.country}</p>
                 </div>
               </div>
-              <div className="mt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-                <Link to='/paymentsection'>
-                  <button className={`px-4 py-2 rounded-md text-white w-full sm:w-auto lg:ml-10 ${selectedAddress === idx ? 'bg-[#870900]' : 'bg-[#870900]'} cursor-pointer`}>Delivery Address</button>
-                </Link>
-                <button className="px-4 py-2 rounded-md bg-[#eef2ff] text-sm w-full sm:w-auto">Edit</button>
-              </div>
+              {/* show action buttons only when this address is selected */}
+              {selectedAddress === idx && (
+                <div className="mt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                  <Link to='/paymentsection'>
+                    <button className={`px-4 py-2 rounded-md text-white w-full sm:w-auto lg:ml-10 bg-[#870900] cursor-pointer`}>Delivery Address</button>
+                  </Link>
+                  <button className="px-4 py-2 rounded-md bg-[#eef2ff] text-sm w-full sm:w-auto">Edit</button>
+                </div>
+              )}
             </div> 
           ))}
         </div>

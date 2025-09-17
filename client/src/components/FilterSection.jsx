@@ -58,19 +58,55 @@ const FilterSection = () => {
 
                         {/* Center - Sort by + Features dropdown */}
                         <div className="flex items-center gap-3 lg:gap-6">
-                            <h3 className="text-lg lg:text-2xl font-bold text-gray-900 lg:ml-4">Sort by</h3>
+                            <h3 className="text-lg lg:text-2xl font-bold text-gray-900 lg:ml-10">Sort by</h3>
 
                             {/* Features dropdown - pill style */}
                             <div className="relative">
                                 <button
                                     onClick={() => setShowSort(true)}
-                                    className="flex items-center gap-3 border border-[#8B0000] text-[#8B0000] bg-white px-4 lg:px-10 py-2 lg:py-1.5 rounded-md text-sm lg:text-base font-medium uppercase lg:w-[200px]"
+                                    className="flex items-center gap-3 border border-[#8B0000] text-[#8B0000] bg-white px-4 md:px-6 lg:px-10 py-2 md:py-2 lg:py-1.5 rounded-md text-sm md:text-sm lg:text-base font-medium uppercase md:w-[240px] lg:w-[200px]"
                                 >
-                                    <span className="text-sm lg:text-base justify-items-center">Featured</span>
+                                    <span className="text-sm md:text-sm lg:text-base justify-items-center">{sortOption}</span>
                                     <svg className="w-4 h-4" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M6 8l4 4 4-4" stroke="#8B0000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                 </button>
+
+                                {/* Dropdown panel for md+ (hidden on mobile) */}
+                                {showSort && (
+                                    <div
+                                        onMouseLeave={() => setShowSort(false)}
+                                        className="hidden md:block absolute left-0 mt-2 w-72 bg-[#340808] text-white rounded-md shadow-lg z-50 p-3 hide-scrollbar"
+                                        style={{ maxHeight: '60vh', overflow: 'auto' }}
+                                        role="menu"
+                                        aria-label="Sort options"
+                                    >
+                                        <ul className="space-y-2">
+                                            {['Featured', 'Price: Low to High', 'Price: High to Low', 'New Arrivals', 'Best Sellers', 'Customer Reviews', 'Discount'].map((opt) => (
+                                                <li key={opt} className="flex items-center justify-between px-2 py-3 hover:bg-[#2b0707] rounded">
+                                                    <button
+                                                        onClick={() => { setSortOption(opt); setShowSort(false); }}
+                                                        className="text-left w-full"
+                                                        role="menuitem"
+                                                    >
+                                                        <span className="text-xl font-playfair">{opt}</span>
+                                                    </button>
+                                                    <div className="ml-4 flex-shrink-0">
+                                                        <input
+                                                            type="radio"
+                                                            name="sort-desktop"
+                                                            value={opt}
+                                                            checked={sortOption === opt}
+                                                            onChange={() => { setSortOption(opt); setShowSort(false); }}
+                                                            className="no-fill-radio"
+                                                            aria-label={`Select ${opt}`}
+                                                        />
+                                                    </div>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
                             </div>
                         </div>
 
@@ -107,7 +143,7 @@ const FilterSection = () => {
                             {['Featured', 'Price: Low to High', 'Price: High to Low', 'New Arrivals', 'Best Sellers', 'Customer Reviews', 'Discount'].map((opt) => (
                                 <label key={opt} className="flex items-center justify-between cursor-pointer">
                                     <span className="text-base">{opt}</span>
-                                    <input type="radio" name="sort" value={opt} checked={sortOption === opt} onChange={() => setSortOption(opt)} className="accent-white" />
+                                    <input type="radio" name="sort" value={opt} checked={sortOption === opt} onChange={() => setSortOption(opt)} className="no-fill-radio" />
                                 </label>
                             ))}
                         </div>
@@ -121,7 +157,7 @@ const FilterSection = () => {
                     {/* Mobile Close Button */}
                     <div className="lg:hidden flex justify-between items-center p-4 border-b border-gray-600">
                         <h2 className="text-lg font-bold">Filters</h2>
-                        <button 
+                        <button
                             onClick={() => setShowFilters(false)}
                             className="text-white hover:text-gray-300"
                         >
@@ -199,7 +235,7 @@ const FilterSection = () => {
 
                 {/* Overlay for mobile when filters are open */}
                 {showFilters && (
-                    <div 
+                    <div
                         className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
                         onClick={() => setShowFilters(false)}
                     ></div>

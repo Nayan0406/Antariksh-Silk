@@ -26,42 +26,43 @@ const ContactForm = () => {
               <div className="w-full xl:w-1/2 relative order-1 xl:order-1">
                 {/* background image layer */}
                 <div className="absolute inset-0" style={{
-                  backgroundImage: "url('/homesection-img.png')",
+                  backgroundImage: " url('/contactform-img.png')",
                   backgroundSize: 'cover',
-                  backgroundPosition: 'center'
+                  backgroundPosition: 'center',
+                  backgroundBlendMode: 'overlay'
                 }} />
                 <div className="relative p-4 sm:p-6 md:p-8 text-white flex flex-col justify-between min-h-[500px] sm:min-h-[400px] md:min-h-[420px] lg:min-h-[500px]">
                   <div>
-                    <div className="text-xs md:text-sm tracking-widest font-semibold mb-2 text-[#facbc7] uppercase">GET IN TOUCH</div>
+                    <div className="text-xs md:text-sm tracking-widest font-semibold mb-2 text-[#facbc7] uppercase lg:mt-10 mt-10">GET IN TOUCH</div>
                     <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4">Contact Information</h3>
                     <p className="text-sm mb-6 max-w-md">“Have a query? Wrap it in a message—we'll unfold the answer.”</p>
 
-                    <ul className="space-y-8 mt-6">
+                    <ul className="space-y-8 mt-10 lg:mt-30">
                       <li className="flex items-start gap-3">
-                        <span className="text-2xl"><FiPhoneCall /></span>
+                        <span className="text-4xl"><FiPhoneCall /></span>
                         <div>
-                          <div className="text-sm font-semibold">Call Us :</div>
+                          <div className="text-lg font-semibold">Call Us :</div>
                           <div className="text-xs">CALL: 1-800-123-9999</div>
                         </div>
                       </li>
                       <li className="flex items-start gap-3">
-                        <span className="text-2xl"><MdOutlineMailOutline /></span>
+                        <span className="text-4xl"><MdOutlineMailOutline /></span>
                         <div>
-                          <div className="text-sm font-semibold">Drop Us :</div>
+                          <div className="text-lg font-semibold">Drop Us :</div>
                           <div className="text-xs">support@beautyness.com</div>
                         </div>
                       </li>
                       <li className="flex items-start gap-3">
-                        <span className="text-1xl h-10"><LuHouse className='h-10'/></span>
+                        <span className="text-4xl"><LuHouse className='h-10'/></span>
                         <div>
-                          <div className="text-sm font-semibold">Visit Us :</div>
+                          <div className="text-lg font-semibold">Visit Us :</div>
                           <div className="text-xs">Mariendalsvej 50D 2 2000 Frederiksberg.</div>
                         </div>
                       </li>
                     </ul>
                   </div>
 
-                  <div className="flex items-center gap-4 md:mt-80">
+                  <div className="flex items-center gap-4 md:mt-80 mt-20">
                     <button aria-label="facebook" className="w-9 h-9 rounded-full border-2 border-[#ec7171] flex items-center justify-center text-white/90"><FaFacebookF /></button>
                     <button aria-label="twitter" className="w-9 h-9 rounded-full border-2 border-[#ec7171] flex items-center justify-center text-white/90"><FaTwitter /></button>
                     <button aria-label="linkedin" className="w-9 h-9 rounded-full border-2 border-[#ec7171] flex items-center justify-center text-white/90"><FaLinkedinIn /></button>

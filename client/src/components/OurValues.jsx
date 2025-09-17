@@ -48,20 +48,23 @@ const OurValues = () => {
         </div>
       </div>
       {/* Right: Saree Images */}
-  <div className="relative flex-1 flex flex-col items-center justify-center md:mt-0 md:ml-8 lg:ml-16 w-full max-w-xl min-h-0 md:min-h-[18rem]">
-        {/* Desktop/tablet: two top, one bottom; Mobile: stack vertically */}
-        <div className="hidden md:flex w-full justify-between items-start">
-          <img src="/ourvalue-img-1.png" alt="Saree 1" className="w-40 md:w-48 lg:w-46 lg:h-100 rounded-full object-cover shadow-lg" />
-          <img src="/ourvalue-img-2.png" alt="Saree 2" className="w-40 md:w-48 lg:w-46 lg:h-100 rounded-full object-cover shadow-lg" />
+  {/* Right: Saree Images - show only on desktop (lg and up) */}
+  <div className="relative flex-1 hidden lg:flex flex-col items-center justify-center lg:mt-0 lg:ml-16 w-full max-w-xl min-h-0 lg:min-h-[32rem]">
+        {/* Desktop: two top, one bottom (visible only on lg+) */}
+        <div className="w-full flex justify-between items-start px-1">
+          {/* Top-left and top-right are tall vertical ovals */}
+          <div className="overflow-hidden rounded-t-full rounded-b-full border-t-2 border-b-2 border-[#550000] shadow-lg transform translate-y-6">
+            <img src="/ourvalue-img-1.png" alt="Saree 1" className="w-28 lg:w-36 xl:w-40 h-56 lg:h-[22rem] xl:h-[24rem] object-cover" />
+          </div>
+          <div className="overflow-hidden rounded-t-full rounded-b-full border-t-2 border-b-2 border-[#550000] shadow-lg transform translate-y-6">
+            <img src="/ourvalue-img-2.png" alt="Saree 2" className="w-28 lg:w-36 xl:w-40 h-56 lg:h-[22rem] xl:h-[24rem] object-cover" />
+          </div>
         </div>
-        <div className="hidden md:flex w-full justify-center items-end lg:-mt-28 md:mt-12">
-          <img src="/ourvalue-img-3.png" alt="Saree 3" className="w-40 md:w-48 lg:w-56 lg:h-100 rounded-full object-cover shadow-lg" />
-        </div>
-        {/* Mobile: stack images vertically and center */}
-        <div className="hidden">
-          <img src="/ourvalue-img-1.png" alt="Saree 1" className="w-36 rounded-full object-cover shadow-lg" />
-          <img src="/ourvalue-img-2.png" alt="Saree 2" className="w-36 rounded-full object-cover shadow-lg" />
-          <img src="/ourvalue-img-3.png" alt="Saree 3" className="w-36 rounded-full object-cover shadow-lg" />
+        <div className="w-full flex justify-center items-end lg:-mt-36">
+          {/* Center bottom overlaps the top two, larger and taller */}
+          <div className="overflow-hidden rounded-t-full rounded-b-full border-t-2 border-b-2 border-[#550000] shadow-lg">
+            <img src="/ourvalue-img-3.png" alt="Saree 3" className="w-32 lg:w-44 xl:w-52 h-64 lg:h-[18rem] xl:h-[25rem] object-cover" />
+          </div>
         </div>
       </div>
     </section>

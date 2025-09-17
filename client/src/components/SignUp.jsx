@@ -17,7 +17,7 @@ const SignUp = () => {
     // Handle signup logic here
     console.log('Signup attempted with:', { name, email, password, confirmPassword, rememberMe });
   };  return (
-  <div className="relative flex flex-col md:flex-row min-h-screen items-center justify-center overflow-hidden bg-[#560101]">
+  <div className="relative flex flex-col md:flex-row min-h-screen items-center justify-center overflow-hidden bg-[#1d0200]">
       {/* Mobile gradient background (shows only on small screens) */}
       <div
         className="absolute inset-0 md:hidden pointer-events-none"
@@ -36,7 +36,7 @@ const SignUp = () => {
                   </div>
     
         {/* Right Side - SignUp Form */}
-  <div className="w-full md:w-1/2 flex items-center md:items-center justify-center bg-transparent md:bg-[#550101] px-4 sm:px-6 md:px-12 py-6 sm:py-10 md:py-14 relative z-10">
+  <div className="w-full md:w-1/2 flex items-center md:items-center justify-center bg-transparent md:bg-[#1d0200] px-4 sm:px-6 md:px-12 py-6 sm:py-10 md:py-14 relative z-10">
           <div className="w-full max-w-md md:max-w-lg lg:max-w-md">
             {/* Logo */}
             <div className="text-center mb-4 sm:mb-6">

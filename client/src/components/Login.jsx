@@ -16,7 +16,7 @@ const Login = () => {
   };
 
   return (
-    <div className="relative flex flex-col md:flex-row min-h-screen items-center md:items-stretch justify-center md:justify-start overflow-hidden bg-[#560101]">
+    <div className="relative flex flex-col md:flex-row min-h-screen items-center md:items-stretch justify-center md:justify-start overflow-hidden bg-[#1d0200] z-1">
 
       {/* Mobile gradient background (shows only on small screens) */}
       <div
@@ -37,7 +37,7 @@ const Login = () => {
       </div>
 
       {/* Right Side - Login Form */}
-  <div className="w-full md:w-1/2 flex items-center md:items-center justify-center bg-transparent md:bg-[#550101] px-4 sm:px-8 md:px-12 py-6 sm:py-12 md:py-16 relative z-10">
+  <div className="w-full md:w-1/2 flex items-center md:items-center justify-center bg-transparent md:bg-[#1d0200] px-4 sm:px-8 md:px-12 py-6 sm:py-12 md:py-16 relative z-1">
     <div className="w-full max-w-md md:max-w-lg lg:max-w-md">
           {/* Logo */}
           <div className="text-center mb-6 sm:mb-8">

@@ -10,8 +10,8 @@ const RecentlyProduct = () => {
               <div className="overflow-x-auto hide-scrollbar py-3">
                 <div className="flex gap-4 sm:gap-6 items-stretch snap-x snap-mandatory px-2 sm:px-4">
                   {/* Card 1 */}
-                  <article className="snap-center flex-shrink-0 min-w-[14rem] sm:min-w-[16rem] md:min-w-[18rem] lg:min-w-[20rem] bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-                    <div className="h-75 md:h-56 lg:h-64 xl:h-85 bg-cover bg-center" style={{backgroundImage: "url('/irkal-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover'}} />
+                  <article className="snap-center flex-shrink-0 w-[48%] sm:w-[45%] md:w-[18rem] lg:w-[20rem] bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+                    <div className="h-40 md:h-56 lg:h-64 xl:h-85 bg-cover bg-center" style={{backgroundImage: "url('/irkal-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover'}} />
                     <div className="p-3 sm:p-4 flex flex-col flex-1">
                       <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                         <div className="text-[#ba7894] text-sm"><div className='flex items-center gap-2'><FaRegStar /> 4.5</div></div>
@@ -27,8 +27,8 @@ const RecentlyProduct = () => {
                   </article>
     
                   {/* Card 2 */}
-                  <article className="snap-center flex-shrink-0 min-w-[14rem] sm:min-w-[16rem] md:min-w-[18rem] lg:min-w-[20rem] bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-                    <div className="h-75 md:h-56 lg:h-64 xl:h-85 bg-cover bg-center" style={{backgroundImage: "url('/tussar-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover'}} />
+                  <article className="snap-center flex-shrink-0 w-[48%] sm:w-[45%] md:w-[18rem] lg:w-[20rem] bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+                    <div className="h-40 md:h-56 lg:h-64 xl:h-85 bg-cover bg-center" style={{backgroundImage: "url('/tussar-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover'}} />
                     <div className="p-3 sm:p-4 flex flex-col flex-1">
                       <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                         <div className="text-[#ba7894] text-sm"><div className='flex items-center gap-2'><FaRegStar /> 4.5</div></div>
@@ -44,8 +44,8 @@ const RecentlyProduct = () => {
                   </article>
     
                   {/* Card 3 */}
-                  <article className="snap-center flex-shrink-0 min-w-[14rem] sm:min-w-[16rem] md:min-w-[18rem] lg:min-w-[20rem] bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-                    <div className="h-75 md:h-56 lg:h-64 xl:h-85 bg-cover bg-center" style={{backgroundImage: "url('/solapur-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover'}} />
+                  <article className="snap-center flex-shrink-0 w-[48%] sm:w-[45%] md:w-[18rem] lg:w-[20rem] bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+                    <div className="h-40 md:h-56 lg:h-64 xl:h-85 bg-cover bg-center" style={{backgroundImage: "url('/solapur-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover'}} />
                     <div className="p-3 sm:p-4 flex flex-col flex-1">
                       <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                         <div className="text-[#ba7894] text-sm"><div className='flex items-center gap-2'><FaRegStar /> 4.5</div></div>
@@ -61,8 +61,8 @@ const RecentlyProduct = () => {
                   </article>
     
                   {/* Card 4 */}
-                  <article className="snap-center flex-shrink-0 min-w-[14rem] sm:min-w-[16rem] md:min-w-[18rem] lg:min-w-[20rem] bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-                    <div className="h-75 md:h-56 lg:h-64 xl:h-85 bg-cover bg-center" style={{backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover'}} />
+                  <article className="snap-center flex-shrink-0 w-[48%] sm:w-[45%] md:w-[18rem] lg:w-[20rem] bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+                    <div className="h-40 md:h-56 lg:h-64 xl:h-85 bg-cover bg-center" style={{backgroundImage: "url('/Kanjeevaram-saree.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover'}} />
                     <div className="p-3 sm:p-4 flex flex-col flex-1">
                       <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                         <div className="text-[#ba7894] text-sm"><div className='flex items-center gap-2'><FaRegStar /> 4.5</div></div>
@@ -78,8 +78,8 @@ const RecentlyProduct = () => {
                   </article>
     
                   {/* Card 5 */}
-                  <article className="snap-center flex-shrink-0 min-w-[14rem] sm:min-w-[16rem] md:min-w-[18rem] lg:min-w-[20rem] bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-                    <div className="h-75 md:h-56 lg:h-64 xl:h-85 bg-cover bg-center" style={{backgroundImage: "url('/home-product-img.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover'}} />
+                  <article className="snap-center flex-shrink-0 w-[48%] sm:w-[45%] md:w-[18rem] lg:w-[20rem] bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+                    <div className="h-40 md:h-56 lg:h-64 xl:h-85 bg-cover bg-center" style={{backgroundImage: "url('/home-product-img.png')", backgroundPosition: 'center 1%', backgroundSize: 'cover'}} />
                     <div className="p-3 sm:p-4 flex flex-col flex-1">
                       <div className="flex items-center justify-between text-xs text-[#a31f1f] mb-2">
                         <div className="text-[#ba7894] text-sm"><div className='flex items-center gap-2'><FaRegStar /> 4.5</div></div>

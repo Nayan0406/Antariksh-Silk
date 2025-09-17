@@ -8,7 +8,7 @@ const BlogItems = () => {
                 <div className="bg-[#dec9c7] md:rounded-br-[10vw] md:rounded-tl-[10vw] p-4 sm:p-6 md:h-[500px] lg:h-[560px]">
                     <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-6 md:gap-0 relative z-10">
                         {/* Purple Content Block */}
-                        <div className="bg-[#550000] text-white p-4 sm:p-6 md:p-8 lg:p-16 w-full md:w-1/2 relative z-10 md:rounded-none order-2 md:order-1">
+                        <div className="bg-[#550000] text-white p-4 sm:p-6 md:p-8 lg:p-16 w-full md:w-1/2 relative z-10 md:rounded-none order-2 md:order-2">
                             <p className="uppercase text-xs sm:text-sm tracking-wide mb-2 opacity-80">BLOG</p>
                             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Paithani</h2>
                             <p className="text-xs sm:text-sm leading-relaxed opacity-90">
@@ -139,7 +139,7 @@ const BlogItems = () => {
                         </div>
 
                         {/* Video Section */}
-                        <div className="w-full md:w-1/2 relative order-2 md:order-1">
+                        <div className="w-full md:w-1/2 relative order-1 md:order-1">
                             <div className="relative h-60 sm:h-64 md:h-100 lg:h-120 lg:w-150">
                                 <video
                                     src="/saree-video-4.mp4"
